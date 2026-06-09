@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artefak Pembelajaran | E-Portofolio PPG Calon Guru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/artefak.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-pink"></div>
+      <div class="mesh-blob blob-navy"></div>
+      <div class="mesh-blob blob-coral"></div>
+    </div>
+
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">E-Portofolio 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content">
+              <a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">E-Portofolio 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content">
+              <a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <a href="dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="artefak-main">
+      <section class="hero-artefak">
+        <div class="container text-center">
+          <div class="badge-tech fade-in-up" style="animation-delay: 0.1s"><i class="fa-solid fa-layer-group"></i> Ruang Karya E-Portofolio 1</div>
+          <h1 class="hero-title fade-in-up" style="animation-delay: 0.3s">Artefak & <span class="text-gradient">Perangkat Pembelajaran</span></h1>
+          <p class="hero-desc fade-in-up" style="animation-delay: 0.5s">Eksplorasi dokumen rancangan pembelajaran Informatika beserta analisis reflektif mengenai kendala, landasan teori, faktor keberhasilan, dan adaptabilitas ruang kelas.</p>
+        </div>
+      </section>
+
+      <section class="document-section reveal">
+  <div class="container">
+    <!-- IDENTITY BAR - Informasi Umum -->
+    <div class="doc-identity-bar">
+      <div class="identity-item">
+        <i class="fa-solid fa-book"></i>
+        <div>
+          <label>Mata Pelajaran</label>
+          <h4>INFORMATIKA</h4>
+        </div>
+      </div>
+      <div class="identity-item">
+        <i class="fa-solid fa-school"></i>
+        <div>
+          <label>Sekolah Mitra (PPL)</label>
+          <h4>SMK Negeri 5 Yogyakarta</h4>
+        </div>
+      </div>
+      <div class="identity-item">
+        <i class="fa-solid fa-users-viewfinder"></i>
+        <div>
+          <label>Fase / Kelas</label>
+          <h4>Fase E / Kelas X</h4>
+        </div>
+      </div>
+      <div class="identity-item">
+        <i class="fa-solid fa-laptop-code"></i>
+        <div>
+          <label>Topik Materi</label>
+          <h4>HAKI, HTML & CSS</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDF TABS CONTAINER -->
+    <div class="pdf-tabs-container">
+      <!-- TAB BUTTONS UTAMA -->
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openPdfTab(event, 'tab-modul')">
+          <i class="fa-solid fa-book-open"></i> RPP
+        </button>
+        <button class="tab-btn" onclick="openPdfTab(event, 'tab-lkpd')">
+          <i class="fa-solid fa-clipboard-list"></i> LKPD
+        </button>
+        <button class="tab-btn" onclick="openPdfTab(event, 'tab-observasi')">
+          <i class="fa-solid fa-spell-check"></i> Observasi
+        </button>
+      </div>
+
+      <!-- ==================== TAB MODUL AJAR (DENGAN SIKLUS 1,2,3) ==================== -->
+      <div id="tab-modul" class="tab-content active">
+        <!-- SUB TAB BUTTONS SIKLUS 1,2,3 -->
+        <div class="cycle-tabs-wrapper" style="margin-bottom: 20px;">
+          <h4 class="tab-instruction" style="font-size: 0.9rem; margin-bottom: 10px;">
+            <i class="fa-solid fa-layer-group"></i> Pilih Siklus Modul Ajar:
+          </h4>
+          <div class="cycle-tabs">
+            <button class="cycle-btn active" onclick="switchModulCycle(event, 'modul-siklus-1')">
+              <i class="fa-solid fa-1"></i> Siklus 1
+            </button>
+            <button class="cycle-btn" onclick="switchModulCycle(event, 'modul-siklus-2')">
+              <i class="fa-solid fa-2"></i> Siklus 2
+            </button>
+            <button class="cycle-btn" onclick="switchModulCycle(event, 'modul-siklus-3')">
+              <i class="fa-solid fa-3"></i> Siklus 3
+            </button>
+          </div>
+        </div>
+
+        <!-- Modul Ajar Siklus 1 -->
+        <div id="modul-siklus-1" class="pdf-content-cycle active">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/RPP_Siklus_1.pdf" title="Modul Ajar Informatika Siklus 1" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/RPP_Siklus_1.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/RPP_Siklus_1.pdf" download="Modul_Ajar_Siklus_1.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh Modul Siklus 1
+            </a>
+          </div>
+        </div>
+
+        <!-- Modul Ajar Siklus 2 -->
+        <div id="modul-siklus-2" class="pdf-content-cycle">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/RPP Siklus 2.pdf" title="Modul Ajar Informatika Siklus 2" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/RPP Siklus 2.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/RPP Siklus 2.pdf" download="Modul_Ajar_Siklus_2.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh Modul Siklus 2
+            </a>
+          </div>
+        </div>
+
+        <!-- Modul Ajar Siklus 3 -->
+        <div id="modul-siklus-3" class="pdf-content-cycle">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/RPP Siklus 3.pdf" title="Modul Ajar Informatika Siklus 3" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/RPP Siklus 3.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/RPP Siklus 3.pdf" download="Modul_Ajar_Siklus_3.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh Modul Siklus 3
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB LKPD (DENGAN SIKLUS 1,2,3) ==================== -->
+      <div id="tab-lkpd" class="tab-content">
+        <!-- SUB TAB BUTTONS SIKLUS 1,2,3 -->
+        <div class="cycle-tabs-wrapper" style="margin-bottom: 20px;">
+          <h4 class="tab-instruction" style="font-size: 0.9rem; margin-bottom: 10px;">
+            <i class="fa-solid fa-layer-group"></i> Pilih Siklus LKPD:
+          </h4>
+          <div class="cycle-tabs">
+            <button class="cycle-btn active" onclick="switchLkpdCycle(event, 'lkpd-siklus-1')">
+              <i class="fa-solid fa-1"></i> Siklus 1
+            </button>
+            <button class="cycle-btn" onclick="switchLkpdCycle(event, 'lkpd-siklus-2')">
+              <i class="fa-solid fa-2"></i> Siklus 2
+            </button>
+            <button class="cycle-btn" onclick="switchLkpdCycle(event, 'lkpd-siklus-3')">
+              <i class="fa-solid fa-3"></i> Siklus 3
+            </button>
+          </div>
+        </div>
+
+        <!-- LKPD Siklus 1 -->
+        <div id="lkpd-siklus-1" class="pdf-content-cycle active">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/LKPD Siklus 1.pdf" title="LKPD Informatika Siklus 1" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/LKPD Siklus 1.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/LKPD Siklus 1.pdf" download="LKPD_Siklus_1.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh LKPD Siklus 1
+            </a>
+          </div>
+        </div>
+
+        <!-- LKPD Siklus 2 -->
+        <div id="lkpd-siklus-2" class="pdf-content-cycle">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/LKPD Siklus 2.pdf" title="LKPD Informatika Siklus 2" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/LKPD Siklus 2.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/LKPD Siklus 2.pdf" download="LKPD_Siklus_2.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh LKPD Siklus 2
+            </a>
+          </div>
+        </div>
+
+        <!-- LKPD Siklus 3 -->
+        <div id="lkpd-siklus-3" class="pdf-content-cycle">
+          <div class="pdf-wrapper">
+            <iframe src="Dokumen/LKPD Siklus 3.pdf" title="LKPD Informatika Siklus 3" loading="lazy"></iframe>
+          </div>
+          <div class="doc-actions">
+            <a href="Dokumen/LKPD Siklus 3.pdf" target="_blank" class="btn-glow">
+              <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+            </a>
+            <a href="Dokumen/LKPD Siklus 3.pdf" download="LKPD_Siklus_3.pdf" class="btn-outline-sport">
+              <i class="fa-solid fa-download"></i> Unduh LKPD Siklus 3
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB OBSERVASI (TANPA SIKLUS) ==================== -->
+      <div id="tab-observasi" class="tab-content">
+        <!-- Observasi LK.1 -->
+        <div class="pdf-wrapper">
+          <iframe src="Dokumen/LK.1.PPLT_Ilham Kurnia Septiadi.pdf" title="Lembar Observasi 1" loading="lazy"></iframe>
+        </div>
+        <div class="doc-actions">
+          <a href="Dokumen/LK.1.PPLT_Ilham Kurnia Septiadi.pdf" target="_blank" class="btn-glow">
+            <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+          </a>
+          <a href="Dokumen/LK.1.PPLT_Ilham Kurnia Septiadi.pdf" download="LK.1_PPLT.pdf" class="btn-outline-sport">
+            <i class="fa-solid fa-download"></i> Unduh LK.1
+          </a>
+        </div>
+
+        <!-- Observasi LK.2 -->
+        <div class="pdf-wrapper" style="margin-top: 40px;">
+          <iframe src="Dokumen/LK.2.PPLT.pdf" title="Lembar Observasi 2" loading="lazy"></iframe>
+        </div>
+        <div class="doc-actions">
+          <a href="Dokumen/LK.2.PPLT.pdf" target="_blank" class="btn-glow">
+            <i class="fa-solid fa-up-right-from-square"></i> Buka Layar Penuh
+          </a>
+          <a href="Dokumen/LK.2.PPLT.pdf" download="LK.2_PPLT.pdf" class="btn-outline-sport">
+            <i class="fa-solid fa-download"></i> Unduh LK.2
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="analysis-zigzag-section reveal">
+        <div class="container">
+          <div class="section-title-modern text-center">
+            <h2>Analisis & <span class="text-gradient">Refleksi Artefak</span></h2>
+            <p>Tinjauan analitis mendalam dari 4 aspek esensial selama penyusunan dan implementasi.</p>
+          </div>
+
+          <div class="zigzag-row reveal">
+            <div class="zigzag-visual">
+              <div class="visual-card hover-tilt">
+                <i class="fa-solid fa-triangle-exclamation big-icon"></i>
+                <div class="card-decor decor-1"></div>
+              </div>
+            </div>
+            <div class="zigzag-content">
+              <div class="zz-number">A</div>
+              <h3>Kendala Penyusunan</h3>
+              <p>
+                Tantangan utama dalam penyusunan produk pembelajaran adalah merancang pembelajaran berdiferensiasi yang mampu mengakomodasi
+                <strong>keragaman gaya belajar, tingkat kesiapan, minat, dan karakteristik peserta didik</strong>
+                dalam satu kelas. Selain itu, menyelaraskan tujuan pembelajaran, aktivitas belajar, dan asesmen agar tetap relevan dengan kebutuhan seluruh peserta didik juga memerlukan perencanaan yang matang. Kendala lain yang sering dihadapi meliputi pemilihan strategi pembelajaran yang tepat, penyusunan instrumen asesmen yang autentik, pengelolaan alokasi waktu pembelajaran, serta penyediaan sumber belajar yang bervariasi untuk mendukung keterlibatan aktif peserta didik.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reverse reveal">
+            <div class="zigzag-visual">
+              <div class="visual-card hover-tilt card-accent">
+                <i class="fa-solid fa-brain big-icon-light"></i>
+                <div class="card-decor decor-2"></div>
+              </div>
+            </div>
+            <div class="zigzag-content">
+              <div class="zz-number">B</div>
+              <h3>Teori & Konsep Pedagogi</h3>
+              <p>
+                Penyusunan pembelajaran ini mengadopsi model
+                <em>Discovery Learning</em> dan <em>Problem Based Learning</em> untuk mengakomodasi <strong>karakteristik peserta didik serta memperkuat keterlibatan mereka dalam proses pembelajaran.</strong>  
+                Discovery Learning diterapkan untuk mendorong peserta didik menemukan konsep secara mandiri melalui kegiatan eksplorasi dan investigasi, sedangkan PBL digunakan untuk melatih kemampuan berpikir kritis, kolaborasi, 
+                dan pemecahan masalah melalui penyelesaian permasalahan yang kontekstual. Penerapan kedua model ini diharapkan dapat menciptakan pengalaman belajar yang lebih bermakna, aktif, dan berpusat pada peserta didik.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reveal">
+            <div class="zigzag-visual">
+              <div class="visual-card hover-tilt">
+                <i class="fa-solid fa-ranking-star big-icon icon-coral-text"></i>
+                <div class="card-decor decor-3"></div>
+              </div>
+            </div>
+            <div class="zigzag-content">
+              <div class="zz-number">C</div>
+              <h3>Faktor Keberhasilan</h3>
+              <p>
+                Faktor utama keberhasilan penerapan produk ini terletak pada
+                <strong>struktur pembelajaran yang sistematis, instruksi yang jelas dan terarah, serta penggunaan media pembelajaran yang interaktif.</strong> 
+                Kombinasi tersebut membantu peserta didik memahami materi dengan lebih mudah, meningkatkan keterlibatan mereka dalam proses pembelajaran, serta menciptakan pengalaman belajar yang lebih efektif dan bermakna.
+              </p>
+            </div>
+          </div>
+
+          <div class="zigzag-row reverse reveal">
+            <div class="zigzag-visual">
+              <div class="visual-card hover-tilt card-navy">
+                <i class="fa-solid fa-sliders big-icon-light"></i>
+                <div class="card-decor decor-4"></div>
+              </div>
+            </div>
+            <div class="zigzag-content">
+              <div class="zz-number">D</div>
+              <h3>Potensi Pengembangan & Perbaikan</h3>
+              <p>
+                Potensi pengembangan & perbaikan perangkat pembelajaran terletak pada <strong>penyempurnaan strategi pembelajaran berdiferensiasi agar semakin mampu mengakomodasi keragaman gaya belajar, minat, dan tingkat kesiapan peserta didik.</strong>  
+                Selain itu, perlu dilakukan pengembangan media pembelajaran yang lebih variatif, penyempurnaan instrumen asesmen autentik, serta optimalisasi alokasi waktu pada setiap tahapan pembelajaran. Perbaikan tersebut diharapkan dapat meningkatkan keterlibatan peserta didik, efektivitas pembelajaran, dan ketercapaian tujuan pembelajaran secara lebih optimal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+
+          <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun sebagai dokumentasi dan refleksi perjalanan menjadi guru profesional.</p>
+        </div>
+
+        <!-- PORTOFOLIO 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> E-Portofolio 1</h4>
+
+          <ul>
+            <li>
+              <a href="profile.html"> <i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa </a>
+            </li>
+
+            <li>
+              <a href="artefak.html"> <i class="fa-solid fa-file-waveform"></i> Artefak Produk </a>
+            </li>
+
+            <li>
+              <a href="penilaian.html"> <i class="fa-solid fa-list-check"></i> Instrumen Penilaian </a>
+            </li>
+
+            <li>
+              <a href="modelguru.html"> <i class="fa-solid fa-chalkboard-user"></i> Model Guru </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PORTOFOLIO 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-layer-group"></i> E-Portofolio 2</h4>
+
+          <ul>
+            <li>
+              <a href="refleksi.html"> <i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir </a>
+            </li>
+
+            <li>
+              <a href="filosofi.html"> <i class="fa-solid fa-seedling"></i> Filosofi Mengajar </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- KONTAK -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+
+          <p>
+            <i class="fa-solid fa-building-columns"></i>
+            Universitas Negeri Yogyakarta
+          </p>
+
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="150" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"> <i class="fa-solid fa-envelope"></i> Email </a>
+
+            <a href="https://www.instagram.com/_kurnia.sp?igsh=MXh2bGR6ZXU5bnlzeg==" target="_blank"> <i class="fa-brands fa-instagram"></i> Instagram </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+  // ==================== SCRIPT ARTEFAK (FIXED) ====================
+
+// 1. Fungsi Tab Utama (Modul Ajar, LKPD, Observasi)
+function openPdfTab(evt, tabId) {
+  // Sembunyikan semua tab content
+  var tabContents = document.getElementsByClassName("tab-content");
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].classList.remove("active");
+  }
+
+  // Hapus class active dari semua tombol tab
+  var tabBtns = document.getElementsByClassName("tab-btn");
+  for (var i = 0; i < tabBtns.length; i++) {
+    tabBtns[i].classList.remove("active");
+  }
+
+  // Tampilkan tab content yang dipilih
+  document.getElementById(tabId).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
+// 2. Fungsi untuk switch siklus Modul Ajar
+function switchModulCycle(event, cycleId) {
+  const parent = document.getElementById('tab-modul');
+  if (!parent) return;
+  
+  parent.querySelectorAll('.cycle-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.currentTarget.classList.add('active');
+
+  parent.querySelectorAll('.pdf-content-cycle').forEach(content => {
+    content.classList.remove('active');
+  });
+
+  document.getElementById(cycleId).classList.add('active');
+}
+
+// 3. Fungsi untuk switch siklus LKPD
+function switchLkpdCycle(event, cycleId) {
+  const parent = document.getElementById('tab-lkpd');
+  if (!parent) return;
+  
+  parent.querySelectorAll('.cycle-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.currentTarget.classList.add('active');
+
+  parent.querySelectorAll('.pdf-content-cycle').forEach(content => {
+    content.classList.remove('active');
+  });
+
+  document.getElementById(cycleId).classList.add('active');
+}
+
+// 4. Navbar scroll effect
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) navbar.classList.add("scrolled");
+  else navbar.classList.remove("scrolled");
+});
+
+// 5. Mobile Menu Hamburger
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+}
+
+// 6. Mobile Dropdown Logic
+const dropdownBtns = document.querySelectorAll(".dropbtn");
+dropdownBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      const content = btn.nextElementSibling;
+      const chevron = btn.querySelector(".chevron");
+
+      document.querySelectorAll(".dropdown-content").forEach((c) => {
+        if (c !== content) c.classList.remove("show");
+      });
+      document.querySelectorAll(".chevron").forEach((c) => {
+        if (c !== chevron) c.style.transform = "rotate(0deg)";
+      });
+
+      content.classList.toggle("show");
+      if (content.classList.contains("show")) {
+        chevron.style.transform = "rotate(180deg)";
+      } else {
+        chevron.style.transform = "rotate(0deg)";
+      }
+    }
+  });
+});
+
+// 7. Scroll Reveal Animation
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal, .fade-in-up");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 80;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+window.addEventListener("scroll", reveal);
+reveal();
+
+// 8. Pastikan tab pertama aktif saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function() {
+  // Set default tab pertama aktif
+  const firstTab = document.getElementById("tab-modul");
+  if (firstTab) {
+    firstTab.classList.add("active");
+  }
+  
+  // Set default modul siklus 1 aktif
+  const firstModulCycle = document.getElementById("modul-siklus-1");
+  if (firstModulCycle) {
+    firstModulCycle.classList.add("active");
+  }
+  
+  // Set default lkpd siklus 1 aktif
+  const firstLkpdCycle = document.getElementById("lkpd-siklus-1");
+  if (firstLkpdCycle) {
+    firstLkpdCycle.classList.add("active");
+  }
+});
+    </script>
+  </body>
+</html>

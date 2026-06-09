@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dokumentasi Kegiatan | E-Portofolio PPG Calon Guru</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/dokumentasi.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-pink"></div>
+      <div class="mesh-blob blob-navy"></div>
+      <div class="mesh-blob blob-coral"></div>
+    </div>
+
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name"
+            >E-Portofolio <span class="highlight">PPG.</span></span
+          >
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">
+              E-Portofolio 1 <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="profile.html"
+                ><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a
+              >
+              <a href="artefak.html"
+                ><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a
+              >
+              <a href="penilaian.html"
+                ><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a
+              >
+              <a href="modelguru.html"
+                ><i class="fa-solid fa-bullseye"></i> Model Guru</a
+              >
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">
+              E-Portofolio 2 <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="refleksi.html"
+                ><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a
+              >
+              <a href="filosofi.html"
+                ><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a
+              >
+            </div>
+          </div>
+
+          <a href="dokumentasi.html" class="nav-link active">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="dokumentasi-main">
+      <section class="hero-dokumentasi">
+        <div class="container text-center">
+          <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
+            <i class="fa-solid fa-camera-retro"></i> Rekam Jejak Lapangan
+          </div>
+          <h1 class="hero-title fade-in-up" style="animation-delay: 0.3s">
+            Dokumentasi <span class="text-gradient">Kegiatan</span>
+          </h1>
+          <p class="hero-desc fade-in-up" style="animation-delay: 0.5s">
+            Kumpulan momen inspiratif, aksi nyata, dan dinamika pembelajaran
+            selama mengikuti program PPG Prajabatan dan Praktik Pengalaman
+            Lapangan (PPL).
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery-section reveal">
+        <div class="container">
+          <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">
+              Semua Momen
+            </button>
+            <button class="filter-btn" data-filter="foto">
+              <i class="fa-regular fa-image"></i> Galeri Foto
+            </button>
+            <button class="filter-btn" data-filter="video">
+              <i class="fa-solid fa-video"></i> Galeri Video
+            </button>
+          </div>
+
+          <div class="gallery-grid" id="gallery-grid">
+            <!-- Item 1: Foto -->
+            <div class="gallery-item filter-item foto">
+              <div class="item-inner">
+                <img src="IMG/Treatmen Murid.jpeg" alt="Kegiatan PPL" />
+                <div class="item-overlay">
+                  <div class="overlay-content">
+                    <span class="tag">PPL Siklus 1</span>
+                    <h3>Treatment Peserta Didik</h3>
+                    <p>
+                      Memberikan treatment khusus kepada peserta didik yang
+                      tertinggal materi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Foto Tall -->
+            <div class="gallery-item filter-item foto tall">
+              <div class="item-inner">
+                <img src="IMG/kegiatan2.jpeg" alt="Pemanasan" />
+                <div class="item-overlay">
+                  <div class="overlay-content">
+                    <span class="tag">Kegiatan diluar Sekolah</span>
+                    <h3>Pendampingan Kegiatan Kemah SMKN 5 Yogyakarta</h3>
+                    <p>
+                      Mendampingi peserta didik kelas X dalam kegiatan kemah di
+                      Buper Kaliurang.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Video 1 - PRAKTIK PEMBELAJARAN HAKI (dengan fallback) -->
+            <div class="gallery-item filter-item video">
+              <div class="item-inner video-card">
+                <div
+                  class="video-thumb-wrapper"
+                  data-video-id="dQw4w9WgXcQ"
+                  onclick="playVideo(this)"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+                    alt="Thumbnail Praktik Pembelajaran HAKI"
+                    class="video-thumbnail"
+                    loading="lazy"
+                  />
+                  <div class="play-button-overlay">
+                    <div class="play-circle">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <span>Tonton Video</span>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <h3>Praktik Pembelajaran HAKI</h3>
+                  <p>
+                    <i class="fa-solid fa-location-dot"></i> SMK Negeri 5
+                    Yogyakarta
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    target="_blank"
+                    rel="noopener"
+                    class="direct-link"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka
+                    di YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Foto -->
+            <div class="gallery-item filter-item foto">
+              <div class="item-inner">
+                <img src="IMG/Diskusi.jpeg" alt="Kerja Sama Tim" />
+                <div class="item-overlay">
+                  <div class="overlay-content">
+                    <span class="tag">PPG Prajabatan</span>
+                    <h3>Diskusi Kelompok</h3>
+                    <p>
+                      Momen diskusi rekan PPL bersama Dosen Pembimbing
+                      Lapangan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Video 2 - TREATMENT PESERTA DIDIK (dengan fallback) -->
+            <div class="gallery-item filter-item video">
+              <div class="item-inner video-card">
+                <div
+                  class="video-thumb-wrapper"
+                  data-video-id="7DEHfoz6TvU"
+                  onclick="playVideo(this)"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/7DEHfoz6TvU/maxresdefault.jpg"
+                    alt="Thumbnail Treatment Peserta Didik"
+                    class="video-thumbnail"
+                    loading="lazy"
+                  />
+                  <div class="play-button-overlay">
+                    <div class="play-circle">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <span>Tonton Video</span>
+                  </div>
+                </div>
+                <div class="video-info">
+                  <h3>Treatment Peserta Didik</h3>
+                  <p>
+                    <i class="fa-solid fa-location-dot"></i> Lab Komputer SMKN 5
+                    Yogyakarta
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=7NqSZ3KpROI"
+                    target="_blank"
+                    rel="noopener"
+                    class="direct-link"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka
+                    di YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6: Foto Wide -->
+            <div class="gallery-item filter-item foto wide">
+              <div class="item-inner">
+                <img src="IMG/Kondisi Kelas.jpeg" alt="Uji Kebugaran" />
+                <div class="item-overlay">
+                  <div class="overlay-content">
+                    <span class="tag">PPL Siklus 3</span>
+                    <h3>Kondisi Kelas Keramik A</h3>
+                    <p>
+                      Peserta Didik sedang fokus menganalisis kendala dalam
+                      program yang mereka rancang.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun
+            sebagai dokumentasi dan refleksi perjalanan menjadi guru
+            profesional.
+          </p>
+        </div>
+
+        <!-- PORTOFOLIO 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> E-Portofolio 1</h4>
+          <ul>
+            <li>
+              <a href="profile.html">
+                <i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa
+              </a>
+            </li>
+            <li>
+              <a href="artefak.html">
+                <i class="fa-solid fa-file-waveform"></i> Artefak Produk
+              </a>
+            </li>
+            <li>
+              <a href="penilaian.html">
+                <i class="fa-solid fa-list-check"></i> Instrumen Penilaian
+              </a>
+            </li>
+            <li>
+              <a href="modelguru.html">
+                <i class="fa-solid fa-chalkboard-user"></i> Model Guru
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PORTOFOLIO 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-layer-group"></i> E-Portofolio 2</h4>
+          <ul>
+            <li>
+              <a href="refleksi.html">
+                <i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir
+              </a>
+            </li>
+            <li>
+              <a href="filosofi.html">
+                <i class="fa-solid fa-seedling"></i> Filosofi Mengajar
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- KONTAK -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p>
+            <i class="fa-solid fa-building-columns"></i>
+            Universitas Negeri Yogyakarta
+          </p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com">
+              <i class="fa-solid fa-envelope"></i> Email
+            </a>
+            <a
+              href="https://www.instagram.com/_kurnia.sp?igsh=MXh2bGR6ZXU5bnlzeg=="
+              target="_blank"
+            >
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak
+            Cipta Dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ========================
+      // VIDEO PLAYER FALLBACK
+      // ========================
+      function playVideo(wrapper) {
+        const videoId = wrapper.getAttribute("data-video-id");
+
+        // Ganti thumbnail dengan iframe YouTube
+        wrapper.innerHTML = `
+          <div class="video-wrapper-inner">
+            <iframe
+              src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+              title="Video YouTube"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        `;
+      }
+
+      // ========================
+      // FILTER GALLERY
+      // ========================
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const filterItems = document.querySelectorAll(".filter-item");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((button) => button.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filterValue = btn.getAttribute("data-filter");
+
+          filterItems.forEach((item) => {
+            if (filterValue === "all" || item.classList.contains(filterValue)) {
+              item.style.display = "block";
+              setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "scale(1)";
+              }, 50);
+            } else {
+              item.style.opacity = "0";
+              item.style.transform = "scale(0.8)";
+              setTimeout(() => {
+                item.style.display = "none";
+              }, 300);
+            }
+          });
+        });
+      });
+
+      // ========================
+      // NAVBAR SCROLL
+      // ========================
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // ========================
+      // MOBILE MENU
+      // ========================
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // ========================
+      // MOBILE DROPDOWN
+      // ========================
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+
+            content.classList.toggle("show");
+            if (content.classList.contains("show"))
+              chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+
+      // ========================
+      // SCROLL REVEAL
+      // ========================
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal, .fade-in-up");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 80;
+          if (elementTop < windowHeight - elementVisible)
+            reveals[i].classList.add("active");
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>
