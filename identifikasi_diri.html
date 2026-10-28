@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identifikasi Diri & Komitmen Pendidik - Semester 2 | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/tech-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+
+    <style>
+      /* Smooth Scrolling & Navbar Offset */
+      html {
+        scroll-padding-top: 85px;
+        scroll-behavior: smooth;
+      }
+      .identifikasi-main {
+        padding-top: 105px;
+        min-height: 80vh;
+      }
+
+      /* Hero Identity Section */
+      .identitas-hero {
+        padding: 25px 0 45px;
+      }
+      .identitas-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 2.2rem;
+        align-items: stretch;
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 960px) {
+        .identitas-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      /* Visual Card Left */
+      .identitas-visual-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .identitas-visual-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(56, 189, 248, 0.45);
+        box-shadow: 0 20px 50px rgba(56, 189, 248, 0.15);
+      }
+      .card-terminal-bar {
+        background: rgba(2, 6, 23, 0.85);
+        padding: 10px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        color: #94a3b8;
+      }
+      .terminal-dots {
+        display: flex;
+        gap: 6px;
+      }
+      .terminal-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot-red { background: #ef4444; }
+      .dot-yellow { background: #f59e0b; }
+      .dot-green { background: #10b981; }
+
+      .photo-frame {
+        position: relative;
+        overflow: hidden;
+        background: #0b1120;
+        text-align: center;
+        padding: 12px;
+      }
+      .photo-frame img {
+        width: 100%;
+        max-height: 480px;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 12px;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .identitas-visual-card:hover .photo-frame img {
+        transform: scale(1.02);
+      }
+
+      .floating-tag {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        right: 24px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        border-radius: 10px;
+        padding: 8px 14px;
+        font-size: 0.78rem;
+        font-family: var(--font-mono, monospace);
+        color: #e2e8f0;
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+      .floating-tag i {
+        color: #38bdf8;
+      }
+
+      .visual-meta-list {
+        padding: 18px 20px 22px;
+        background: rgba(15, 23, 42, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .meta-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.85rem;
+      }
+      .meta-label {
+        color: #94a3b8;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .meta-val {
+        color: #f1f5f9;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      /* Identity Info Right */
+      .identitas-profile-info {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 18px;
+        padding: 2.2rem;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .profile-header-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+      .badge-sub {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 4px 12px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .badge-sub-primary {
+        background: rgba(56, 189, 248, 0.12);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .badge-sub-green {
+        background: rgba(52, 211, 153, 0.12);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+      .badge-sub-purple {
+        background: rgba(192, 132, 252, 0.12);
+        color: #c084fc;
+        border: 1px solid rgba(192, 132, 252, 0.3);
+      }
+
+      .profile-title-name {
+        font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+      }
+      .profile-role {
+        font-size: 1.05rem;
+        color: #38bdf8;
+        font-weight: 500;
+        margin-bottom: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .calling-quote-box {
+        background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+        border-left: 4px solid #38bdf8;
+        border-radius: 0 12px 12px 0;
+        padding: 1.4rem 1.6rem;
+        margin-bottom: 1.6rem;
+        position: relative;
+      }
+      .calling-quote-box i.quote-icon {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        font-size: 2.2rem;
+        color: rgba(56, 189, 248, 0.1);
+      }
+      .calling-quote-box p {
+        color: #cbd5e1;
+        font-size: 0.98rem;
+        line-height: 1.8;
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 0;
+      }
+
+      .profile-chips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1.2rem;
+      }
+      .chip-card {
+        background: rgba(2, 6, 23, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: border-color 0.3s ease, background 0.3s ease;
+      }
+      .chip-card:hover {
+        border-color: rgba(56, 189, 248, 0.3);
+        background: rgba(2, 6, 23, 0.65);
+      }
+      .chip-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.15rem;
+        flex-shrink: 0;
+      }
+      .chip-icon.icon-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+      .chip-icon.icon-green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+      .chip-icon.icon-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+      .chip-icon.icon-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+
+      .chip-text h4 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #94a3b8;
+        margin-bottom: 2px;
+        font-family: var(--font-mono, monospace);
+      }
+      .chip-text p {
+        font-size: 0.88rem;
+        color: #f1f5f9;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      /* Sections General */
+      .identifikasi-section {
+        padding: 40px 0;
+      }
+      .section-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2.8rem;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        position: relative;
+      }
+      .section-header-bar {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 1.4rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .section-header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-icon-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+      }
+      .badge-blue-grad {
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(3, 105, 161, 0.35));
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        color: #38bdf8;
+      }
+      .badge-green-grad {
+        background: linear-gradient(135deg, rgba(52, 211, 153, 0.25), rgba(5, 150, 105, 0.35));
+        border: 1px solid rgba(52, 211, 153, 0.4);
+        color: #34d399;
+      }
+      .badge-amber-grad {
+        background: linear-gradient(135deg, rgba(251, 191, 36, 0.25), rgba(180, 83, 9, 0.35));
+        border: 1px solid rgba(251, 191, 36, 0.4);
+        color: #fbbf24;
+      }
+      .badge-purple-grad {
+        background: linear-gradient(135deg, rgba(192, 132, 252, 0.25), rgba(126, 34, 206, 0.35));
+        border: 1px solid rgba(192, 132, 252, 0.4);
+        color: #c084fc;
+      }
+
+      .section-title-wrap h2 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+      }
+      .section-title-wrap span.indicator-q {
+        font-size: 0.82rem;
+        color: #94a3b8;
+        font-family: var(--font-mono, monospace);
+        display: block;
+        margin-top: 3px;
+      }
+
+      /* Grand Vision Callout */
+      .grand-vision-banner {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.75) 100%);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 16px;
+        padding: 2.2rem 2.4rem;
+        position: relative;
+        margin-bottom: 2.2rem;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+      .grand-vision-banner.green-theme {
+        border-color: rgba(52, 211, 153, 0.35);
+      }
+      .grand-vision-quote {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: #f1f5f9;
+        font-weight: 400;
+        text-align: justify;
+        text-justify: inter-word;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+      }
+      .grand-vision-quote strong {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .grand-vision-banner.green-theme .grand-vision-quote strong {
+        color: #34d399;
+      }
+      .vision-quote-icon-bg {
+        position: absolute;
+        bottom: 12px;
+        right: 20px;
+        font-size: 5rem;
+        color: rgba(255, 255, 255, 0.03);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Typography Highlights */
+      .hl-concept {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .hl-action {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .hl-context {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+      .hl-purple {
+        color: #c084fc;
+        font-weight: 700;
+      }
+
+      /* Vision Pillar Cards Grid */
+      .vision-pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 1.4rem;
+      }
+      .vision-pillar-card {
+        background: rgba(2, 6, 23, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 1.8rem;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .vision-pillar-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+      .pillar-icon-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.1rem;
+      }
+      .pillar-icon-box {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+      .pillar-badge-num {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #94a3b8;
+      }
+      .vision-pillar-card h3 {
+        font-size: 1.1rem;
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 0.85rem;
+        line-height: 1.4;
+      }
+      .vision-pillar-card p {
+        font-size: 0.92rem;
+        color: #cbd5e1;
+        line-height: 1.8;
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 0;
+      }
+
+      /* 6 Mission Pillars Grid */
+      .misi-pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 1.6rem;
+      }
+      @media (max-width: 768px) {
+        .misi-pillars-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .misi-card {
+        background: rgba(2, 6, 23, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .misi-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .misi-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      }
+      .misi-card:hover::before {
+        opacity: 1;
+      }
+      .misi-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.2rem;
+      }
+      .misi-pill-tag {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .pill-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+      .pill-green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+      .pill-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+      .pill-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+      .pill-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+      .pill-teal { background: rgba(45, 212, 191, 0.15); color: #2dd4bf; border: 1px solid rgba(45, 212, 191, 0.3); }
+
+      .misi-number {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .misi-card h3 {
+        font-size: 1.18rem;
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 1.1rem;
+        line-height: 1.45;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .misi-card h3 i {
+        font-size: 1.15rem;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+      .misi-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .misi-card li {
+        color: #cbd5e1;
+        font-size: 0.91rem;
+        line-height: 1.75;
+        text-align: justify;
+        text-justify: inter-word;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .misi-card li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-size: 0.8rem;
+        color: #34d399;
+      }
+      .misi-card.theme-blue li::before { color: #38bdf8; }
+      .misi-card.theme-purple li::before { color: #c084fc; }
+      .misi-card.theme-amber li::before { color: #fbbf24; }
+      .misi-card.theme-rose li::before { color: #fb7185; }
+      .misi-card.theme-teal li::before { color: #2dd4bf; }
+
+      .misi-card-footer {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: #94a3b8;
+        font-family: var(--font-mono, monospace);
+      }
+
+      /* Dokumen Section */
+      .doc-card-container {
+        background: rgba(2, 6, 23, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.8rem;
+      }
+      .doc-info-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.4rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .doc-info-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .doc-info-left i.pdf-icon {
+        font-size: 2.2rem;
+        color: #ef4444;
+      }
+      .doc-meta-title h4 {
+        color: #ffffff;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .doc-meta-title p {
+        color: #94a3b8;
+        font-size: 0.8rem;
+        font-family: var(--font-mono, monospace);
+        margin: 0;
+      }
+      .doc-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .btn-doc {
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        font-family: var(--font-mono, monospace);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .btn-doc-primary {
+        background: #38bdf8;
+        color: #0f172a !important;
+        border: 1px solid #38bdf8;
+      }
+      .btn-doc-primary:hover {
+        background: #7dd3fc;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+      }
+      .btn-doc-secondary {
+        background: rgba(255, 255, 255, 0.05);
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-doc-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .pdf-embed-wrapper {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #1e293b;
+        height: 620px;
+        position: relative;
+      }
+      .pdf-embed-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BACKGROUND EFFECT -->
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-pink"></div>
+      <div class="mesh-blob blob-navy"></div>
+      <div class="mesh-blob blob-coral"></div>
+    </div>
+
+    <!-- NAVBAR RESMI -->
+    <header class="navbar scrolled" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="identifikasi_diri.html" class="active-dropdown"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Refleksi</div>
+              <a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="identifikasi-main">
+      <!-- SECTION HERO & PROFIL IDENTITAS -->
+      <section class="identitas-hero">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 25px;">
+            <div class="badge-tech"><i class="fa-solid fa-id-card"></i> Semester 2 · Lembar Kerja 1 (LK 1) · PPG Calon Guru</div>
+            <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin: 14px 0 10px; font-weight: 800; letter-spacing: -0.02em;">
+              Identifikasi Diri <span class="text-gradient">& Komitmen Profesional</span>
+            </h1>
+            <p style="color: var(--text-light, #94a3b8); max-width: 780px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+              Peta Jalan Visi Transformatif Pendidikan Indonesia, Kompas Moral Guru Masa Depan, dan 6 Pilar Aksi Nyata Dedikasi bagi Kemajuan Pendidikan Daerah.
+            </p>
+          </div>
+
+          <!-- DUAL HERO GRID -->
+          <div class="identitas-grid">
+            <!-- LEFT: PHOTO SHOWCASE -->
+            <div class="identitas-visual-card">
+              <div class="card-terminal-bar">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span>foto_kelulusan.jpg</span>
+              </div>
+              <div class="photo-frame">
+                <img src="IMG/wisuda_ilham.jpg" alt="Foto Wisuda Ilham Kurnia Septiadi, S.Pd." />
+                <div class="floating-tag">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span>Class of 2025 · IKIP / Univ. PGRI Pontianak</span>
+                </div>
+              </div>
+              <div class="visual-meta-list">
+                <div class="meta-item">
+                  <span class="meta-label"><i class="fa-solid fa-user-graduate"></i> Jenjang Pendidikan:</span>
+                  <span class="meta-val">Sarjana Pendidikan (S.Pd.)</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label"><i class="fa-solid fa-laptop-code"></i> Program Studi:</span>
+                  <span class="meta-val">Pendidikan Teknologi Informasi</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label"><i class="fa-solid fa-university"></i> LPTK PPG:</span>
+                  <span class="meta-val">Universitas Negeri Yogyakarta</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label"><i class="fa-solid fa-map-pin"></i> Basis Pengabdian:</span>
+                  <span class="meta-val">Jelai Hulu, Ketapang (Kalbar)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT: IDENTITY DETAILS & CALLING STATEMENT -->
+            <div class="identitas-profile-info">
+              <div>
+                <div class="profile-header-badge">
+                  <span class="badge-sub badge-sub-primary"><i class="fa-solid fa-shield-halved"></i> Calon Guru Profesional</span>
+                  <span class="badge-sub badge-sub-green"><i class="fa-solid fa-code"></i> Guru Informatika</span>
+                  <span class="badge-sub badge-sub-purple"><i class="fa-solid fa-seedling"></i> Penggerak Pendidikan Daerah</span>
+                </div>
+
+                <h2 class="profile-title-name">Ilham Kurnia Septiadi, S.Pd.</h2>
+                <div class="profile-role">
+                  <i class="fa-solid fa-chalkboard-user"></i> Mahasiswa PPG Calon Guru Gelombang 2 Tahun 2025/2026
+                </div>
+
+                <div class="calling-quote-box">
+                  <i class="fa-solid fa-quote-right quote-icon"></i>
+                  <p>
+                    <strong style="color: #38bdf8;">"Pendidikan, bagi saya, bukan sekadar proses mentransfer pengetahuan,</strong> tetapi jalan untuk membangun kualitas sumber daya manusia yang mampu memajukan daerahnya dan Indonesia secara berkelanjutan. Lahir dan berakar dari <strong style="color: #fbbf24;">Kecamatan Jelai Hulu, Kabupaten Ketapang, Kalimantan Barat</strong>, saya bertekad menjadi pendidik yang tidak hanya hadir di dalam ruang kelas, melainkan hadir sebagai suluh pemantik inspirasi bagi generasi muda di pelosok negeri."
+                  </p>
+                </div>
+              </div>
+
+              <!-- CHIPS GRID -->
+              <div>
+                <div class="profile-chips-grid">
+                  <div class="chip-card">
+                    <div class="chip-icon icon-blue">
+                      <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div class="chip-text">
+                      <h4>Kompas Utama</h4>
+                      <p>Visi Pendidikan Indonesia</p>
+                    </div>
+                  </div>
+
+                  <div class="chip-card">
+                    <div class="chip-icon icon-green">
+                      <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="chip-text">
+                      <h4>Visi Pribadi</h4>
+                      <p>Guru Pembelajar Reflektif</p>
+                    </div>
+                  </div>
+
+                  <div class="chip-card">
+                    <div class="chip-icon icon-amber">
+                      <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="chip-text">
+                      <h4>Peta Aksi</h4>
+                      <p>6 Pilar Misi Profesional</p>
+                    </div>
+                  </div>
+
+                  <div class="chip-card">
+                    <div class="chip-icon icon-purple">
+                      <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="chip-text">
+                      <h4>Fokus Pengabdian</h4>
+                      <p>Pemerataan Kualitas 3T</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: VISI PENDIDIKAN DI INDONESIA -->
+      <section class="identifikasi-section" id="visi-indonesia">
+        <div class="container">
+          <div class="section-card">
+            <!-- CARD HEADER -->
+            <div class="section-header-bar">
+              <div class="section-header-left">
+                <div class="section-icon-badge badge-blue-grad">
+                  <i class="fa-solid fa-earth-asia"></i>
+                </div>
+                <div class="section-title-wrap">
+                  <h2>1. Visi Pribadi untuk Pendidikan di Indonesia</h2>
+                  <span class="indicator-q">Indikator 01 · LK 1: "Apa visi saya untuk pendidikan di Indonesia?"</span>
+                </div>
+              </div>
+              <div class="badge-sub badge-sub-primary">
+                <i class="fa-solid fa-bullseye"></i> Visi Transformatif Bangsa
+              </div>
+            </div>
+
+            <!-- GRAND VISION BANNER -->
+            <div class="grand-vision-banner">
+              <i class="fa-solid fa-quote-right vision-quote-icon-bg"></i>
+              <p class="grand-vision-quote">
+                "Saya memimpikan pendidikan Indonesia yang mampu menghadirkan <strong class="hl-concept">kesempatan belajar yang berkualitas bagi setiap anak tanpa dibatasi oleh letak geografis</strong>, sehingga anak-anak di daerah terpencil memiliki <strong class="hl-action">peluang yang sama untuk berkembang, berprestasi, dan berkontribusi bagi bangsanya</strong>. Saya meyakini bahwa pemerataan kualitas pendidikan hanya dapat diwujudkan melalui <strong class="hl-concept">penguatan kapasitas guru sebagai penggerak utama pembelajaran</strong>, karena guru yang terus belajar akan melahirkan murid yang memiliki kemampuan <strong class="hl-action">literasi, numerasi, karakter, dan keterampilan abad ke-21</strong> yang lebih baik. Pendidikan, bagi saya, bukan sekadar proses mentransfer pengetahuan, tetapi jalan untuk <strong class="hl-context">membangun kualitas sumber daya manusia yang mampu memajukan daerahnya dan Indonesia secara berkelanjutan</strong>."
+              </p>
+            </div>
+
+            <!-- 3 PILLARS BREAKDOWN -->
+            <div class="vision-pillars-grid">
+              <!-- PILLAR 1 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-blue">
+                    <i class="fa-solid fa-route"></i>
+                  </div>
+                  <span class="pillar-badge-num">Pilar 01</span>
+                </div>
+                <h3>Pemerataan Kualitas & Keadilan Akses Tanpa Sekat Geografis</h3>
+                <p>
+                  Pendidikan berkualitas bukan hak istimewa murid di perkotaan besar, melainkan <span class="hl-concept">hak fundamental seluruh anak bangsa</span>. Anak-anak di pelosok, perbatasan, dan daerah 3T—termasuk di pedalaman Kalimantan Barat—berhak memperoleh fasilitas, akses teknologi, dan mutu pengajaran yang setara agar tidak ada potensi yang terkubur oleh keterbatasan wilayah.
+                </p>
+              </div>
+
+              <!-- PILLAR 2 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-green">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                  </div>
+                  <span class="pillar-badge-num">Pilar 02</span>
+                </div>
+                <h3>Penguatan Guru sebagai Penggerak Utama Pembelajaran</h3>
+                <p>
+                  Kualitas sistem pendidikan tidak akan pernah melampaui <span class="hl-action">kualitas gurunya</span>. Transformasi pendidikan berawal dari pendidik yang memiliki kesadaran belajar sepanjang hayat. Guru yang terus mengembangkan diri akan mentransmisikan kecakapan berpikir kritis, literasi kontekstual, kematangan numerasi, dan budi pekerti luhur bagi generasi penerus.
+                </p>
+              </div>
+
+              <!-- PILLAR 3 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-amber">
+                    <i class="fa-solid fa-chart-line"></i>
+                  </div>
+                  <span class="pillar-badge-num">Pilar 03</span>
+                </div>
+                <h3>Pembangunan SDM Berkelanjutan bagi Kemandirian Daerah</h3>
+                <p>
+                  Pendidikan dipandang sebagai <span class="hl-context">investasi peradaban jangka panjang</span>. Dengan menghasilkan generasi muda yang terdidik, berdaya cipta, dan memiliki kesadaran lokal, daerah-daerah berkembang akan mampu mengelola potensi alam dan budayanya secara mandiri, mengentaskan kemiskinan, dan mempercepat kemajuan Indonesia secara berkesinambungan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: VISI PRIBADI SEBAGAI CALON GURU -->
+      <section class="identifikasi-section" id="visi-guru">
+        <div class="container">
+          <div class="section-card">
+            <!-- CARD HEADER -->
+            <div class="section-header-bar">
+              <div class="section-header-left">
+                <div class="section-icon-badge badge-green-grad">
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="section-title-wrap">
+                  <h2>2. Visi Pribadi sebagai Calon Guru</h2>
+                  <span class="indicator-q">Indikator 02 · LK 1: "Apa visi saya sebagai calon guru?"</span>
+                </div>
+              </div>
+              <div class="badge-sub badge-sub-green">
+                <i class="fa-solid fa-graduation-cap"></i> Profil Pendidik Idaman
+              </div>
+            </div>
+
+            <!-- GRAND VISION BANNER GURU -->
+            <div class="grand-vision-banner green-theme">
+              <i class="fa-solid fa-quote-right vision-quote-icon-bg"></i>
+              <p class="grand-vision-quote">
+                "Sebagai calon guru, saya berkomitmen menjadi pendidik yang <strong class="hl-action">terus belajar, reflektif, adaptif terhadap perkembangan zaman</strong>, serta mampu menciptakan <strong class="hl-concept">pembelajaran yang bermakna dan berpusat pada murid</strong>. Saya ingin menjadi guru yang tidak hanya mengajar materi pelajaran, tetapi juga <strong class="hl-concept">membangun budaya belajar, menumbuhkan kemampuan berpikir kritis, literasi, karakter, dan rasa percaya diri</strong> peserta didik. Di sisi lain, saya ingin berkontribusi dalam meningkatkan kompetensi guru melalui <strong class="hl-context">kolaborasi, berbagi praktik baik, dan pembelajaran profesional</strong> sehingga perubahan pendidikan tidak hanya terjadi di ruang kelas saya, tetapi juga memberi dampak bagi sekolah dan daerah tempat saya mengabdi."
+              </p>
+            </div>
+
+            <!-- 4 DIMENSIONS GRID -->
+            <div class="vision-pillars-grid">
+              <!-- DIMENSI 1 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-green">
+                    <i class="fa-solid fa-infinity"></i>
+                  </div>
+                  <span class="pillar-badge-num">Dimensi 01</span>
+                </div>
+                <h3>Pembelajar Sepanjang Hayat & Pendidik Reflektif</h3>
+                <p>
+                  Memandang proses menjadi guru bukan garis finis, melainkan perjalanan evolusi tanpa batas (<span class="hl-action">lifelong learning</span>). Menjadikan praktik refleksi harian sebagai cermin untuk membedah kelemahan proses ajar, terus mengasah kompetensi pedagogik dan teknologi, serta berjiwa lentur dalam menghadapi dinamika kurikulum masa depan.
+                </p>
+              </div>
+
+              <!-- DIMENSI 2 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-blue">
+                    <i class="fa-solid fa-child-reaching"></i>
+                  </div>
+                  <span class="pillar-badge-num">Dimensi 02</span>
+                </div>
+                <h3>Pembelajaran Bermakna & Berpusat pada Murid</h3>
+                <p>
+                  Menggeser paradigma pengajaran dari sekadar penuntasan silabus menuju <span class="hl-concept">pembelajaran berpusat pada murid</span> (<em>student-centered</em>). Merancang pengalaman belajar informatika yang autentik, relevan dengan kehidupan nyata peserta didik, serta menghormati kodrat alam dan kodrat zaman setiap individu.
+                </p>
+              </div>
+
+              <!-- DIMENSI 3 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-amber">
+                    <i class="fa-solid fa-brain"></i>
+                  </div>
+                  <span class="pillar-badge-num">Dimensi 03</span>
+                </div>
+                <h3>Pembangun Nalar Kritis, Literasi, & Karakter</h3>
+                <p>
+                  Berfokus pada pengembangan kecakapan berpikir komputasional (<span class="hl-action">computational thinking</span>), literasi informasi etis, serta penguatan Profil Pelajar Pancasila. Murid tidak hanya diarahkan menjadi konsumen pasif teknologi, melainkan pencipta solusi berkarakter tangguh, kreatif, dan percaya diri.
+                </p>
+              </div>
+
+              <!-- DIMENSI 4 -->
+              <div class="vision-pillar-card">
+                <div class="pillar-icon-row">
+                  <div class="pillar-icon-box chip-icon icon-purple">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <span class="pillar-badge-num">Dimensi 04</span>
+                </div>
+                <h3>Katalisator Kolaborasi & Agen Perubahan Ekosistem</h3>
+                <p>
+                  Menolak isolasi profesionalisme individu. Membuka pintu ruang kelas untuk berkolaborasi, mendiseminasikan praktik baik (<span class="hl-context">sharing best practices</span>), serta memantik sinergi rekan sejawat demi mengangkat kualitas iklim pembelajaran sekolah dan kemajuan pendidikan di daerah pengabdian.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: 6 PILAR MISI PENDIDIK PROFESIONAL -->
+      <section class="identifikasi-section" id="misi-strategis">
+        <div class="container">
+          <div class="section-card">
+            <!-- CARD HEADER -->
+            <div class="section-header-bar">
+              <div class="section-header-left">
+                <div class="section-icon-badge badge-amber-grad">
+                  <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <div class="section-title-wrap">
+                  <h2>3. Misi dalam Menjadi Pendidik yang Profesional</h2>
+                  <span class="indicator-q">Indikator 03 · LK 1: "Apa yang akan saya lakukan untuk mencapai visi tersebut?"</span>
+                </div>
+              </div>
+              <div class="badge-sub badge-sub-amber">
+                <i class="fa-solid fa-list-check"></i> 6 Pilar Rencana Aksi Nyata
+              </div>
+            </div>
+
+            <!-- INTRO TEXT -->
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.8; text-align: justify; text-justify: inter-word; margin-bottom: 2rem;">
+              Untuk mewujudkan visi besar pendidikan Indonesia dan visi pribadi sebagai pendidik masa depan, saya merumuskan <span class="hl-concept">enam pilar misi strategis</span> yang operasional, terukur, dan berakar pada komitmen pengabdian berkelanjutan:
+            </p>
+
+            <!-- 6 MISI GRID -->
+            <div class="misi-pillars-grid">
+              <!-- MISI 1 -->
+              <div class="misi-card theme-blue">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-blue">Pilar Strategis 01</span>
+                    <span class="misi-number">01</span>
+                  </div>
+                  <h3><i class="fa-solid fa-arrow-trend-up" style="color: #38bdf8;"></i> Mengembangkan Kompetensi Diri secara Berkelanjutan</h3>
+                  <ul>
+                    <li>
+                      Meningkatkan kompetensi <span class="hl-concept">pedagogik, profesional, sosial, dan kepribadian</span> melalui Program Pendidikan Profesi Guru (PPG), pelatihan bersertifikasi, seminar akademik, dan komunitas belajar guru.
+                    </li>
+                    <li>
+                      Mengikuti perkembangan <span class="hl-action">teknologi mutakhir dan inovasi pembelajaran digital</span> agar senantiasa mampu menghadirkan kurikulum informatika yang relevan dengan kebutuhan industri dan era masyarakat 5.0.
+                    </li>
+                    <li>
+                      Menjadikan <span class="hl-context">refleksi kritis</span> sebagai kebiasaan rutin pasca-mengajar untuk mendiagnosis kendala kelas dan memprogramkan perbaikan kualitas pembelajaran secara berkelanjutan.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Peningkatan Kualitas Diri</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #38bdf8;"></i> Pilar Mandiri</span>
+                </div>
+              </div>
+
+              <!-- MISI 2 -->
+              <div class="misi-card theme-green">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-green">Pilar Strategis 02</span>
+                    <span class="misi-number">02</span>
+                  </div>
+                  <h3><i class="fa-solid fa-users-gear" style="color: #34d399;"></i> Menciptakan Pembelajaran yang Berpusat pada Murid</h3>
+                  <ul>
+                    <li>
+                      Merancang modul dan skenario pembelajaran yang <span class="hl-action">bermakna, interaktif, aktif</span>, serta terkonfigurasi secara adaptif sesuai tahap kesiapan belajar peserta didik (<em>Teaching at the Right Level / TaRL</em>).
+                    </li>
+                    <li>
+                      Memanfaatkan <span class="hl-concept">perangkat teknologi secara bijak, etis, dan produktif</span> sebagai katalisator eksplorasi dan media penciptaan solusi, bukan sekadar instrumen konsumtif.
+                    </li>
+                    <li>
+                      Menumbuhkan daya <span class="hl-context">nalar kritis, kecakapan literasi digital, budi pekerti luhur, kreativitas algoritmik</span>, dan rasa percaya diri peserta didik dalam mempresentasikan gagasannya di depan umum.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Transformasi Kelas</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #34d399;"></i> Berorientasi Murid</span>
+                </div>
+              </div>
+
+              <!-- MISI 3 -->
+              <div class="misi-card theme-purple">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-purple">Pilar Strategis 03</span>
+                    <span class="misi-number">03</span>
+                  </div>
+                  <h3><i class="fa-solid fa-handshake-angle" style="color: #c084fc;"></i> Menjadi Guru yang Kolaboratif dan Inspiratif</h3>
+                  <ul>
+                    <li>
+                      Berbagi praktik baik (<span class="hl-purple">best practices</span>) secara transparan kepada rekan sejawat melalui forum diskusi ilmiah, <em>lesson study</em> berkala, dan komunitas belajar sekolah.
+                    </li>
+                    <li>
+                      Berkolaborasi erat lintas mata pelajaran dalam <span class="hl-action">mengembangkan inovasi media ajar, lembar kerja terintegrasi</span>, dan proyek penguatan Profil Pelajar Pancasila (P5) yang berdampak nyata.
+                    </li>
+                    <li>
+                      Menjadi rekan belajar yang suportif dan inspiratif guna mendorong <span class="hl-concept">peningkatan standar profesionalitas pendidik secara kolegial dan bersama-sama</span>.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Kemitraan Sejawat</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #c084fc;"></i> Sinergi Edukatif</span>
+                </div>
+              </div>
+
+              <!-- MISI 4 -->
+              <div class="misi-card theme-amber">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-amber">Pilar Strategis 04</span>
+                    <span class="misi-number">04</span>
+                  </div>
+                  <h3><i class="fa-solid fa-school-flag" style="color: #fbbf24;"></i> Mengembangkan Budaya Belajar di Sekolah</h3>
+                  <ul>
+                    <li>
+                      Mendorong terbangunnya iklim satuan pendidikan yang <span class="hl-concept">inklusif, kolaboratif, aman, dan sarat refleksi</span>, sehingga seluruh warga sekolah merasa dihargai dan termotivasi untuk bertumbuh.
+                    </li>
+                    <li>
+                      Menginisiasi program-program pembiasaan terpadu yang memperkuat <span class="hl-action">literasi informasi, numerasi kontekstual, kematangan karakter</span>, serta keterampilan abad ke-21 murid.
+                    </li>
+                    <li>
+                      Membantu manajemen sekolah membangun tata kelola akademik yang berorientasi pada <span class="hl-context">penjaminan mutu proses pembelajaran berkelanjutan</span> berbasis data rapor pendidikan.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Budaya Satuan Pendidikan</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #fbbf24;"></i> Iklim Akademik</span>
+                </div>
+              </div>
+
+              <!-- MISI 5 -->
+              <div class="misi-card theme-rose">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-rose">Pilar Strategis 05</span>
+                    <span class="misi-number">05</span>
+                  </div>
+                  <h3><i class="fa-solid fa-map-location-dot" style="color: #fb7185;"></i> Berkontribusi bagi Kemajuan Pendidikan di Daerah Asal</h3>
+                  <ul>
+                    <li>
+                      Mengabdikan segenap kapasitas keilmuan dan kompetensi profesional untuk <span class="hl-action">meningkatkan mutu pendidikan di Kecamatan Jelai Hulu dan Kabupaten Ketapang</span>.
+                    </li>
+                    <li>
+                      Menjalin kemitraan kolaboratif strategis antara pihak sekolah, tokoh masyarakat adat, orang tua wali, dan dinas pendidikan daerah demi memecahkan kendala pendidikan lokal.
+                    </li>
+                    <li>
+                      Turut mengambil inisiatif dalam <span class="hl-concept">pendampingan literasi TIK, pelatihan metode ajar kreatif</span>, dan diseminasi bahan ajar digital bagi rekan-rekan guru di pelosok daerah.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Dedikasi Daerah Asal</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #fb7185;"></i> Jelai Hulu & Ketapang</span>
+                </div>
+              </div>
+
+              <!-- MISI 6 -->
+              <div class="misi-card theme-teal">
+                <div>
+                  <div class="misi-card-header">
+                    <span class="misi-pill-tag pill-teal">Pilar Strategis 06</span>
+                    <span class="misi-number">06</span>
+                  </div>
+                  <h3><i class="fa-solid fa-scale-balanced" style="color: #2dd4bf;"></i> Mewujudkan Pemerataan Kualitas Pendidikan</h3>
+                  <ul>
+                    <li>
+                      Berkontribusi nyata dalam <span class="hl-concept">mengakselerasi kualitas sumber daya manusia</span> melalui layanan pendidikan yang adil, inklusif, dan tidak meninggalkan anak-anak pelosok di belakang.
+                    </li>
+                    <li>
+                      Menjadi guru profesional yang berintegritas tinggi serta mampu memberikan <span class="hl-action">resonansi dampak transformatif</span> tidak hanya bagi murid di kelas, tetapi juga sekolah, masyarakat, dan daerah.
+                    </li>
+                    <li>
+                      Mengadvokasi pemerataan sarana digital dan kecakapan masa depan agar putra-putri daerah mampu bersaing secara setara di kancah nasional maupun global.
+                    </li>
+                  </ul>
+                </div>
+                <div class="misi-card-footer">
+                  <span>Fokus: Keadilan Sosial Pendidikan</span>
+                  <span><i class="fa-solid fa-circle-check" style="color: #2dd4bf;"></i> Transformasi Nasional</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: DOKUMEN AUTENTIK & LEMBAR KERJA 1 -->
+      <section class="identifikasi-section" id="dokumen-autentik" style="padding-bottom: 70px;">
+        <div class="container">
+          <div class="section-card">
+            <!-- CARD HEADER -->
+            <div class="section-header-bar">
+              <div class="section-header-left">
+                <div class="section-icon-badge badge-purple-grad">
+                  <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div class="section-title-wrap">
+                  <h2>4. Dokumen Autentik Lembar Kerja 1 (LK 1)</h2>
+                  <span class="indicator-q">Bukti Verifikasi Resmi Identifikasi Diri Mahasiswa PPG Calon Guru</span>
+                </div>
+              </div>
+              <div class="badge-sub badge-sub-purple">
+                <i class="fa-solid fa-certificate"></i> Dokumen Terverifikasi
+              </div>
+            </div>
+
+            <!-- DOC INFO & ACTION BAR -->
+            <div class="doc-card-container">
+              <div class="doc-info-bar">
+                <div class="doc-info-left">
+                  <i class="fa-solid fa-file-pdf pdf-icon"></i>
+                  <div class="doc-meta-title">
+                    <h4>LEMBAR KERJA 1 (LK 1) IDENTIFIKASI DIRI</h4>
+                    <p>LK_1_Identifikasi_Diri.pdf · 4 Halaman · Disusun oleh Ilham Kurnia Septiadi, S.Pd.</p>
+                  </div>
+                </div>
+                <div class="doc-actions">
+                  <a href="Dokumen/LK_1_Identifikasi_Diri.pdf" target="_blank" class="btn-doc btn-doc-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Layar Penuh
+                  </a>
+                  <a href="Dokumen/LK_1_Identifikasi_Diri.pdf" download="LK_1_Identifikasi_Diri_Ilham_Kurnia_Septiadi.pdf" class="btn-doc btn-doc-secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+
+              <!-- EMBEDDED VIEWER -->
+              <div class="pdf-embed-wrapper">
+                <iframe
+                  src="Dokumen/LK_1_Identifikasi_Diri.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                  title="Lembar Kerja 1 LK 1 Identifikasi Diri Ilham Kurnia Septiadi"
+                >
+                  <p style="padding: 30px; text-align: center; color: #cbd5e1;">
+                    Browser Anda tidak mendukung pratinjau dokumen PDF secara langsung. 
+                    <a href="Dokumen/LK_1_Identifikasi_Diri.pdf" target="_blank" style="color: #38bdf8; text-decoration: underline;">
+                      Klik di sini untuk mengunduh atau membuka dokumen.
+                    </a>
+                  </p>
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER RESMI -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.
+          </p>
+        </div>
+
+        <!-- SEMESTER 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <!-- SEMESTER 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAK & LOKASI -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // NAVBAR SCROLL
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // MOBILE MENU
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // MOBILE DROPDOWN
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1233 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karya Inovasi Pembelajaran | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/tech-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+
+    <style>
+      /* Smooth Scrolling & Navbar Offset */
+      html {
+        scroll-padding-top: 85px;
+        scroll-behavior: smooth;
+      }
+      .inovasi-main {
+        padding-top: 105px;
+      }
+      .inovasi-section,
+      .aksi-nyata-section {
+        scroll-margin-top: 85px;
+      }
+
+      /* Scoped Enhancements for Inovasi Page */
+      .inovasi-hero {
+        padding: 15px 0 35px;
+        text-align: center;
+        position: relative;
+      }
+      .inovasi-hero h1 {
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        margin: 16px 0 14px;
+        line-height: 1.25;
+        font-weight: 800;
+      }
+      .inovasi-hero p {
+        max-width: 840px;
+        margin: 0 auto 28px;
+        color: var(--text-light, #94a3b8);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+      .hero-cta-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+      }
+      .btn-custom-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 26px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #06b6d4, #10b981);
+        color: #0b1120 !important;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35);
+        transition: all 0.3s ease;
+      }
+      .btn-custom-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 26px rgba(6, 182, 212, 0.5);
+      }
+      .btn-custom-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 24px;
+        border-radius: 10px;
+        background: rgba(15, 23, 42, 0.85);
+        color: #e2e8f0 !important;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+      }
+      .btn-custom-secondary:hover {
+        background: rgba(30, 41, 59, 0.9);
+        border-color: #38bdf8;
+        transform: translateY(-2px);
+      }
+      .hero-stat-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 16px;
+        backdrop-filter: blur(12px);
+      }
+      .stat-item {
+        text-align: center;
+        padding: 8px 12px;
+      }
+      .stat-item .stat-num {
+        font-family: var(--font-mono, monospace);
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #38bdf8;
+        margin-bottom: 4px;
+        display: block;
+      }
+      .stat-item .stat-label {
+        font-size: 0.82rem;
+        color: #94a3b8;
+        line-height: 1.35;
+      }
+
+      /* In-Depth Content Sections */
+      .inovasi-section {
+        padding: 55px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .section-badge-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 30px;
+        background: rgba(6, 182, 212, 0.12);
+        border: 1px solid rgba(6, 182, 212, 0.35);
+        color: #22d3ee;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+      }
+      .inovasi-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(56, 189, 248, 0.18);
+        border-radius: 16px;
+        padding: 26px;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .inovasi-card:hover {
+        border-color: rgba(56, 189, 248, 0.4);
+        transform: translateY(-2px);
+      }
+      .quote-visi-box {
+        background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05));
+        border-left: 4px solid #06b6d4;
+        border-radius: 0 16px 16px 0;
+        padding: 24px;
+        margin-bottom: 28px;
+      }
+      .quote-visi-box p {
+        font-size: 1.05rem;
+        font-style: italic;
+        color: #f1f5f9;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      /* Tab Buttons */
+      .custom-tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      .tab-pill-btn {
+        padding: 10px 18px;
+        border-radius: 10px;
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #94a3b8;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .tab-pill-btn:hover {
+        background: rgba(30, 41, 59, 0.9);
+        color: #f1f5f9;
+        border-color: rgba(56, 189, 248, 0.3);
+      }
+      .tab-pill-btn.active {
+        background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(16, 185, 129, 0.15));
+        color: #38bdf8;
+        border-color: #38bdf8;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+      }
+
+      /* Showcase Dual-System */
+      .dual-system-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .system-badge-tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.72rem;
+        font-family: var(--font-mono, monospace);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .tag-guru {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .tag-siswa {
+        background: rgba(52, 211, 153, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0;
+      }
+      .feature-list li {
+        padding: 9px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+        color: #cbd5e1;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+      .feature-list li i {
+        color: #06b6d4;
+        margin-top: 3px;
+        font-size: 0.85rem;
+      }
+
+      /* CyberClass UI Mockup Box */
+      .cyberclass-mockup {
+        background: #030712;
+        border: 1px solid #1f2937;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-top: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      }
+      .mockup-header {
+        background: #111827;
+        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #1f2937;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+      }
+      .mockup-body {
+        padding: 18px;
+      }
+
+      /* Modul Embed Frame Container */
+      .modul-frame-wrap {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        background: #000;
+        aspect-ratio: 16 / 9;
+        position: relative;
+        margin-top: 16px;
+      }
+      .modul-frame-wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      /* 4-Step Learning Pipeline */
+      .pipeline-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .pipeline-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 20px;
+        position: relative;
+      }
+      .pipeline-step-num {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #06b6d4;
+        background: rgba(6, 182, 212, 0.12);
+        padding: 3px 8px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      /* Gallery / Aksi Nyata Section (Gaya index.html) */
+      .aksi-nyata-section {
+        padding: 70px 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.6) 100%);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      @media (max-width: 992px) {
+        .inovasi-main {
+          padding-top: 85px;
+        }
+        .hero-stat-bar {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .dual-system-grid {
+          grid-template-columns: 1fr;
+        }
+        .pipeline-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .hero-stat-bar {
+          grid-template-columns: 1fr;
+        }
+        .pipeline-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BACKGROUND EFFECT -->
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-pink"></div>
+      <div class="mesh-blob blob-navy"></div>
+      <div class="mesh-blob blob-coral"></div>
+    </div>
+
+    <!-- NAVBAR RESMI -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">Refleksi</div>
+              <a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="inovasi-pembelajaran.html" class="active-dropdown"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="inovasi-main">
+      <!-- ================= HERO SECTION ================= -->
+      <section class="inovasi-hero">
+        <div class="container">
+          <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
+            <i class="fa-solid fa-lightbulb"></i> Karya Inovasi Pembelajaran · PPG Calon Guru
+          </div>
+          <h1 class="fade-in-up" style="animation-delay: 0.25s">
+            Ekosistem Pembelajaran <span class="text-gradient">Digital Terpadu</span>
+          </h1>
+          <p class="fade-in-up" style="animation-delay: 0.4s">
+            Integrasi Web Pengelolaan Kelas <strong>"CyberClass"</strong> dan <strong>E-Modul Interaktif "Algoritma & Pemrograman"</strong> Terkoneksi <em>Real-Time Database Spreadsheet</em> untuk Guru dan Peserta Didik Kelas X pada Mata Pelajaran Informatika serta Koding dan Kecerdasan Artifisial (KKA) di SMAN 9 & SMKN 5 Yogyakarta.
+          </p>
+
+          <!-- Dual CTA Buttons -->
+          <div class="hero-cta-group fade-in-up" style="animation-delay: 0.5s">
+            <a
+              href="https://ilhamkurniaseptiadi.github.io/Media-Algoritma-dan-Pemograman-Global-/"
+              target="_blank"
+              rel="noopener"
+              class="btn-custom-primary"
+            >
+              <i class="fa-solid fa-rocket"></i>
+              <span>Buka Live E-Modul Siswa ↗</span>
+            </a>
+            <a href="#section-cyberclass" class="btn-custom-secondary">
+              <i class="fa-solid fa-display"></i>
+              <span>Eksplorasi Web CyberClass</span>
+            </a>
+            <a href="#dokumentasi-inovasi" class="btn-custom-secondary">
+              <i class="fa-solid fa-images"></i>
+              <span>Aksi Nyata & Dokumentasi</span>
+            </a>
+          </div>
+
+          <!-- Quick Highlight Stat Bar -->
+          <div class="hero-stat-bar fade-in-up" style="animation-delay: 0.6s">
+            <div class="stat-item">
+              <span class="stat-num">8</span>
+              <span class="stat-label">Rombel Sasaran (X-1 s.d. X-7 SMA 9 & X Kulit A SMK 5)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">2 Sisi</span>
+              <span class="stat-label">Ekosistem Saling Terintegrasi (Guru & Siswa)</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Real-Time Database & Analytics Spreadsheet</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">95.5</span>
+              <span class="stat-label">Rerata Skor Hasil Belajar Peserta Didik</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 01. PENGANTAR VISI (LK 1) ================= -->
+      <section class="inovasi-section reveal" id="section-visi">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-compass"></i> Bagian 01 · Fondasi Filosofis
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Kompas Pedagogis: Dari Visi Calon Guru Menjadi Karya Nyata
+          </h2>
+          <p style="color: #94a3b8; max-width: 800px; margin-bottom: 24px;">
+            Inovasi teknologi ini bukan sekadar alat bantu teknis, melainkan perwujudan konkret dari visi pribadi saya sebagai calon pendidik profesional sebagaimana dirumuskan pada <strong>Lembar Kerja 1 (LK 1)</strong>.
+          </p>
+
+          <!-- Quote Visi Pribadi -->
+          <div class="quote-visi-box">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <i class="fa-solid fa-quote-left" style="color: #06b6d4; font-size: 1.2rem;"></i>
+              <strong style="color: #38bdf8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-mono);">
+                Visi Pribadi untuk Pendidikan Indonesia (LK 1)
+              </strong>
+            </div>
+            <p>
+              "Saya memimpikan pendidikan Indonesia yang mampu menghadirkan kesempatan belajar yang berkualitas bagi setiap anak tanpa dibatasi oleh letak geografis, sehingga anak-anak di daerah terpencil memiliki peluang yang sama untuk berkembang, berprestasi, dan berkontribusi bagi bangsanya. Saya meyakini bahwa pemerataan kualitas pendidikan hanya dapat diwujudkan melalui penguatan kapasitas guru sebagai penggerak utama pembelajaran... Pendidikan bukan sekadar proses mentransfer pengetahuan, tetapi jalan untuk membangun kualitas sumber daya manusia yang mampu memajukan daerahnya dan Indonesia secara berkelanjutan."
+            </p>
+          </div>
+
+          <!-- Pemetaan 4 Misi Strategis ke Produk Inovasi -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px;">
+            <div class="inovasi-card">
+              <div style="color: #38bdf8; font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-globe"></i></div>
+              <h4 style="color: #fff; margin-bottom: 8px; font-size: 1.05rem;">1. Pemerataan Akses Tanpa Batas</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+                <strong>Visi LK 1:</strong> Komitmen pengabdian bagi daerah asal (Jelai Hulu & Kab. Ketapang) serta pemerataan kualitas pendidikan.<br />
+                <span style="color: #34d399; font-weight: 600;">Wujud Inovasi:</span> E-Modul berbasis web publik (GitHub Pages) dapat diakses mandiri 24/7 dari gawai apa pun tanpa keterbatasan laboratorium fisik.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <div style="color: #a855f7; font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-robot"></i></div>
+              <h4 style="color: #fff; margin-bottom: 8px; font-size: 1.05rem;">2. Guru Adaptif di Era AI</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+                <strong>Visi LK 1:</strong> Mengikuti perkembangan teknologi dan menjadi inovator pembelajaran abad ke-21.<br />
+                <span style="color: #34d399; font-weight: 600;">Wujud Inovasi:</span> Sebagai guru Informatika & KKA, merancang sendiri aplikasi web <em>CyberClass</em> dan arsitektur basis data spreadsheet tanpa bergantung platform berbayar.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <div style="color: #34d399; font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-user-group"></i></div>
+              <h4 style="color: #fff; margin-bottom: 8px; font-size: 1.05rem;">3. Berpusat pada Murid & Gamifikasi</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+                <strong>Visi LK 1:</strong> Pembelajaran bermakna, aktif, menumbuhkan nalar kritis, dan kepercayaan diri murid.<br />
+                <span style="color: #34d399; font-weight: 600;">Wujud Inovasi:</span> Fitur <em>Spin Wheel</em>, <em>Random Team</em>, dan sistem poin keaktifan <em>Top 5 Leaderboard</em> menghidupkan kelas yang adil dan menyenangkan.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <div style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 12px;"><i class="fa-solid fa-chart-line"></i></div>
+              <h4 style="color: #fff; margin-bottom: 8px; font-size: 1.05rem;">4. Budaya Reflektif Berbasis Data</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6;">
+                <strong>Visi LK 1:</strong> Menjadikan refleksi sebagai kebiasaan evaluasi berkala dan berbagi praktik baik.<br />
+                <span style="color: #34d399; font-weight: 600;">Wujud Inovasi:</span> Respons LKPD, pre-test, post-test, dan refleksi murid langsung terolah otomatis ke dashboard analitik spreadsheet untuk tindak lanjut cepat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 02. LATAR BELAKANG & TANTANGAN (LK 4) ================= -->
+      <section class="inovasi-section reveal" id="section-tantangan">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-triangle-exclamation"></i> Bagian 02 · Identifikasi Masalah
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Latar Belakang & Tantangan Pembelajaran di Sekolah
+          </h2>
+          <p style="color: #94a3b8; max-width: 820px; margin-bottom: 26px;">
+            Berdasarkan hasil pengamatan dan pengalaman praktik mengajar di SMAN 9 Yogyakarta (Kelas X-1 s.d. X-7) dan SMKN 5 Yogyakarta (Kelas X Kulit A), teridentifikasi empat tantangan nyata yang menjadi dasar perancangan inovasi ini:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+            <div class="inovasi-card" style="border-top: 3px solid #ef4444;">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #f87171; font-weight: 700;">TANTANGAN 01</span>
+              <h4 style="color: #fff; margin: 8px 0;">Fragmentasi Pengelolaan Multi-Kelas</h4>
+              <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.6;">
+                Dalam mengelola 8 rombongan belajar, guru sering mengalami kendala efisiensi waktu karena harus membuka berbagai aplikasi atau catatan manual terpisah untuk presensi, poin keaktifan, rekap nilai, dan pengacakan kelompok.
+              </p>
+            </div>
+
+            <div class="inovasi-card" style="border-top: 3px solid #f59e0b;">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #fbbf24; font-weight: 700;">TANTANGAN 02</span>
+              <h4 style="color: #fff; margin: 8px 0;">Abstraknya Materi Algoritma</h4>
+              <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.6;">
+                Konsep Algoritma dan Pemrograman memiliki karakteristik yang abstrak. Murid membutuhkan visualisasi dinamis dan demonstrasi interaktif agar tidak sekadar menghafal sintaks tanpa memahami logika pemecahan masalah.
+              </p>
+            </div>
+
+            <div class="inovasi-card" style="border-top: 3px solid #06b6d4;">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #22d3ee; font-weight: 700;">TANTANGAN 03</span>
+              <h4 style="color: #fff; margin: 8px 0;">Ketidakefisienan Media Fisik</h4>
+              <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.6;">
+                Membawa banyak alat peraga konkret fisik ke ruang-ruang kelas secara bergantian memerlukan persiapan lama. Di sisi lain, siswa membutuhkan media terpadu yang dapat diakses mandiri kapan saja untuk <em>deep learning</em>.
+              </p>
+            </div>
+
+            <div class="inovasi-card" style="border-top: 3px solid #10b981;">
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #34d399; font-weight: 700;">TANTANGAN 04</span>
+              <h4 style="color: #fff; margin: 8px 0;">Kebutuhan Evaluasi Real-Time</h4>
+              <p style="font-size: 0.86rem; color: #cbd5e1; line-height: 1.6;">
+                Guru memerlukan sistem yang mampu merekam dan mengolah respon pre-test, lembar kerja (LKPD), post-test, dan refleksi secara instan di kelas sebagai dasar pengambilan keputusan pedagogis yang akurat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 03. DUA SISI INOVASI (CYBERCLASS & E-MODUL) ================= -->
+      <section class="inovasi-section reveal" id="section-cyberclass">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-layer-group"></i> Bagian 03 · Arsitektur Dual-System
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Dual-System Digital Learning Ecosystem: Guru & Siswa
+          </h2>
+          <p style="color: #94a3b8; max-width: 820px; margin-bottom: 30px;">
+            Solusi inovatif ini menyatukan dua sisi kebutuhan pembelajaran dalam satu ekosistem yang terhubung dengan basis data <em>Google Spreadsheet</em> secara langsung:
+          </p>
+
+          <div class="dual-system-grid">
+            <!-- SISI GURU: CYBERCLASS -->
+            <div class="inovasi-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="system-badge-tag tag-guru"><i class="fa-solid fa-chalkboard-user"></i> Sisi Guru · Web CyberClass</span>
+                <h3 style="color: #fff; font-size: 1.35rem; margin-bottom: 8px;">Aplikasi Manajemen Kelas Terpadu</h3>
+                <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6;">
+                  Layar kendali tunggal (<em>single dashboard</em>) untuk mengorganisasi rombongan belajar tanpa perlu membuka banyak aplikasi terpisah.
+                </p>
+
+                <ul class="feature-list">
+                  <li>
+                    <i class="fa-solid fa-sliders"></i>
+                    <div>
+                      <strong style="color: #fff;">Select Environment:</strong> Berpindah ruang kelola instan antara 8 rombel (X Kulit A SMK 5 & X-1 s.d. X-7 SMA 9) untuk mapel KKA & Informatika.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <div>
+                      <strong style="color: #fff;">System Overview & Absensi:</strong> Jam aktif real-time, rekap kehadiran harian (Hadir, Sakit, Izin, Alpha), serta persentase kehadiran sesi.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>
+                      <strong style="color: #fff;">Poin Keaktifan & Top 5 Leaderboard:</strong> Sistem gamifikasi pencatatan poin interaksi kelas yang otomatis memotivasi siswa.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-dharmachakra"></i>
+                    <div>
+                      <strong style="color: #fff;">Interactive Tools:</strong> Fitur <em>Spin Wheel</em> pengundi nama acak dan <em>Random Team Generator</em> pembagi kelompok diskusi yang transparan.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Simulator UI CyberClass Mini -->
+              <div class="cyberclass-mockup">
+                <div class="mockup-header">
+                  <span style="color: #38bdf8;"><i class="fa-solid fa-terminal"></i> CYBERCLASS v1.0 — Teacher Dashboard</span>
+                  <span style="color: #34d399; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 8px; height: 8px; border-radius: 50%; background: #34d399; display: inline-block;"></span> Active Session
+                  </span>
+                </div>
+                <div class="mockup-body">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                    <span style="font-size: 0.82rem; color: #e2e8f0; font-weight: 600;">Kelas: SMAN 9 Yogyakarta (X-1 Informatika)</span>
+                    <span style="font-size: 0.75rem; color: #38bdf8; font-family: var(--font-mono);">Kehadiran: 31/36 Siswa (86%)</span>
+                  </div>
+                  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px;">
+                    <button class="tab-pill-btn" style="padding: 6px 10px; font-size: 0.75rem; justify-content: center;" onclick="alert('Simulasi: Spin Wheel mengundi nama siswa secara acak...')">
+                      <i class="fa-solid fa-dharmachakra"></i> Spin Wheel
+                    </button>
+                    <button class="tab-pill-btn" style="padding: 6px 10px; font-size: 0.75rem; justify-content: center;" onclick="alert('Simulasi: Random Team membagi 36 siswa menjadi 6 kelompok adil...')">
+                      <i class="fa-solid fa-users"></i> Acak Tim
+                    </button>
+                    <button class="tab-pill-btn" style="padding: 6px 10px; font-size: 0.75rem; justify-content: center;" onclick="alert('Simulasi: Tambah +10 Poin Keaktifan untuk perwakilan siswa...')">
+                      <i class="fa-solid fa-star" style="color: #fbbf24;"></i> +10 Poin
+                    </button>
+                  </div>
+                  <div style="font-size: 0.72rem; color: #94a3b8; font-family: var(--font-mono); text-align: center; border-top: 1px solid #1f2937; padding-top: 8px;">
+                    ⚡ Berjalan pada Local Environment Guru & Siap Dihosting ke Production
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SISI SISWA: E-MODUL INTERAKTIF -->
+            <div class="inovasi-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="system-badge-tag tag-siswa"><i class="fa-solid fa-graduation-cap"></i> Sisi Siswa · E-Modul Web Interaktif</span>
+                <h3 style="color: #fff; font-size: 1.35rem; margin-bottom: 8px;">Portal Belajar Mandiri Berbasis Sintaks</h3>
+                <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6;">
+                  Modul digital yang merangkum seluruh tahapan belajar peserta didik dalam satu alur sintaks yang runtut dan interaktif.
+                </p>
+
+                <ul class="feature-list">
+                  <li>
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <div>
+                      <strong style="color: #fff;">Pre-Test Diagnostik:</strong> Soal interaktif untuk mendeteksi kesiapan dan pemahaman awal sebelum masuk ke materi inti.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <div>
+                      <strong style="color: #fff;">Materi & Simulasi Interaktif:</strong> Visualisasi animasi logika algoritma yang dapat dicoba dan dimanipulasi langsung oleh siswa.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-file-signature"></i>
+                    <div>
+                      <strong style="color: #fff;">LKPD & Refleksi Terpadu:</strong> Lembar kerja digital dan form refleksi yang langsung mengirimkan jawaban ke database guru.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-database"></i>
+                    <div>
+                      <strong style="color: #fff;">Google Spreadsheet Backend:</strong> Seluruh nilai dan respon siswa terangkum otomatis tanpa memerlukan server backend terpisah.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Frame Preview & Live Button -->
+              <div>
+                <div class="modul-frame-wrap">
+                  <iframe
+                    src="https://ilhamkurniaseptiadi.github.io/Media-Algoritma-dan-Pemograman-Global-/"
+                    loading="lazy"
+                    title="Live Preview E-Modul Pembelajaran Algoritma"
+                  ></iframe>
+                </div>
+                <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                  <span style="font-size: 0.78rem; color: #94a3b8; font-family: var(--font-mono);">
+                    URL: ilhamkurniaseptiadi.github.io
+                  </span>
+                  <a
+                    href="https://ilhamkurniaseptiadi.github.io/Media-Algoritma-dan-Pemograman-Global-/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn-custom-primary"
+                    style="padding: 8px 16px; font-size: 0.82rem;"
+                  >
+                    <span>Buka Penuh di Tab Baru ↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 04. 5 PILAR PRINSIP INOVASI (LK 4) ================= -->
+      <section class="inovasi-section reveal" id="section-pilar">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-award"></i> Bagian 04 · Kaidah Ilmiah
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Pemenuhan 5 Pilar Prinsip Karya Inovasi Pendidikan
+          </h2>
+          <p style="color: #94a3b8; max-width: 800px; margin-bottom: 24px;">
+            Desain karya inovatif ini memenuhi lima prinsip karya inovasi pendidikan sebagaimana diamanatkan pada <strong>Lembar Kerja 4 (LK 4)</strong>:
+          </p>
+
+          <div class="custom-tab-nav" id="pilarTabNav">
+            <button class="tab-pill-btn active" onclick="switchPilar(0, this)">
+              <i class="fa-solid fa-sparkles"></i> 1. Kebaruan (Novelty)
+            </button>
+            <button class="tab-pill-btn" onclick="switchPilar(1, this)">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> 2. Kreativitas
+            </button>
+            <button class="tab-pill-btn" onclick="switchPilar(2, this)">
+              <i class="fa-solid fa-bullseye"></i> 3. Relevansi
+            </button>
+            <button class="tab-pill-btn" onclick="switchPilar(3, this)">
+              <i class="fa-solid fa-hand-holding-heart"></i> 4. Kebermanfaatan
+            </button>
+            <button class="tab-pill-btn" onclick="switchPilar(4, this)">
+              <i class="fa-solid fa-chart-simple"></i> 5. Efektivitas Terbukti
+            </button>
+          </div>
+
+          <div class="inovasi-card" id="pilarContentBox" style="min-height: 180px;">
+            <!-- Konten diisi dinamis oleh JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 05. ALUR SKENARIO IMPLEMENTASI (4 TAHAP) ================= -->
+      <section class="inovasi-section reveal" id="section-implementasi">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-arrows-split-up-and-left"></i> Bagian 05 · Praktik Pembelajaran
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Alur Skenario Implementasi Nyata di Kelas
+          </h2>
+          <p style="color: #94a3b8; max-width: 820px; margin-bottom: 28px;">
+            Sinergi antara Web CyberClass (Guru) dan E-Modul Interaktif (Siswa) diimplementasikan secara terstruktur melalui 4 tahapan sintaks pembelajaran:
+          </p>
+
+          <div class="pipeline-grid">
+            <div class="pipeline-card">
+              <span class="pipeline-step-num">TAHAP 01</span>
+              <h4 style="color: #fff; margin-bottom: 10px;">Pembukaan & Diagnostik</h4>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; margin-bottom: 8px;">
+                <strong style="color: #38bdf8;">Guru:</strong> Memilih kelas di CyberClass & mengisi absensi harian.
+              </p>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5;">
+                <strong style="color: #34d399;">Siswa:</strong> Membuka modul web dan mengerjakan Pre-Test untuk mengukur kesiapan awal.
+              </p>
+            </div>
+
+            <div class="pipeline-card">
+              <span class="pipeline-step-num">TAHAP 02</span>
+              <h4 style="color: #fff; margin-bottom: 10px;">Eksplorasi Konsep & LKPD</h4>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; margin-bottom: 8px;">
+                <strong style="color: #38bdf8;">Guru:</strong> Memberi pemantik konsep dengan PPT penunjang & membagi kelompok via <em>Random Team</em>.
+              </p>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5;">
+                <strong style="color: #34d399;">Siswa:</strong> Mencoba simulasi algoritma interaktif, menonton video konsep, dan mengerjakan LKPD digital.
+              </p>
+            </div>
+
+            <div class="pipeline-card">
+              <span class="pipeline-step-num">TAHAP 03</span>
+              <h4 style="color: #fff; margin-bottom: 10px;">Interaksi & Gamifikasi</h4>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; margin-bottom: 8px;">
+                <strong style="color: #38bdf8;">Guru:</strong> Memutar <em>Spin Wheel</em> untuk memilih juru bicara kelompok & menginput poin keaktifan.
+              </p>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5;">
+                <strong style="color: #34d399;">Siswa:</strong> Berpartisipasi aktif mempresentasikan hasil diskusi; termotivasi masuk peringkat Top 5 kelas.
+              </p>
+            </div>
+
+            <div class="pipeline-card">
+              <span class="pipeline-step-num">TAHAP 04</span>
+              <h4 style="color: #fff; margin-bottom: 10px;">Evaluasi Real-Time & Penutup</h4>
+              <p style="font-size: 0.82rem; color: #38bdf8; line-height: 1.5; margin-bottom: 8px;">
+                <strong style="color: #38bdf8;">Guru:</strong> Memantau rekapitulasi nilai dan respon refleksi secara langsung pada dashboard spreadsheet.
+              </p>
+              <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5;">
+                <strong style="color: #34d399;">Siswa:</strong> Mengerjakan Post-Test akhir untuk mengukur ketuntasan belajar serta mengisi lembar refleksi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 06. EVALUASI KEBERHASILAN (LK 4) ================= -->
+      <section class="inovasi-section reveal" id="section-evaluasi">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-list-check"></i> Bagian 06 · Pengukuran Mutu
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Tahapan Evaluasi Tingkat Keberhasilan Inovasi
+          </h2>
+          <p style="color: #94a3b8; max-width: 800px; margin-bottom: 24px;">
+            Untuk memastikan akuntabilitas dan efektivitas pembelajaran, evaluasi dilakukan secara bertahap melalui empat instrumen utama:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+            <div class="inovasi-card">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #38bdf8; font-weight: 700;">EVALUASI 1</span>
+              <h4 style="color: #fff; margin: 8px 0;">Evaluasi Diagnostik</h4>
+              <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                Dilaksanakan di awal sesi melalui soal Pre-Test di dalam E-Modul untuk mengukur kesiapan dan kemampuan awal siswa terhadap topik yang dipelajari.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #34d399; font-weight: 700;">EVALUASI 2</span>
+              <h4 style="color: #fff; margin: 8px 0;">Evaluasi Formatif & Proses</h4>
+              <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                Merekam dinamika kelas, tingkat antusiasme, kolaborasi kelompok, dan perolehan poin keaktifan serta ketuntasan pengumpulan LKPD digital.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #fbbf24; font-weight: 700;">EVALUASI 3</span>
+              <h4 style="color: #fff; margin: 8px 0;">Evaluasi Sumatif</h4>
+              <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                Mengukur capaian hasil belajar melalui Post-Test dan membandingkan peningkatan nilai (<em>gain score</em>) dari data diagnostik awal.
+              </p>
+            </div>
+
+            <div class="inovasi-card">
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #a855f7; font-weight: 700;">EVALUASI 4</span>
+              <h4 style="color: #fff; margin: 8px 0;">Evaluasi Reflektif</h4>
+              <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.6;">
+                Menganalisis umpan balik kualitatif siswa di lembar refleksi modul serta efisiensi waktu guru dalam mengelola kelas multi-rombel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 07. ANALITIK HASIL BELAJAR (DATA ASLI SPREADSHEET) ================= -->
+      <section class="inovasi-section reveal" id="section-analitik">
+        <div class="container">
+          <div class="section-badge-pill">
+            <i class="fa-solid fa-chart-pie"></i> Bagian 07 · Evidence-Based Data
+          </div>
+          <h2 class="text-2xl font-bold" style="font-size: 1.85rem; margin-bottom: 10px;">
+            Bukti Analitik Ketercapaian Hasil Belajar Siswa
+          </h2>
+          <p style="color: #94a3b8; max-width: 820px; margin-bottom: 22px;">
+            Data empiris keterlaksanaan pembelajaran yang terekam otomatis pada <em>Database Google Spreadsheet</em> di berbagai pertemuan dan kelas sasaran:
+          </p>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap;">
+            <button class="tab-pill-btn active" id="btnFilterP1" onclick="filterAnalytics('p1', this)">
+              <i class="fa-solid fa-calendar-day"></i> Pertemuan 1 (Global Rombel)
+            </button>
+            <button class="tab-pill-btn" id="btnFilterP2" onclick="filterAnalytics('p2', this)">
+              <i class="fa-solid fa-chart-column"></i> Post-Test P2 (Lintas Kelas X-1 s.d. X-6)
+            </button>
+          </div>
+
+          <div class="inovasi-card" id="analyticsTableBox">
+            <!-- Diisi otomatis oleh JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 08. DOKUMENTASI AKSI NYATA (GAYA INDEX.HTML) ================= -->
+      <section class="aksi-nyata-section reveal" id="dokumentasi-inovasi">
+        <div class="container">
+          <div class="section-title-wrap text-center" style="margin-bottom: 35px;">
+            <span class="section-tag">Aksi Nyata</span>
+            <h2 style="font-size: 2rem; margin: 10px 0 12px; font-weight: 800;">
+              Dokumentasi Praktik Pembelajaran & Implementasi
+            </h2>
+            <p style="color: #94a3b8; max-width: 720px; margin: 0 auto; line-height: 1.6;">
+              Rekam jejak implementasi nyata ekosistem <em>CyberClass</em> dan <em>E-Modul Interaktif</em> di ruang kelas SMAN 9 Yogyakarta dan SMKN 5 Yogyakarta.
+            </p>
+          </div>
+
+          <!-- Gallery Grid Konsisten dengan index.html -->
+          <div class="gallery-grid">
+            <div class="gallery-item hover-zoom" data-file="kegiatan1.jpeg">
+              <img src="IMG/kegiatan1.jpeg" alt="Observasi dan Persiapan Implementasi PPL" />
+              <div class="gallery-overlay">
+                <span>Observasi & Persiapan Implementasi Pembelajaran</span>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-zoom" data-file="praktik1.jpeg">
+              <img src="IMG/praktik1.jpeg" alt="Praktik Mengajar Berbantuan Ekosistem Digital" />
+              <div class="gallery-overlay">
+                <span>Praktik Mengajar Berbantuan Ekosistem Digital di Kelas</span>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-zoom" data-file="kegiatan2.jpeg">
+              <img src="IMG/kegiatan2.jpeg" alt="Kegiatan Pendampingan & Eksplorasi Siswa" />
+              <div class="gallery-overlay">
+                <span>Pendampingan Siswa dalam Mengeksplorasi Modul Web</span>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-zoom" data-file="Diskusi.jpeg">
+              <img src="IMG/Diskusi.jpeg" alt="Diskusi Kelompok dengan Pembagian Random Team" />
+              <div class="gallery-overlay">
+                <span>Diskusi Kolaboratif Kelompok Berbantuan Random Team CyberClass</span>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-zoom" data-file="Kondisi Kelas.jpeg">
+              <img src="IMG/Kondisi Kelas.jpeg" alt="Suasana Kelas Interaktif Berbantuan Teknologi" />
+              <div class="gallery-overlay">
+                <span>Suasana Kelas Aktif & Antusias dalam Pengerjaan LKPD Digital</span>
+              </div>
+            </div>
+
+            <div class="gallery-item hover-zoom" data-file="Treatmen Murid.jpeg">
+              <img src="IMG/Treatmen Murid.jpeg" alt="Diferensiasi Bimbingan Peserta Didik" />
+              <div class="gallery-overlay">
+                <span>Diferensiasi Bimbingan Belajar dan Refleksi Siswa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER RESMI (IDENTIK DENGAN INDEX) ================= -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.
+          </p>
+        </div>
+
+        <!-- SEMESTER 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <!-- SEMESTER 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAK & LOKASI -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // 1. NAVBAR & DROPDOWN LOGIC
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+
+      // 2. DATA 5 PILAR INOVASI (LK 4)
+      const pilarDetails = [
+        {
+          badge: "PILAR 01 · NOVELTY",
+          title: "Kebaruan (Novelty)",
+          desc: "Menghadirkan pendekatan baru berupa integrasi sistem manajemen kelas guru (CyberClass) dan portal belajar mandiri siswa (E-Modul Web) yang dikembangkan secara mandiri (custom-built) sesuai karakteristik mata pelajaran Informatika dan KKA. Seluruh aktivitas di dalam modul web mampu mengirimkan respon secara langsung ke sistem serverless database Google Sheets yang otomatis terolah menjadi dasbor analitik nilai.",
+          points: [
+            "Sentralisasi multi-tools (Presensi, Nilai, Spin Wheel, Random Team) dalam 1 layar kendali.",
+            "Integrasi arsitektur frontend web statis ke basis data spreadsheet tanpa ketergantungan server berbayar."
+          ]
+        },
+        {
+          badge: "PILAR 02 · CREATIVITY",
+          title: "Kreativitas",
+          desc: "Mengombinasikan teori pedagogik (pembelajaran berpusat pada murid, gamifikasi, dan asesmen berkelanjutan) dengan rekayasa teknologi web. Google Spreadsheet yang umumnya hanya digunakan untuk tabulasi pasif, dialihfungsikan menjadi Real-Time Database & Analytics Dashboard untuk menyelesaikan persoalan administrasi serta keterbatasan media demonstrasi konkret di kelas.",
+          points: [
+            "Memadukan Problem-Based Learning dengan simulasi interaktif algoritma berbasis web.",
+            "Mengoptimalkan gamifikasi Top 5 Siswa dan Spin Wheel untuk membangkitkan motivasi intrinsik murid."
+          ]
+        },
+        {
+          badge: "PILAR 03 · RELEVANCE",
+          title: "Relevansi & Kontekstualitas",
+          desc: "Sangat relevan dengan karakteristik peserta didik generasi digital (Gen Z/Alpha), tuntutan Kurikulum Merdeka pada mata pelajaran Informatika serta Koding dan Kecerdasan Artifisial (KKA), serta dinamika perkembangan teknologi saat ini.",
+          points: [
+            "Sesuai dengan target capaian kurikulum pada Fase E di SMAN 9 Yogyakarta dan SMKN 5 Yogyakarta.",
+            "Memberikan teladan nyata bagi siswa bahwa guru mempraktikkan langsung kompetensi rekayasa perangkat lunak."
+          ]
+        },
+        {
+          badge: "PILAR 04 · USEFULNESS",
+          title: "Kebermanfaatan (Usefulness)",
+          desc: "Memberikan nilai tambah nyata bagi guru dalam menghemat waktu persiapan media, mendokumentasikan presensi/keaktifan, serta menilai hasil kerja siswa secara otomatis. Bagi siswa, inovasi ini memberikan kemudahan akses belajar terpadu dalam satu tautan serta pengalaman belajar yang adil dan interaktif.",
+          points: [
+            "Bagi Guru: Efisiensi waktu pengelolaan kelas multi-rombel dan tersedianya arsip nilai siap pakai.",
+            "Bagi Siswa: Fasilitas belajar mandiri mendalam (deep learning) tanpa terhalang sekat ruang dan jam sekolah."
+          ]
+        },
+        {
+          badge: "PILAR 05 · EVIDENCE-BASED",
+          title: "Efektivitas Terbukti",
+          desc: "Produk telah berulang kali diujicobakan dan diimplementasikan secara nyata dalam berbagai pertemuan pembelajaran di 8 rombongan belajar. Pengujian CyberClass membuktikan kelancaran manajemen presensi dan dinamika kelas, sedangkan Dashboard Google Sheets berhasil merekam ratusan respons tugas dan tes siswa dengan capaian rerata di atas 94,0.",
+          points: [
+            "Telah teruji di 8 kelas sasaran (X-1 s.d. X-7 SMAN 9 & X Kulit A SMKN 5).",
+            "Mendokumentasikan lebih dari 250 pengumpulan LKPD digital dan puluhan rekaman refleksi belajar."
+          ]
+        }
+      ];
+
+      function switchPilar(index, btn) {
+        document.querySelectorAll("#pilarTabNav .tab-pill-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const p = pilarDetails[index];
+        const box = document.getElementById("pilarContentBox");
+        box.innerHTML = `
+          <div style="animation: fadeIn 0.3s ease;">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${p.badge}</div>
+            <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">${p.title}</h3>
+            <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; margin-bottom: 18px;">${p.desc}</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+              <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); padding: 12px 16px; border-radius: 10px; font-size: 0.85rem; color: #e2e8f0;">
+                <i class="fa-solid fa-circle-check" style="color: #34d399; margin-right: 8px;"></i> ${p.points[0]}
+              </div>
+              <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); padding: 12px 16px; border-radius: 10px; font-size: 0.85rem; color: #e2e8f0;">
+                <i class="fa-solid fa-circle-check" style="color: #34d399; margin-right: 8px;"></i> ${p.points[1]}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // 3. DATA ANALITIK HASIL BELAJAR (BERDASARKAN SCREENSHOT ASLI SPREADSHEET)
+      const dataAnalytics = {
+        p1: [
+          { label: "Pre-Test P1", part: "53 Siswa", avg: 92.5, max: 100, min: 70 },
+          { label: "Post-Test P1", part: "9 Siswa", avg: 91.1, max: 100, min: 80 },
+          { label: "LKPD P1 — Telaah Video Pembelajaran", part: "123 Respons Terkumpul", avg: 100.0, max: 100, min: 100 },
+          { label: "LKPD P1 — Pengumpulan Lembar Kerja", part: "253 Respons Terkumpul", avg: 100.0, max: 100, min: 100 },
+          { label: "Refleksi Pembelajaran P1", part: "13 Respons Siswa", avg: 100.0, max: 100, min: 100 }
+        ],
+        p2: [
+          { label: "Post-Test P2 — Kelas X-1", part: "3 Siswa", avg: 100.0, max: 100, min: 100 },
+          { label: "Post-Test P2 — Kelas X-2", part: "34 Siswa", avg: 94.4, max: 100, min: 80 },
+          { label: "Post-Test P2 — Kelas X-3", part: "21 Siswa", avg: 98.1, max: 100, min: 90 },
+          { label: "Post-Test P2 — Kelas X-4", part: "26 Siswa", avg: 95.0, max: 100, min: 80 },
+          { label: "Post-Test P2 — Kelas X-5", part: "30 Siswa", avg: 94.0, max: 100, min: 80 },
+          { label: "Post-Test P2 — Kelas X-6", part: "25 Siswa", avg: 95.6, max: 100, min: 80 },
+          { label: "Pre-Test P2 — Kelas X-1", part: "29 Siswa", avg: 99.3, max: 100, min: 80 }
+        ]
+      };
+
+      function filterAnalytics(type, btn) {
+        document.querySelectorAll("#section-analitik .tab-pill-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const list = dataAnalytics[type];
+        const container = document.getElementById("analyticsTableBox");
+        const rows = list
+          .map(
+            (item) => `
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); flex-wrap: wrap; gap: 12px;">
+              <div style="flex: 1; min-width: 240px;">
+                <strong style="color: #fff; font-size: 0.95rem; display: block; margin-bottom: 4px;">${item.label}</strong>
+                <span style="font-size: 0.78rem; color: #94a3b8; font-family: var(--font-mono);">
+                  Partisipasi: <span style="color: #38bdf8; font-weight: 600;">${item.part}</span> | Nilai Tertinggi: ${item.max} | Terendah: ${item.min}
+                </span>
+              </div>
+              <div style="min-width: 180px; text-align: right;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-bottom: 4px;">
+                  <span>Rerata Nilai</span>
+                  <span style="font-family: var(--font-mono); font-weight: 700; color: #34d399;">${item.avg} / 100</span>
+                </div>
+                <div style="width: 100%; height: 7px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                  <div style="width: ${item.avg}%; height: 100%; background: linear-gradient(90deg, #06b6d4, #10b981); border-radius: 4px;"></div>
+                </div>
+              </div>
+            </div>
+          `
+          )
+          .join("");
+
+        container.innerHTML = `
+          <div style="animation: fadeIn 0.3s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+              <span style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; font-family: var(--font-mono);">
+                ${type === "p1" ? "REKAPITULASI AKTIVITAS PERTEMUAN 1" : "REKAPITULASI POST-TEST PERTEMUAN 2 LINTAS KELAS"}
+              </span>
+              <span style="font-size: 0.75rem; color: #34d399; font-family: var(--font-mono);">● Live Spreadsheet Sync</span>
+            </div>
+            ${rows}
+          </div>
+        `;
+      }
+
+      // 4. SCROLL REVEAL ANIMATION
+      function reveal() {
+        const reveals = document.querySelectorAll(".reveal, .fade-in-up");
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 70;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+
+      // Inisialisasi awal saat halaman dibuka
+      switchPilar(0, document.querySelector("#pilarTabNav .tab-pill-btn"));
+      filterAnalytics("p1", document.getElementById("btnFilterP1"));
+      reveal();
+    </script>
+  </body>
+</html>
+

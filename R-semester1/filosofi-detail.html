@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refleksi Filosofi Pendidikan &amp; Pendidikan Nilai | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/tech-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+
+    <style>
+      /* Styling khusus halaman detail Semester 1 */
+      .detail-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 2.5rem 0 6rem;
+      }
+      .detail-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 100px;
+      }
+      .detail-header h1 {
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin: 1rem 0 0.8rem;
+      }
+      .detail-header p {
+        max-width: 840px;
+        margin: 0 auto;
+        color: var(--text-light, #94a3b8);
+        line-height: 1.75;
+        font-size: 1.05rem;
+        text-align: center;
+      }
+
+      .content-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      }
+      .content-card h2 {
+        font-size: 1.45rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        border-bottom: 2px solid rgba(29, 78, 216, 0.1);
+        padding-bottom: 0.8rem;
+      }
+      .content-card h2 i {
+        color: var(--secondary);
+      }
+      .content-card p,
+      .content-card li {
+        color: var(--text-light, #cbd5e1);
+        line-height: 1.85;
+        margin-bottom: 1rem;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .content-card ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .content-card li {
+        margin-bottom: 0.75rem;
+      }
+
+      /* Highlight Kata Kunci Penting */
+      .hl-concept {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .hl-action {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .hl-context {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+
+      /* Sub-kotak Refleksi 4C & Analisis */
+      .refleksi-subbox {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(56, 189, 248, 0.15);
+        border-radius: 16px;
+        padding: 1.8rem;
+        margin-bottom: 1.6rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+      }
+      .refleksi-subbox:hover {
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+      .refleksi-subbox h3 {
+        color: #f8fafc;
+        font-size: 1.15rem;
+        margin-bottom: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+      .badge-4c {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .badge-conn {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .badge-chal {
+        background: rgba(248, 113, 113, 0.15);
+        color: #f87171;
+        border: 1px solid rgba(248, 113, 113, 0.3);
+      }
+      .badge-conc {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+      .badge-chan {
+        background: rgba(52, 211, 153, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+      .badge-art {
+        background: rgba(168, 85, 247, 0.15);
+        color: #c084fc;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+      }
+
+      /* Tab Navigasi Dokumen */
+      .doc-tabs {
+        display: flex;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--primary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+        padding: 0.8rem 1.4rem;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: inherit;
+        font-size: 0.95rem;
+      }
+      .tab-btn:hover {
+        background: rgba(29, 78, 216, 0.15);
+        color: var(--secondary);
+      }
+      .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+      }
+      .tab-btn.active i {
+        color: var(--accent);
+      }
+
+      /* Pane Konten Tab */
+      .tab-pane {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      .tab-pane.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .artefak-box {
+        background: rgba(29, 78, 216, 0.03);
+        border-left: 4px solid var(--secondary);
+        padding: 1.8rem;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 1.8rem;
+        border: 1px solid rgba(29, 78, 216, 0.08);
+        border-left-width: 4px;
+      }
+      .artefak-box h3 {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin-bottom: 0.6rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .artefak-box h3 i {
+        color: var(--accent);
+      }
+
+      /* PDF Viewer & Action Buttons */
+      .pdf-preview-container {
+        margin-top: 1.2rem;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .pdf-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .btn-pdf:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+      .btn-pdf.secondary {
+        background: rgba(29, 78, 216, 0.1);
+        color: var(--secondary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+      }
+      .btn-pdf.secondary:hover {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .conclusion-highlight {
+        background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(217, 119, 6, 0.05));
+        border: 1px solid rgba(29, 78, 216, 0.15);
+        border-radius: 16px;
+        padding: 2.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-1"></div>
+      <div class="mesh-blob blob-2"></div>
+      <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="../logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="../index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Refleksi</div>
+              <a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="../dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container detail-container">
+        <!-- HEADER DETAIL -->
+        <div class="detail-header">
+          <div class="badge-tech"><i class="fa-solid fa-seedling"></i> Semester 1 · Mata Kuliah 01</div>
+          <h1>Filosofi Pendidikan dan <span class="text-gradient">Pendidikan Nilai</span></h1>
+          <p>
+            Membangun fondasi pendidik profesional melalui pemikiran menuntun <span class="hl-concept">Ki Hadjar Dewantara</span>, telaah pendidikan kontekstual &amp; emansipatoris <span class="hl-context">Sokola Rimba</span>, serta penegakan integritas kode etik guru tanpa kompromi pada <span class="hl-action">Kasus Pak Dudung</span>.
+          </p>
+        </div>
+
+        <!-- 1. ARTEFAK PEMBELAJARAN & DOKUMEN PDF (DENGAN 3 TAB PILIHAN) -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-file-lines"></i> 1. Dokumen Autentik, Lembar Refleksi &amp; Artefak</h2>
+          <p>
+            Pilihlah tab di bawah ini untuk melihat pratinjau dokumen lembar refleksi resmi atau artefak modul diskusi pemecahan masalah yang telah diunggah dan dianalisis:
+          </p>
+
+          <!-- Tombol Navigasi Tab -->
+          <div class="doc-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-refleksi')">
+              <i class="fa-solid fa-file-pdf"></i> Lembar Refleksi (LK 2)
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-artefak1')">
+              <i class="fa-solid fa-people-roof"></i> Artefak 1 (2.C.a Sokola Rimba)
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-artefak2')">
+              <i class="fa-solid fa-scale-balanced"></i> Artefak 2 (4.C Kasus Pak Dudung)
+            </button>
+          </div>
+
+          <!-- Tab 1: Lembar Refleksi -->
+          <div id="tab-refleksi" class="tab-pane active">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Lembar Refleksi Pengalaman Belajar (LK 2)</h3>
+              <p>
+                Dokumen resmi <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> yang membedah transformasi mendalam pemikiran calon guru menggunakan kerangka kerja <span class="hl-concept">4C (Connection, Challenge, Concept, Change)</span>. Dokumen ini mengkaji peran guru sebagai pamong yang menuntun kodrat anak, menggeser fokus dari orientasi nilai semata menuju proses tumbuh kembang, serta menegakkan integritas moral guru di hadapan peserta didik dan masyarakat.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Dokumen Refleksi (Refleksi_Filosofi.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/Refleksi_Filosofi.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Lembar Refleksi Filosofi"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/Refleksi_Filosofi.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/Refleksi_Filosofi.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Artefak 1 (Sokola Rimba) -->
+          <div id="tab-artefak1" class="tab-pane">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Artefak 1: Analisis Diskusi Kasus Sokola Rimba (2.C.a)</h3>
+              <p>
+                Dokumen produk diskusi kelompok yang mengkaji secara kritis model pendidikan kontekstual bagi komunitas adat Suku Anak Dalam (Orang Rimba). Artefak ini mengeksplorasi bagaimana pendidikan literasi fungsional dapat menjadi sarana emansipasi dan proteksi hak adat tanpa mencerabut identitas budaya dan kearifan lokal peserta didik.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Artefak Sokola Rimba (2.C.a.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/2.C.a.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Analisis Sokola Rimba"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/2.C.a.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/2.C.a.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Artefak 2 (Kasus Pak Dudung) -->
+          <div id="tab-artefak2" class="tab-pane">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Artefak 2: Analisis Kode Etik Guru &amp; Gratifikasi (4.C)</h3>
+              <p>
+                Dokumen telaah mendalam terhadap dilema etika profesi pendidik melalui studi kasus figur <em>Pak Dudung</em>. Artefak ini mengkaji bahaya laten penerimaan bingkisan bernilai tinggi dari orang tua murid terhadap objektivitas asesmen, pencegahan konflik kepentingan, serta penegakan marwah profesionalisme guru.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Artefak Kasus Pak Dudung (4.C.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/4.C.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Analisis Kasus Pak Dudung"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/4.C.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/4.C.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. REFLEKSI PENGALAMAN BELAJAR BERDASARKAN LK 2 & ARTEFAK -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-arrows-rotate"></i> 2. Refleksi Pengalaman Belajar &amp; Analisis Artefak (Model 4C)</h2>
+          <p>
+            Berdasarkan dokumen autentik <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> serta artefak pendukung (<span class="hl-context">Artefak 2.C.a</span> dan <span class="hl-context">Artefak 4.C</span>), berikut adalah analisis refleksi komprehensif menggunakan kerangka kerja <span class="hl-concept">4C (Connection, Challenge, Concept, Change)</span>:
+          </p>
+
+          <!-- A. CONNECTION -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conn">Connection</span> Relevansi Pemikiran Ki Hadjar Dewantara &amp; Tanggung Jawab Moral Pendidik</h3>
+            <p>
+              Materi perkuliahan ini memberikan pencerahan filosofis paling mendasar bagi eksistensi saya sebagai calon guru profesional. Melalui ajaran <span class="hl-concept">Ki Hadjar Dewantara (KHD)</span>, saya menyadari hakikat sejati pendidik bukanlah instruktur yang mendominasi atau mencetak anak layaknya kertas kosong (menolak teori <em>tabula rasa</em>), melainkan seorang <span class="hl-action">pamong</span> yang bertugas <em>"menuntun"</em> segala kekuatan kodrat yang ada pada anak agar mereka mencapai keselamatan dan kebahagiaan setinggi-tingginya, baik sebagai manusia maupun anggota masyarakat.
+            </p>
+            <p>
+              Telaah studi kasus <span class="hl-context">Sokola Rimba</span> memperteguh keyakinan saya bahwa pembelajaran harus berakar pada realitas hidup dan kearifan lokal peserta didik. Pendidikan harus difungsikan sebagai alat emansipasi dan pembebasan, bukan alat penyeragaman budaya. Lebih jauh, kajian kritis atas kasus etika pendidik (<span class="hl-context">Kasus Pak Dudung</span>) membukakan kesadaran bahwa guru memikul apa yang disebut sebagai <span class="hl-concept">"tanggung jawab pengaruh" (responsibility of influence)</span>—suatu pengaruh moral yang meninggalkan jejak permanen pada karakter murid. Oleh karena itu, integritas, keadilan perlakuan, dan keteladanan (<span class="hl-action">modeling</span>) merupakan fondasi profesi yang tidak dapat ditawar.
+            </p>
+          </div>
+
+          <!-- B. CHALLENGE -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chal">Challenge</span> Dekonstruksi Paradigma Lama Menuju Pendidikan Sejati</h3>
+            <p>
+              Perkuliahan ini secara tajam menantang dan membongkar miskonsepsi pembelajaran konvensional yang sebelumnya sempat tertanam dalam benak saya:
+            </p>
+            <ul>
+              <li>
+                <strong>Orientasi Hasil vs. Tuntunan Proses:</strong> Dari pandangan lama yang semata mengejar ketuntasan nilai angka di atas kertas raport (*Assessment of Learning* kaku) menuju penghormatan penuh terhadap proses unik tumbuh kembang setiap anak sesuai ritmenya masing-masing.
+              </li>
+              <li>
+                <strong>Transfer Ilmu vs. Alih Nilai &amp; Keteladanan:</strong> Mengubah pemahaman bahwa mengajar bukan sekadar mentransfer pengetahuan kognitif abstrak di ruang kelas, melainkan menghidupkan budi pekerti luhur melalui perilaku nyata pendidik sepanjang waktu (<span class="hl-concept">Ing Ngarsa Sung Tuladha</span>).
+              </li>
+              <li>
+                <strong>Kekakuan Kurikulum vs. Relevansi Kontekstual:</strong> Mengikis kecenderungan menerapkan kurikulum secara mekanis dan seragam, beralih pada perancangan pembelajaran yang responsif terhadap tantangan sosial budaya dan lingkungan kejuruan murid.
+              </li>
+              <li>
+                <strong>Kompromi Norma vs. Keteguhan Kode Etik:</strong> Menolak normalisasi pemberian bingkisan atau hadiah dari wali murid yang kerap disalahartikan sebagai tanda terima kasih, namun secara nyata berpotensi menciptakan konflik kepentingan dan mencederai objektivitas penilaian guru.
+              </li>
+            </ul>
+          </div>
+
+          <!-- C. CONCEPT -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conc">Concept</span> Konsep-Konsep Utama Filosofi &amp; Pendidikan Nilai</h3>
+            <p>
+              Pengalaman perkuliahan ini mengkristalisasi pemahaman teoritis pada empat pilar konsep utama:
+            </p>
+            <ul>
+              <li>
+                <span class="hl-concept">Trilogi Kepemimpinan Pendidikan KHD:</span> Asas fundamental kepanduan: <em>Ing Ngarsa Sung Tuladha</em> (di depan memberi teladan konsisten), <em>Ing Madya Mangun Karsa</em> (di tengah membangun karsa dan semangat belajar), serta <em>Tut Wuri Handayani</em> (di belakang memberi dorongan kemandirian).
+              </li>
+              <li>
+                <span class="hl-concept">Kodrat Alam &amp; Kodrat Zaman:</span> Memahami bahwa pendidikan anak harus diselaraskan dengan potensi alamiah lingkungan geografis dan sosiokulturalnya (<span class="hl-context">kodrat alam</span>), sekaligus membekali mereka kecakapan berpikir kritis dan literasi teknologi abad ke-21 (<span class="hl-context">kodrat zaman</span>).
+              </li>
+              <li>
+                <span class="hl-concept">Pendidikan Kontekstual Emansipatoris (Sokola Rimba):</span> Menempatkan guru sebagai fasilitator yang menjembatani pengetahuan fungsional dengan kebutuhan riil komunitas agar pendidikan berdaya guna secara kontekstual bagi perlindungan hak murid.
+              </li>
+              <li>
+                <span class="hl-concept">Integritas &amp; Kode Etik Profesi Guru:</span> Penegakan prinsip keadilan distributif dan komutatif, objektivitas asesmen, serta pencegahan gratifikasi demi menjaga kehormatan dan martabat luhur profesi guru.
+              </li>
+            </ul>
+          </div>
+
+          <!-- D. CHANGE -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chan">Change</span> Rencana Transformasi Nyata dalam Praktik Keguruan</h3>
+            <p>
+              Berdasarkan internalisasi nilai-nilai filosofis tersebut, empat perubahan konkret saya canangkan dalam praktik mengajar sehari-hari:
+            </p>
+            <ul>
+              <li>
+                <strong>Mewujudkan Kelas Berbasis Asah, Asih, Asuh:</strong> Menciptakan atmosfer ruang belajar yang humanis, bebas dari intimidasi atau hukuman fisik, dan senantiasa menghargai martabat serta potensi unik setiap murid.
+              </li>
+              <li>
+                <strong>Kontekstualisasi Pembelajaran Informatika:</strong> Mengaitkan konsep-konsep komputasi dan teknologi informasi dengan kearifan lokal, etika digital, dan kebutuhan industri kejuruan siswa di lapangan.
+              </li>
+              <li>
+                <strong>Penegakan Integritas &amp; Tolak Gratifikasi:</strong> Secara tegas dan santun menolak pemberian bingkisan pribadi dari orang tua siswa yang berkaitan dengan momen kenaikan kelas atau kelulusan guna menjamin keadilan evaluasi bagi seluruh peserta didik tanpa memandang latar belakang ekonomi.
+              </li>
+              <li>
+                <strong>Konsistensi Keteladanan Budi Pekerti:</strong> Berkomitmen untuk senantiasa menyelaraskan perkataan dengan perbuatan, disiplin waktu, bersikap adil, dan memancarkan empati sebagai wujud nyata pengajaran nilai.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sub-Box 5: Analisis Artefak -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-art">Analisis Kritis Artefak</span> Evaluasi Mendalam Artefak 2.C.a dan Artefak 4.C</h3>
+            <p>
+              Dua artefak pembelajaran resmi dipilih sebagai bukti dukung otentik ketercapaian kompetensi filosofis dan etika keguruan:
+            </p>
+            <ul>
+              <li>
+                <strong>Artefak 2.C.a (Diskusi Pemecahan Masalah Kasus Sokola Rimba):</strong> Dokumen ini membuktikan kemampuan analisis kritis dalam membedah esensi pendidikan yang berakar pada kearifan lokal. Analisis terhadap kiprah Butet Manurung di Suku Anak Dalam menunjukkan bagaimana metode baca-tulis fungsional dirancang sesuai ritme hidup masyarakat adat tanpa mencederai adat istiadat mereka. Artefak ini membuktikan kepahaman saya bahwa kurikulum tidak boleh dipaksakan seragam, melainkan harus dikontekstualisasikan agar menjadi alat pemberdayaan.
+              </li>
+              <li>
+                <strong>Artefak 4.C (Analisis Pelanggaran Kode Etik Guru - Kasus Pak Dudung):</strong> Dokumen ini menjadi bukti penguasaan etika profesi pendidik. Analisis kelompok secara tajam membongkar celah bahaya di balik tindakan Pak Dudung yang menerima hadiah mahal dari orang tua murid. Meskipun Pak Dudung dikenal sebagai guru favorit, penerimaan tersebut berpotensi melahirkan *bias subliminal*, diskriminasi terhadap siswa kurang mampu, dan pelanggaran kode etik guru. Artefak ini membuktikan ketegasan sikap calon guru dalam menjaga batas profesional dan menolak segala bentuk gratifikasi.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. KESIMPULAN & AKSI NYATA KOMPREHENSIF -->
+        <section class="content-card conclusion-highlight">
+          <h2><i class="fa-solid fa-bullseye"></i> 3. Kesimpulan &amp; Rencana Aksi Nyata Komprehensif</h2>
+          <p>
+            Pemahaman filosofi Ki Hadjar Dewantara dan etika profesi mengukuhkan ikrar saya untuk menjadi pendidik yang berakar pada kearifan dan berwawasan masa depan. Empat komitmen aksi nyata yang akan terus saya implementasikan adalah:
+          </p>
+          <ul>
+            <li>
+              <strong>Penerapan Sistem Among dalam Manajemen Kelas:</strong> Menempatkan diri sebagai pamong yang menuntun kodrat unik murid melalui bimbingan yang penuh kasih sayang, kesabaran, dan penghormatan martabat anak.
+            </li>
+            <li>
+              <strong>Penyelarasan Pembelajaran dengan Kodrat Alam &amp; Zaman:</strong> Menghadirkan modul ajar informatika yang kontekstual dengan kultur lokal kejuruan sekaligus melatih literasi digital kritis dan kecakapan komputasi modern.
+            </li>
+            <li>
+              <strong>Penegakan Kode Etik &amp; Budaya Anti-Gratifikasi:</strong> Mengomunikasikan kebijakan penolakan bingkisan pribadi kepada komite dan orang tua secara persuasif sejak awal tahun ajaran demi menjamin perlakuan yang adil dan objektif bagi setiap murid.
+            </li>
+            <li>
+              <strong>Pembudayaan Ekosistem Reflektif Berkelanjutan:</strong> Merutinkan refleksi diri mingguan bersama rekan sejawat di sekolah guna mengevaluasi keteladanan budi pekerti serta keselarasan antara filosofi mengajar dengan praktik pengajaran nyata.
+            </li>
+          </ul>
+        </section>
+
+        <!-- TOMBOL KEMBALI -->
+        <div style="text-align: center; margin-top: 2rem;">
+          <a
+            href="../refleksi-semester1.html"
+            class="btn-glow"
+            style="display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Daftar Mata Kuliah Semester 1
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.
+          </p>
+        </div>
+
+        <!-- SEMESTER 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <!-- SEMESTER 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAK & LOKASI -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0;"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT TAB INTERAKTIF -->
+    <script>
+      function openTab(evt, tabId) {
+        var i, tabpane, tabbtn;
+        tabpane = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < tabpane.length; i++) {
+          tabpane[i].classList.remove("active");
+        }
+        tabbtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbtn.length; i++) {
+          tabbtn[i].classList.remove("active");
+        }
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+
+      // NAVBAR SCROLL & DROPDOWN
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      if (hamburger) {
+        hamburger.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+          hamburger.classList.toggle("active");
+        });
+      }
+
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

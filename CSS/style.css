@@ -1,10 +1,10 @@
 /* ROOT VARIABLES - Feminine, Sporty, Professional (UNS Vibe) */
 :root {
   --primary: #0f172a;     /* Slate Navy - Lebih gelap & tegas */
-  --secondary: #06b6d4;   /* Cyan - Modern, teknologi, segar */
-  --accent: #10b981;      /* Emerald Green - Kesegaran, profesional */
+  --secondary: #1d4ed8;   /* Cyan - Modern, teknologi, segar */
+  --accent: #d97706;      /* Emerald Green - Kesegaran, profesional */
   --text-main: #1e293b;   /* Slate - Gelap tapi lembut */
-  --text-light: #64748b;  /* Slate Gray - Netral */
+  --text-light: #475569;  /* Slate Gray - Netral */
   --bg-color: transparent;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.85);
@@ -1072,5 +1072,226 @@ body {
 @media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+}
+/* ========================================================
+   GAYA KHUSUS HALAMAN REFLEKSI MATA KULIAH
+   ======================================================== */
+
+/* --- HEADER HALAMAN MATA KULIAH --- */
+.page-header {
+  padding: 140px 0 60px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- GRID & KARTU MATA KULIAH (Modern & Maskulin) --- */
+.courses-section {
+  padding: 3rem 0 6rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--glass-shadow);
+  border-color: var(--secondary); /* Warna Royal Blue saat di-hover */
+}
+
+/* Nomor Transparan di Belakang Kartu */
+.course-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 5rem;
+  font-weight: 800;
+  color: rgba(29, 78, 216, 0.04); /* Biru sangat transparan */
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.course-card:hover .course-number {
+  color: rgba(29, 78, 216, 0.08);
+  transform: scale(1.05);
+}
+
+/* Ikon Mata Kuliah */
+.course-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(29, 78, 216, 0.1);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.course-card:hover .course-icon-box {
+  background: var(--secondary);
+  color: white;
+  transform: rotate(-5deg);
+}
+
+.course-content h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.course-content p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Tautan "Lihat Artefak" */
+.course-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.course-link i {
+  transition: var(--transition);
+}
+
+.course-link:hover {
+  color: var(--accent); /* Warna Amber saat di-hover */
+}
+
+.course-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Teks Gradasi untuk Judul (Opsional, gunakan jika belum ada) */
+.text-gradient {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* ==========================================================================
+   PATCH v2.1 — Navbar Semester-based + Wide Dropdown
+   ========================================================================== */
+
+/* Dropdown wide (untuk Semester 1 & Semester 2) */
+.dropdown-content.dropdown-wide {
+  min-width: 280px !important;
+  max-width: 320px !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+}
+
+/* Section label di dalam dropdown */
+.dropdown-label {
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--green) !important;
+  padding: 10px 12px 6px !important;
+  opacity: 0.85;
+  user-select: none;
+}
+
+/* Divider antar section */
+.dropdown-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 8px;
+  opacity: 0.8;
+}
+
+/* Link di dalam dropdown wide */
+.dropdown-content.dropdown-wide a {
+  padding: 8px 12px !important;
+  font-size: 12.5px !important;
+  gap: 9px !important;
+  border-radius: 5px !important;
+  line-height: 1.35 !important;
+}
+
+/* Ikon di dalam dropdown */
+.dropdown-content.dropdown-wide a i {
+  width: 16px !important;
+  min-width: 16px !important;
+  font-size: 12px !important;
+  text-align: center;
+  color: var(--blue) !important;
+}
+
+.dropdown-content.dropdown-wide a:hover {
+  padding-left: 14px !important;
+}
+
+.dropdown-content.dropdown-wide a:hover i {
+  color: var(--green) !important;
+}
+
+/* Mobile: dropdown wide tetap full width */
+@media (max-width: 900px) {
+  .dropdown-content.dropdown-wide {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+  }
+  
+  .dropdown-label {
+    padding: 8px 12px 4px !important;
+    font-size: 9px !important;
+  }
+  
+  .dropdown-divider {
+    margin: 4px 0 !important;
+  }
+  
+  .dropdown-content.dropdown-wide a {
+    padding: 8px 12px !important;
+    font-size: 12.5px !important;
   }
 }

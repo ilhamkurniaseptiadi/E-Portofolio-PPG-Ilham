@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refleksi Pola Pikir Bertumbuh (Growth Mindset) | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/tech-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+
+    <style>
+      /* Styling khusus halaman detail Semester 1 */
+      .detail-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 2.5rem 0 6rem;
+      }
+      .detail-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 100px;
+      }
+      .detail-header h1 {
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin: 1rem 0 0.8rem;
+      }
+      .detail-header p {
+        max-width: 840px;
+        margin: 0 auto;
+        color: var(--text-light, #94a3b8);
+        line-height: 1.75;
+        font-size: 1.05rem;
+        text-align: center;
+      }
+
+      .content-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      }
+      .content-card h2 {
+        font-size: 1.45rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        border-bottom: 2px solid rgba(29, 78, 216, 0.1);
+        padding-bottom: 0.8rem;
+      }
+      .content-card h2 i {
+        color: var(--secondary);
+      }
+      .content-card p,
+      .content-card li {
+        color: var(--text-light, #cbd5e1);
+        line-height: 1.85;
+        margin-bottom: 1rem;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .content-card ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .content-card li {
+        margin-bottom: 0.75rem;
+      }
+
+      /* Highlight Kata Kunci Penting */
+      .hl-concept {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .hl-action {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .hl-context {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+
+      /* Sub-kotak Refleksi 4C & Analisis */
+      .refleksi-subbox {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(56, 189, 248, 0.15);
+        border-radius: 16px;
+        padding: 1.8rem;
+        margin-bottom: 1.6rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+      }
+      .refleksi-subbox:hover {
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+      .refleksi-subbox h3 {
+        color: #f8fafc;
+        font-size: 1.15rem;
+        margin-bottom: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+      .badge-4c {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .badge-conn {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .badge-chal {
+        background: rgba(248, 113, 113, 0.15);
+        color: #f87171;
+        border: 1px solid rgba(248, 113, 113, 0.3);
+      }
+      .badge-conc {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+      .badge-chan {
+        background: rgba(52, 211, 153, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+      .badge-art {
+        background: rgba(168, 85, 247, 0.15);
+        color: #c084fc;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+      }
+
+      /* Tab Navigasi Dokumen */
+      .doc-tabs {
+        display: flex;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--primary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+        padding: 0.8rem 1.4rem;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: inherit;
+        font-size: 0.95rem;
+      }
+      .tab-btn:hover {
+        background: rgba(29, 78, 216, 0.15);
+        color: var(--secondary);
+      }
+      .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+      }
+      .tab-btn.active i {
+        color: var(--accent);
+      }
+
+      /* Pane Konten Tab */
+      .tab-pane {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      .tab-pane.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .artefak-box {
+        background: rgba(29, 78, 216, 0.03);
+        border-left: 4px solid var(--secondary);
+        padding: 1.8rem;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 1.8rem;
+        border: 1px solid rgba(29, 78, 216, 0.08);
+        border-left-width: 4px;
+      }
+      .artefak-box h3 {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin-bottom: 0.6rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .artefak-box h3 i {
+        color: var(--accent);
+      }
+
+      /* PDF Viewer & Action Buttons */
+      .pdf-preview-container {
+        margin-top: 1.2rem;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .pdf-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .btn-pdf:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+      .btn-pdf.secondary {
+        background: rgba(29, 78, 216, 0.1);
+        color: var(--secondary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+      }
+      .btn-pdf.secondary:hover {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .conclusion-highlight {
+        background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(217, 119, 6, 0.05));
+        border: 1px solid rgba(29, 78, 216, 0.15);
+        border-radius: 16px;
+        padding: 2.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-1"></div>
+      <div class="mesh-blob blob-2"></div>
+      <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="../logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="../index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Refleksi</div>
+              <a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="../dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container detail-container">
+        <!-- HEADER DETAIL -->
+        <div class="detail-header">
+          <div class="badge-tech"><i class="fa-solid fa-brain"></i> Semester 1 · Mata Kuliah 02</div>
+          <h1>Pola Pikir Bertumbuh <span class="text-gradient">(Growth Mindset)</span></h1>
+          <p>
+            Membangun optimisme pedagogis berbasis sains <span class="hl-concept">neuroplastisitas otak</span>, mendekonstruksi bias *fixed mindset*, dan merefleksikan error/bug pemrograman sebagai batu loncatan menuju resiliensi komputasional siswa di era kejuruan modern.
+          </p>
+        </div>
+
+        <!-- 1. ARTEFAK PEMBELAJARAN & DOKUMEN PDF (DENGAN 2 TAB PILIHAN) -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-file-lines"></i> 1. Dokumen Autentik, Lembar Refleksi &amp; Artefak</h2>
+          <p>
+            Pilihlah tab di bawah ini untuk melihat pratinjau dokumen lembar refleksi resmi atau artefak modul proyek *growth mindset* yang telah diunggah dan dianalisis:
+          </p>
+
+          <!-- Tombol Navigasi 2 Tab -->
+          <div class="doc-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-refleksi')">
+              <i class="fa-solid fa-file-pdf"></i> Lembar Refleksi (LK 2)
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-artefak')">
+              <i class="fa-solid fa-laptop-code"></i> Artefak LK 4.3 (Error &amp; Debugging)
+            </button>
+          </div>
+
+          <!-- Tab 1: Lembar Refleksi -->
+          <div id="tab-refleksi" class="tab-pane active">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Lembar Refleksi Pola Pikir Bertumbuh (LK 2)</h3>
+              <p>
+                Dokumen resmi <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> yang memuat refleksi filosofis dan neurosains mengenai urgensi *growth mindset* dalam menjawab hasil PISA Indonesia. Dokumen ini menguraikan bagaimana pandangan lama yang mendewakan bakat bawaan (*fixed mindset*) didekonstruksi melalui pemahaman plastisitas jaringan saraf otak (akson, dendrit, sinapsis) serta komitmen menghadirkan budaya belajar yang merayakan proses dan usaha.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Dokumen Refleksi (Refleksi_Growth_Mindset.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/Refleksi_Growth_Mindset.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Lembar Refleksi Growth Mindset"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/Refleksi_Growth_Mindset.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/Refleksi_Growth_Mindset.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Artefak LK 4.3 -->
+          <div id="tab-artefak" class="tab-pane">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Artefak LK 4.3: Perancangan Proyek Penguatan Growth Mindset</h3>
+              <p>
+                Dokumen produk perencanaan pembelajaran berbasis proyek dengan pertanyaan pemantik utama: <span class="hl-concept">"Bagaimana kita bisa melihat setiap error atau 'bug' pada kode program sebagai petunjuk berharga untuk menjadi seorang programmer yang lebih tangguh?"</span>. Modul ini mendesain alur instruksional terstruktur yang melatih ketekunan murid SMK dalam mendiagnosis pesan kegagalan (*debugging*) secara optimis.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Artefak LK 4.3 (LK. 4.3 Growth Mindset.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/LK. 4.3 Growth Mindset.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Artefak LK 4.3 Growth Mindset"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/LK. 4.3 Growth Mindset.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/LK. 4.3 Growth Mindset.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. REFLEKSI PENGALAMAN BELAJAR BERDASARKAN LK 2 & ARTEFAK -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-arrows-rotate"></i> 2. Refleksi Pengalaman Belajar &amp; Analisis Artefak (Model 4C)</h2>
+          <p>
+            Berdasarkan dokumen autentik <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> serta artefak proyek pendukung (<span class="hl-context">Artefak LK 4.3</span>), berikut adalah analisis refleksi komprehensif menggunakan kerangka kerja <span class="hl-concept">4C (Connection, Challenge, Concept, Change)</span>:
+          </p>
+
+          <!-- A. CONNECTION -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conn">Connection</span> Menjawab Krisis Pola Pikir Nasional Melalui Bukti Neurosains</h3>
+            <p>
+              Materi perkuliahan Pola Pikir Bertumbuh (<span class="hl-concept">Growth Mindset</span>) beresonansi kuat dengan urgensi nyata di lapangan pendidikan Indonesia. Laporan PISA 2018 menempatkan Indonesia di peringkat tiga terbawah dari 79 negara dalam Membaca, Matematika, dan Sains. Salah satu akar masalah mendasar yang teridentifikasi secara empiris adalah meluasnya jebakan pola pikir tetap (<span class="hl-context">fixed mindset</span>), di mana lebih dari 60% murid Indonesia meyakini bahwa kecerdasan adalah takdir bawaan lahir yang tidak dapat diubah.
+            </p>
+            <p>
+              Bagi saya sebagai calon guru Informatika, konsep biologi saraf mengenai <span class="hl-concept">neuroplastisitas</span> menghadirkan bukti ilmiah yang tak terbantahkan: otak anak bersifat elastis dan dinamis. Setiap kali murid dihadapkan pada kesulitan berpikir dan memecahkan teka-teki logika komputasi, sinyal elektrik melompat dari akson ke dendrit, membentuk percabangan dan memperkuat jejaring sinapsis baru. Bukti ini meneguhkan optimisme pedagogis saya bahwa <em>tidak ada murid yang bodoh secara permanen</em>; kecakapan analitis dan kemampuan koding murid kejuruan dapat terus bertumbuh melalui metode latihan terarah dan kegigihan (<span class="hl-action">grit</span>).
+            </p>
+          </div>
+
+          <!-- B. CHALLENGE -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chal">Challenge</span> Mendekonstruksi Budaya Takut Salah &amp; Person-Praise</h3>
+            <p>
+              Perkuliahan ini menantang kebiasaan lama dalam praktik pembelajaran di sekolah yang secara tak sadar melanggengkan *fixed mindset*:
+            </p>
+            <ul>
+              <li>
+                <strong>Orientasi Hasil vs. Orientasi Proses:</strong> Budaya evaluasi yang mendewakan skor ujian dan peringkat telah memicu pembelajaran dangkal (*surface learning*), di mana murid belajar sekadar agar terhindar dari nilai jelek, bukan karena dorongan rasa ingin tahu murni.
+              </li>
+              <li>
+                <strong>Jebakan Pujian Pribadi (*Person Praise*):</strong> Memuji murid dengan sebutan <em>"kamu pintar sekali"</em> atau <em>"anak berbakat"</em> justru menjadi racun psikologis yang membuat murid takut mengambil tugas berisiko tinggi demi mempertahankan label pintarnya. Hal ini harus diubah menuju pujian proses (<span class="hl-action">Process Praise</span>) yang mengapresiasi daya tahan, strategi, dan eksplorasi langkah belajar.
+              </li>
+              <li>
+                <strong>Stigma Kesalahan dalam Koding:</strong> Di laboratorium komputer, munculnya pesan galat (*error/syntax bug*) sering dipandang murid sebagai aib atau kegagalan intelegensi. Tantangan terbesarnya adalah mereorientasi persepsi bahwa *error* bukan kegagalan, melainkan guru terbaik yang memandu logika pemrogram.
+              </li>
+            </ul>
+          </div>
+
+          <!-- C. CONCEPT -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conc">Concept</span> Konsep-Konsep Inti Teori Carol Dweck &amp; Neurosains</h3>
+            <p>
+              Pemahaman teoritis mendalam yang diintegrasikan ke dalam filosofi mengajar saya mencakup empat konsep kunci:
+            </p>
+            <ul>
+              <li>
+                <span class="hl-concept">Teori Fixed vs. Growth Mindset (Carol Dweck):</span> Membedakan secara tegas respons mental murid: apakah memandang tantangan sebagai ancaman (*fixed*) atau sebagai wahana peningkatan kapasitas nalar (*growth*).
+              </li>
+              <li>
+                <span class="hl-concept">Kekuatan Kata "Belum" (The Power of "Yet"):</span> Mengubah deklarasi kepasrahan murid—seperti <em>"Saya tidak bisa memahami materi algoritma ini"</em>—menjadi kalimat berdaya: <em>"Saya <strong>belum</strong> memahaminya hari ini, tetapi dengan latihan tambahan saya pasti bisa"</em>.
+              </li>
+              <li>
+                <span class="hl-concept">Umpan Balik Berbasis Usaha &amp; Strategi:</span> Memberikan umpan balik deskriptif spesifik yang membedah keefektifan metode belajar murid, bukan sekadar memberikan pujian superfisial.
+              </li>
+              <li>
+                <span class="hl-concept">Reframing Error &amp; Debugging Komputasional:</span> Memposisikan proses menemukan dan memperbaiki kesalahan kode sebagai latihan pembentukan ketahanan mental (*grit*) dan keterampilan metakognitif tingkat tinggi.
+              </li>
+            </ul>
+          </div>
+
+          <!-- D. CHANGE -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chan">Change</span> Rencana Transformasi Praktik Mengajar di Laboratorium Komputer</h3>
+            <p>
+              Berdasarkan wawasan yang diperoleh, tiga transformasi konkret diimplementasikan di ruang kelas:
+            </p>
+            <ul>
+              <li>
+                <strong>Menciptakan Kelas Ramah Kesalahan (*Error-Friendly Classroom*):</strong> Menegaskan kesepakatan kelas bahwa ruang praktikum adalah tempat aman untuk mencoba dan berbuat salah. Kesalahan dipajang secara terbuka di layar proyektor untuk dipecahkan bersama tanpa stigma celaan.
+              </li>
+              <li>
+                <strong>Membiasakan Jurnal Refleksi Debugging:</strong> Mewajibkan peserta didik mencatat pesan galat yang ditemui, menelusuri penyebabnya, dan mendokumentasikan strategi penyelesaiannya dalam logbook praktikum.
+              </li>
+              <li>
+                <strong>Transisi Menyeluruh ke Process Praise:</strong> Melatih diri sebagai guru untuk secara konsisten memuji ketekunan mencari referensi dokumentasi, ketelitian logika, dan kerjasama tim peserta didik.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sub-Box 5: Analisis Artefak -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-art">Analisis Kritis Artefak</span> Evaluasi Proyek LK 4.3 (Error &amp; Debugging)</h3>
+            <p>
+              Artefak penugasan resmi (<span class="hl-concept">LK. 4.3 Growth Mindset.pdf</span>) dijadikan bukti dukung utama penerapan growth mindset dalam pembelajaran kejuruan:
+            </p>
+            <ul>
+              <li>
+                <strong>Formulasi Pertanyaan Pemantik Mendasar:</strong> Melalui rumusan <em>"Bagaimana kita bisa melihat setiap error atau 'bug' pada kode program sebagai petunjuk berharga untuk menjadi seorang programmer yang lebih tangguh?"</em>, artefak ini berhasil menyinergikan kompetensi teknis pemrograman dengan penguatan karakter resiliensi.
+              </li>
+              <li>
+                <strong>Skenario Desain Pembelajaran Berbasis Proyek:</strong> Artefak merancang tahapan instruksional utuh: mulai dari apersepsi neurosains, pemberian studi kasus kode berkutu (*buggy code*), simulasi bedah eror secara kolaboratif, hingga rubrik evaluasi yang memberi bobot tinggi pada persistensi dan penalaran reflektif murid alih-alih hanya kesempurnaan sintaks awal.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. KESIMPULAN & AKSI NYATA KOMPREHENSIF -->
+        <section class="content-card conclusion-highlight">
+          <h2><i class="fa-solid fa-bullseye"></i> 3. Kesimpulan &amp; Rencana Aksi Nyata Komprehensif</h2>
+          <p>
+            Penanaman pola pikir bertumbuh menjadi pilar utama dalam mencetak lulusan SMK yang adaptif, bermental baja, dan siap bersaing di dunia industri yang terus berubah. Empat komitmen aksi nyata yang diimplementasikan adalah:
+          </p>
+          <ul>
+            <li>
+              <strong>Edukasi Neurosains Awal Semester:</strong> Menyelenggarakan sesi pengantar visual mengenai cara kerja plastisitas otak di awal pembelajaran agar seluruh murid memiliki keyakinan ilmiah bahwa kapasitas mereka tidak terbatas.
+            </li>
+            <li>
+              <strong>Penerapan Ritual "Perayaan Kesalahan Berharga":</strong> Mengapresiasi murid yang berani mengangkat tangan dan membagikan pesan error komputernya di depan kelas sebagai momentum belajar berharga bersama.
+            </li>
+            <li>
+              <strong>Standardisasi Umpan Balik Berbasis Proses (*Process-Feedback Rubric*):</strong> Menggunakan format komentar tertulis pada penugasan koding yang menyoroti perbaikan logika, keteraturan struktur kode, dan ketekunan uji coba.
+            </li>
+            <li>
+              <strong>Pemberian Ruang Remedi &amp; Revisi Portofolio:</strong> Membuka kesempatan bagi murid untuk memperbaiki kode program dan tugas proyek yang belum tuntas guna menanamkan nilai luhur bahwa ketuntasan sejati lahir dari keberanian memperbaiki kegagalan.
+            </li>
+          </ul>
+        </section>
+
+        <!-- TOMBOL KEMBALI -->
+        <div style="text-align: center; margin-top: 2rem;">
+          <a
+            href="../refleksi-semester1.html"
+            class="btn-glow"
+            style="display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Daftar Mata Kuliah Semester 1
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.
+          </p>
+        </div>
+
+        <!-- SEMESTER 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <!-- SEMESTER 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAK & LOKASI -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0;"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT TAB INTERAKTIF -->
+    <script>
+      function openTab(evt, tabId) {
+        var i, tabpane, tabbtn;
+        tabpane = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < tabpane.length; i++) {
+          tabpane[i].classList.remove("active");
+        }
+        tabbtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbtn.length; i++) {
+          tabbtn[i].classList.remove("active");
+        }
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+
+      // NAVBAR SCROLL & DROPDOWN
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      if (hamburger) {
+        hamburger.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+          hamburger.classList.toggle("active");
+        });
+      }
+
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

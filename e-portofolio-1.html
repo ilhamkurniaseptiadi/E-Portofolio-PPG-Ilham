@@ -1,0 +1,578 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Portofolio 1 - Semester 2 | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/tech-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-pink"></div>
+      <div class="mesh-blob blob-navy"></div>
+      <div class="mesh-blob blob-coral"></div>
+    </div>
+
+    <header class="navbar scrolled" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="e-portofolio-1.html" class="active-dropdown"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">Refleksi</div>
+              <a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="ep-main">
+      <!-- HERO -->
+      <section class="ep-hero">
+        <div class="container text-center">
+          <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
+            <i class="fa-solid fa-folder-open"></i> Semester 2 · Dokumentasi Praktik
+          </div>
+          <h1 class="fade-in-up" style="animation-delay: 0.2s">
+            E-Portofolio 1 <span class="text-gradient">Semester 2</span>
+          </h1>
+          <p class="ep-hero-desc fade-in-up" style="animation-delay: 0.3s">
+            Rangkaian dokumentasi Praktik Pengalaman Lapangan (PPL) Siklus 1 — RPP, video praktik mengajar, analisis mendalam, hingga instrumen penilaian.
+          </p>
+        </div>
+      </section>
+
+      <!-- LAYOUT: TOC + CONTENT -->
+      <div class="ep-layout">
+        <!-- TOC SIDEBAR -->
+        <aside class="ep-toc">
+          <div class="ep-toc-sticky">
+            <div class="ep-toc-title">
+              <i class="fa-solid fa-list-ul"></i> Daftar Isi
+            </div>
+            <nav class="ep-toc-nav">
+              <a href="#section-01" class="ep-toc-link active" data-section="section-01">
+                <span class="toc-num">01</span> RPP Siklus 1
+              </a>
+              <a href="#section-02" class="ep-toc-link" data-section="section-02">
+                <span class="toc-num">02</span> Video Praktik
+              </a>
+              <a href="#section-03" class="ep-toc-link" data-section="section-03">
+                <span class="toc-num">03</span> Analisis RPP
+              </a>
+              <a href="#section-04" class="ep-toc-link" data-section="section-04">
+                <span class="toc-num">04</span> Analisis Media
+              </a>
+              <a href="#section-05" class="ep-toc-link" data-section="section-05">
+                <span class="toc-num">05</span> Analisis Video
+              </a>
+              <a href="#section-06" class="ep-toc-link" data-section="section-06">
+                <span class="toc-num">06</span> Kegiatan Non-Mengajar
+              </a>
+              <a href="#section-07" class="ep-toc-link" data-section="section-07">
+                <span class="toc-num">07</span> Instrumen Penilaian
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="ep-content">
+
+          <!-- SECTION 01: RPP -->
+          <section id="section-01" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">01</span>
+              <h2>RPP Siklus 1</h2>
+              <p>Rencana Pelaksanaan Pembelajaran lengkap dengan tujuan, langkah, dan asesmen.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>RPP_Siklus_1.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB', 'RPP Siklus 1')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="https://drive.google.com/file/d/1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 02: VIDEO -->
+          <section id="section-02" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">02</span>
+              <h2>Video Praktik Pembelajaran Siklus 1</h2>
+              <p>Rekaman praktik mengajar Informatika pada Siklus 1.</p>
+            </div>
+
+            <div class="video-block">
+              <div class="video-block-embed" data-video-src="https://www.youtube.com/embed/dmqRm-f75Tk">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-video"></i>
+                  <span>Video belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 03: ANALISIS RPP -->
+          <section id="section-03" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">03</span>
+              <h2>Analisis RPP</h2>
+              <p>Refleksi dan evaluasi terhadap rancangan pembelajaran yang telah disusun.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Analisis_RPP_Siklus_1.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_3', 'Analisis RPP')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="GANTI_DOWNLOAD_LINK_3" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_3">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 04: ANALISIS MEDIA -->
+          <section id="section-04" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">04</span>
+              <h2>Analisis Media Pembelajaran</h2>
+              <p>Kajian efektivitas media digital dan alat bantu yang digunakan di kelas.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Analisis_Media_Siklus_1.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_4', 'Analisis Media Pembelajaran')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="GANTI_DOWNLOAD_LINK_4" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_4">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 05: ANALISIS VIDEO -->
+          <section id="section-05" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">05</span>
+              <h2>Analisis Video Praktik Pembelajaran</h2>
+              <p>Umpan balik dan refleksi berdasarkan rekaman praktik mengajar.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Analisis_Video_Siklus_1.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_5', 'Analisis Video Praktik')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="GANTI_DOWNLOAD_LINK_5" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_5">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 06: ANALISIS KEGIATAN NON-MENGAJAR -->
+          <section id="section-06" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">06</span>
+              <h2>Analisis Kegiatan Non-Mengajar</h2>
+              <p>Dokumentasi keterlibatan dalam kegiatan di luar jam mengajar.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Analisis_Kegiatan_NonMengajar.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_6', 'Analisis Kegiatan Non-Mengajar')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="GANTI_DOWNLOAD_LINK_6" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_6">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION 07: INSTRUMEN PENILAIAN -->
+          <section id="section-07" class="ep-section">
+            <div class="ep-section-header">
+              <span class="ep-section-num">07</span>
+              <h2>Instrumen Penilaian</h2>
+              <p>Kumpulan instrumen penilaian autentik: kognitif, afektif, dan psikomotorik.</p>
+            </div>
+
+            <div class="pdf-block">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>Instrumen_Penilaian_Siklus_1.pdf</span>
+                </div>
+                <div class="pdf-block-actions">
+                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_7', 'Instrumen Penilaian')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    <span>Full Preview</span>
+                  </button>
+                  <a href="GANTI_DOWNLOAD_LINK_7" target="_blank" rel="noopener" class="btn-pdf-action">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    <span>Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_7">
+                <div class="pdf-placeholder">
+                  <i class="fa-solid fa-file-pdf"></i>
+                  <span>PDF belum tersedia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- PDF MODAL -->
+    <div class="pdf-modal" id="pdfModal">
+      <div class="pdf-modal-backdrop" onclick="closePdfModal()"></div>
+      <div class="pdf-modal-content">
+        <div class="pdf-modal-header">
+          <span class="pdf-modal-title" id="pdfModalTitle">
+            <i class="fa-solid fa-file-pdf"></i> Preview
+          </span>
+          <div class="pdf-modal-actions">
+            <a href="#" target="_blank" class="btn-pdf-action" id="pdfModalOpen">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              <span>Tab Baru</span>
+            </a>
+            <button class="btn-pdf-action close" onclick="closePdfModal()" aria-label="Tutup">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="pdf-modal-body">
+          <iframe id="pdfModalIframe" src="" loading="lazy" title="PDF Preview"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.</p>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+        <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+        <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="150" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+
+      // ===== TOC Active Highlight =====
+      const sections = document.querySelectorAll(".ep-section");
+      const tocLinks = document.querySelectorAll(".ep-toc-link");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach((l) => l.classList.remove("active"));
+              const id = entry.target.id;
+              const activeLink = document.querySelector('.ep-toc-link[data-section="' + id + '"]');
+              if (activeLink) activeLink.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+      );
+
+      sections.forEach((s) => observer.observe(s));
+
+      // ===== Lazy Load PDF Embed =====
+      const pdfWrappers = document.querySelectorAll(".pdf-block-embed[data-pdf-id]");
+      const pdfObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const wrapper = entry.target;
+              const pdfId = wrapper.getAttribute("data-pdf-id");
+              if (pdfId && !pdfId.includes("GANTI")) {
+                wrapper.innerHTML =
+                  '<iframe src="https://drive.google.com/file/d/' +
+                  pdfId +
+                  '/preview" allow="autoplay" loading="lazy" title="PDF Preview"></iframe>';
+              }
+              pdfObserver.unobserve(wrapper);
+            }
+          });
+        },
+        { rootMargin: "300px" }
+      );
+      pdfWrappers.forEach((w) => pdfObserver.observe(w));
+
+      // ===== Lazy Load Video Embed =====
+      const videoWrappers = document.querySelectorAll(".video-block-embed[data-video-src]");
+      const videoObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const wrapper = entry.target;
+              const src = wrapper.getAttribute("data-video-src");
+              if (src && !src.includes("GANTI")) {
+                wrapper.innerHTML =
+                  '<iframe src="' +
+                  src +
+                  '" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
+              }
+              videoObserver.unobserve(wrapper);
+            }
+          });
+        },
+        { rootMargin: "300px" }
+      );
+      videoWrappers.forEach((w) => videoObserver.observe(w));
+
+      // ===== PDF Modal =====
+      function openPdfModal(pdfId, title) {
+        if (!pdfId || pdfId.includes("GANTI")) {
+          alert("File PDF belum tersedia. Silakan isi link Drive terlebih dahulu.");
+          return;
+        }
+        const modal = document.getElementById("pdfModal");
+        const iframe = document.getElementById("pdfModalIframe");
+        const titleEl = document.getElementById("pdfModalTitle");
+        const openBtn = document.getElementById("pdfModalOpen");
+
+        iframe.src = "https://drive.google.com/file/d/" + pdfId + "/preview";
+        titleEl.innerHTML = '<i class="fa-solid fa-file-pdf"></i> ' + title;
+        openBtn.href = "https://drive.google.com/file/d/" + pdfId + "/view";
+
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePdfModal() {
+        const modal = document.getElementById("pdfModal");
+        const iframe = document.getElementById("pdfModalIframe");
+        modal.classList.remove("open");
+        setTimeout(() => {
+          iframe.src = "";
+        }, 200);
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePdfModal();
+      });
+
+      // ===== Scroll Reveal =====
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal, .fade-in-up");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 80;
+          if (elementTop < windowHeight - elementVisible) reveals[i].classList.add("active");
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+    </script>
+  </body>
+</html>

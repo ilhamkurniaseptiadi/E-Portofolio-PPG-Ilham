@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refleksi Proyek Kepemimpinan | E-Portofolio Ilham Kurnia Septiadi</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/tech-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+
+    <style>
+      /* Styling khusus halaman detail Semester 2 */
+      .detail-container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 2.5rem 0 6rem;
+      }
+      .detail-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 100px;
+      }
+      .detail-header h1 {
+        font-size: clamp(2rem, 4vw, 2.7rem);
+        font-weight: 800;
+        color: var(--primary);
+        margin: 1rem 0 0.8rem;
+      }
+      .detail-header p {
+        max-width: 820px;
+        margin: 0 auto;
+        color: var(--text-light, #94a3b8);
+        line-height: 1.75;
+        font-size: 1.05rem;
+        text-align: center;
+      }
+
+      .content-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      }
+      .content-card h2 {
+        font-size: 1.45rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        border-bottom: 2px solid rgba(29, 78, 216, 0.1);
+        padding-bottom: 0.8rem;
+      }
+      .content-card h2 i {
+        color: var(--secondary);
+      }
+      .content-card p,
+      .content-card li {
+        color: var(--text-light, #cbd5e1);
+        line-height: 1.85;
+        margin-bottom: 1rem;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .content-card ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .content-card li {
+        margin-bottom: 0.75rem;
+      }
+
+      /* Highlight Kata Kunci Penting */
+      .hl-concept {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .hl-action {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .hl-context {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+
+      /* Sub-kotak Refleksi 4C & Analisis */
+      .refleksi-subbox {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(56, 189, 248, 0.15);
+        border-radius: 16px;
+        padding: 1.8rem;
+        margin-bottom: 1.6rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+      }
+      .refleksi-subbox:hover {
+        border-color: rgba(56, 189, 248, 0.35);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+      .refleksi-subbox h3 {
+        color: #f8fafc;
+        font-size: 1.15rem;
+        margin-bottom: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+      }
+      .badge-4c {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .badge-conn {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+      .badge-chal {
+        background: rgba(248, 113, 113, 0.15);
+        color: #f87171;
+        border: 1px solid rgba(248, 113, 113, 0.3);
+      }
+      .badge-conc {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+      }
+      .badge-chan {
+        background: rgba(52, 211, 153, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+      .badge-art {
+        background: rgba(168, 85, 247, 0.15);
+        color: #c084fc;
+        border: 1px solid rgba(168, 85, 247, 0.3);
+      }
+
+      /* Tab Navigasi Dokumen */
+      .doc-tabs {
+        display: flex;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--primary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+        padding: 0.8rem 1.4rem;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .tab-btn:hover {
+        background: rgba(29, 78, 216, 0.15);
+        color: var(--secondary);
+      }
+      .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+      }
+      .tab-btn.active i {
+        color: var(--accent);
+      }
+
+      /* Pane Konten Tab */
+      .tab-pane {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+      .tab-pane.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .artefak-box {
+        background: rgba(29, 78, 216, 0.03);
+        border-left: 4px solid var(--secondary);
+        padding: 1.8rem;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 1.8rem;
+        border: 1px solid rgba(29, 78, 216, 0.08);
+        border-left-width: 4px;
+      }
+      .artefak-box h3 {
+        font-size: 1.2rem;
+        color: var(--primary);
+        margin-bottom: 0.6rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .artefak-box h3 i {
+        color: var(--accent);
+      }
+
+      /* PDF Viewer & Action Buttons */
+      .pdf-preview-container {
+        margin-top: 1.2rem;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .pdf-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .btn-pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .btn-pdf:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+      }
+      .btn-pdf.secondary {
+        background: rgba(29, 78, 216, 0.1);
+        color: var(--secondary);
+        border: 1px solid rgba(29, 78, 216, 0.2);
+      }
+      .btn-pdf.secondary:hover {
+        background: var(--secondary);
+        color: white;
+      }
+
+      .conclusion-highlight {
+        background: linear-gradient(135deg, rgba(29, 78, 216, 0.05), rgba(217, 119, 6, 0.05));
+        border: 1px solid rgba(29, 78, 216, 0.15);
+        border-radius: 16px;
+        padding: 2.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-1"></div>
+      <div class="mesh-blob blob-2"></div>
+      <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <div class="nav-left">
+          <img src="../logo.png" alt="Logo Universitas" class="univ-logo-img" />
+          <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+        </div>
+
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+        <nav class="nav-right" id="nav-menu">
+          <a href="../index.html" class="nav-link">Beranda</a>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio 1</div>
+              <a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+              <a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+              <a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+              <a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">E-Portofolio 2</div>
+              <a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+              <a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="nav-link dropbtn active">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+            <div class="dropdown-content dropdown-wide">
+              <div class="dropdown-label">E-Portofolio</div>
+              <a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+              <a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Refleksi</div>
+              <a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+              <a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+
+              <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Inovasi Pembelajaran</div>
+              <a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+            </div>
+          </div>
+
+          <a href="../dokumentasi.html" class="nav-link">Dokumentasi</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container detail-container">
+        <!-- HEADER DETAIL -->
+        <div class="detail-header">
+          <div class="badge-tech"><i class="fa-solid fa-chess-king"></i> Semester 2 · Mata Kuliah 04</div>
+          <h1>Proyek <span class="text-gradient">Kepemimpinan</span></h1>
+          <p>
+            Mewujudkan peran guru sebagai pemimpin pembelajaran (<span class="hl-concept">instructional leader</span>) dan agen perubahan melalui inisiasi proyek nyata pelatihan &amp; diseminasi media interaktif Canva di <span class="hl-context">SMK Negeri 5 Yogyakarta</span> dengan kerangka kerja <span class="hl-concept">TPACK</span>, model <span class="hl-concept">ADDIE</span>, dan kepemimpinan pelayan (<span class="hl-concept">servant leadership</span>).
+          </p>
+        </div>
+
+        <!-- 1. ARTEFAK PEMBELAJARAN & DOKUMEN PDF (DENGAN 3 TAB PILIHAN) -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-file-lines"></i> 1. Dokumen Autentik, Lembar Refleksi &amp; Artefak Proyek</h2>
+          <p>
+            Pilihlah tab di bawah ini untuk melihat pratinjau dokumen lembar refleksi resmi, proposal prakarsa perubahan, atau laporan pertanggungjawaban (LPJ) lengkap dengan verifikasi 17 produk media ajar guru:
+          </p>
+
+          <!-- Tombol Navigasi 3 Tab -->
+          <div class="doc-tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-refleksi')">
+              <i class="fa-solid fa-file-pdf"></i> 1. Lembar Refleksi (LK 2)
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-artefak1')">
+              <i class="fa-solid fa-file-signature"></i> 2. Artefak Proposal Perencanaan
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-artefak2')">
+              <i class="fa-solid fa-clipboard-check"></i> 3. Artefak LPJ &amp; 17 Media Guru
+            </button>
+          </div>
+
+          <!-- Tab 1: Refleksi Proyek -->
+          <div id="tab-refleksi" class="tab-pane active">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Lembar Refleksi Proyek Kepemimpinan (LK 2)</h3>
+              <p>
+                Dokumen resmi <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> yang mendokumentasikan refleksi analitis pengalaman memimpin proyek kepemimpinan menggunakan kerangka kerja <span class="hl-concept">4C (Connection, Challenge, Concept, Change)</span>. Dokumen ini merefleksikan peran saya sebagai <span class="hl-action">Ketua Pelaksana</span> yang mengoordinasikan 8 mahasiswa PPG, membangun kemitraan kelembagaan di <span class="hl-context">SMKN 5 Yogyakarta</span>, memfasilitasi pelatihan luring 8 JP dan mentoring asinkron, hingga mengukur keberhasilan luaran secara akuntabel.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Dokumen Refleksi (Refleksi PK S2.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/Refleksi PK S2.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Lembar Refleksi Proyek Kepemimpinan"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/Refleksi PK S2.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/Refleksi PK S2.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Proposal Proyek -->
+          <div id="tab-artefak1" class="tab-pane">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Artefak Proposal: Perencanaan Prakarsa Perubahan Berbasis Aset</h3>
+              <p>
+                Dokumen proposal komprehensif yang memuat latar belakang berbasis analisis aset sekolah mitra (<span class="hl-concept">Asset-Based Thinking</span>). Dokumen ini merumuskan target SMART, kurikulum silabus pelatihan 4 komponen media (Pretest, Materi, LKPD, Posttest), linimasa pelaksanaan model ADDIE, alokasi anggaran, serta matriks pembagian tanggung jawab 5 divisi kerja kepanitiaan.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau Proposal Proyek (Proposal_PK_S2.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/Proposal_PK_S2.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Proposal Proyek Kepemimpinan"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/Proposal_PK_S2.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/Proposal_PK_S2.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: LPJ Proyek -->
+          <div id="tab-artefak2" class="tab-pane">
+            <div class="artefak-box">
+              <h3><i class="fa-solid fa-file-pdf"></i> Artefak LPJ: Laporan Pertanggungjawaban &amp; Evaluasi Keberdampakan</h3>
+              <p>
+                Laporan pertanggungjawaban lengkap yang merekam eksekusi nyata di laboratorium komputer <span class="hl-context">SMKN 5 Yogyakarta</span>. Dokumen ini menyajikan evaluasi kriteria sukses (<span class="hl-concept">LK 1.12 dan LK 1.13</span>), evaluasi respons kepuasan guru, analisis refleksi manajerial kepemimpinan, strategi pembentukan komunitas praktisi, serta lampiran verifikasi atas <span class="hl-action">17 produk media interaktif</span> karya para guru kejuruan.
+              </p>
+              <div class="pdf-preview-container">
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">
+                  <i class="fa-solid fa-circle-info text-secondary"></i> Pratinjau LPJ Proyek (LPJ_PK_S2.pdf):
+                </p>
+                <iframe
+                  src="../Dokumen/LPJ_PK_S2.pdf"
+                  width="100%"
+                  height="480px"
+                  style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;"
+                  onerror="this.style.display='none';"
+                  title="Pratinjau Laporan Pertanggungjawaban Proyek"
+                ></iframe>
+                <div class="pdf-actions">
+                  <a href="../Dokumen/LPJ_PK_S2.pdf" target="_blank" class="btn-pdf">
+                    <i class="fa-solid fa-eye"></i> Buka Fullscreen
+                  </a>
+                  <a href="../Dokumen/LPJ_PK_S2.pdf" download class="btn-pdf secondary">
+                    <i class="fa-solid fa-download"></i> Unduh PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. REFLEKSI PENGALAMAN BELAJAR & ANALISIS ARTEFAK -->
+        <section class="content-card">
+          <h2><i class="fa-solid fa-arrows-rotate"></i> 2. Refleksi Pengalaman Belajar &amp; Analisis Artefak Proyek</h2>
+          <p>
+            Refleksi mendalam ini disusun berdasarkan dokumen autentik <span class="hl-concept">Lembar Kerja 2 (LK 2)</span> dengan kerangka kerja <span class="hl-concept">4C (Connection, Challenge, Concept, Change)</span> serta dievaluasi bersama artefak perancangan (<span class="hl-concept">Proposal Proyek</span>) dan artefak akuntabilitas (<span class="hl-concept">LPJ Proyek</span>):
+          </p>
+
+          <!-- 4C Sub-Box 1: Connection -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conn">Connection</span> Keterkaitan Materi dengan Peran Sebagai Pemimpin Pembelajaran</h3>
+            <p>
+              Mata kuliah Proyek Kepemimpinan memperluas dimensi identitas profesional saya: pendidik tidak boleh dibatasi semata sebagai pengajar di dalam empat dinding ruang kelas, melainkan harus tampil sebagai <span class="hl-concept">pemimpin pembelajaran (instructional leader)</span> dan motor penggerak transformasi (<span class="hl-concept">agent of change</span>) di lingkungan sekolah dan komunitas.
+            </p>
+            <p>
+              Saat terjun melakukan observasi di sekolah mitra (<span class="hl-context">SMK Negeri 5 Yogyakarta</span>), kami memetakan aset potensial yang belum dioptimalkan: seluruh guru sebenarnya telah difasilitasi akses akun <em>Canva Pro</em> dari instansi, namun mayoritas baru menggunakannya sebagai kanvas presentasi visual statis satu arah. Dari temuan aset tersebut, kami merancang inisiasi pemberdayaan terstruktur berupa <span class="hl-action">Workshop dan Pendampingan Pembuatan Media Pembelajaran Interaktif Utuh</span> yang mencakup 4 pilar penting: asesmen diagnostik (pretest), materi multimedia komunikatif, lembar aktivitas/LKPD digital, dan evaluasi hasil belajar (posttest). Pengalaman ini mengasah kapasitas <span class="hl-concept">kepemimpinan pelayan (servant leadership)</span> dan diplomasi kelembagaan lintas elemen pendidikan.
+            </p>
+          </div>
+
+          <!-- 4C Sub-Box 2: Challenge -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chal">Challenge</span> Tantangan Eksekusi &amp; Dinamika Manajemen Lapangan</h3>
+            <p>
+              Sebelum mengikuti mata kuliah ini, pengalaman mengajar saya lebih banyak berpusat pada dinamika individual guru di depan peserta didik. Memimpin prakarsa perubahan berskala institusi menghadirkan tantangan kolaboratif dan manajerial yang jauh lebih kompleks:
+            </p>
+            <ul>
+              <li>
+                <strong>Kepemimpinan Terdistribusi (Distributed Leadership):</strong> Sebagai <span class="hl-action">Ketua Pelaksana</span>, saya bertanggung jawab mengoordinasikan 8 anggota tim mahasiswa dengan pembagian divisi spesifik (Kesekretariatan, Bendahara, Acara, Perlengkapan &amp; Pendampingan, PDD), serta membangun jembatan komunikasi diplomatis bersama Dosen Pembimbing, Kepala Sekolah, Waka Kurikulum, dan Guru Pamong SMKN 5 Yogyakarta.
+              </li>
+              <li>
+                <strong>Model Blended Learning &amp; Pendampingan Meja (*One-on-One*):</strong> Berbeda dari seminar konvensional yang pasif, kami menerapkan pola gabungan: 1 hari pelatihan luring (8 JP) di lab komputer dan 3 hari pendampingan daring asinkron. Tantangannya adalah menghadapi rentang literasi digital peserta yang sangat beragam, sehingga tim harus memberikan pendampingan langsung ke tiap meja untuk membimbing guru langkah demi langkah.
+              </li>
+              <li>
+                <strong>Manajemen Risiko &amp; Adaptabilitas Cepat:</strong> Mengelola dinamika jadwal agenda kedinasan sekolah yang padat, lonjakan partisipasi peserta di laboratorium komputer, hingga kontrol mutu administrasi penerbitan sertifikat pelatihan resmi berbobot jam pelajaran (JP).
+              </li>
+            </ul>
+          </div>
+
+          <!-- 4C Sub-Box 3: Concept -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-conc">Concept</span> Konsep-Konsep Kunci Kepemimpinan Pendidikan</h3>
+            <p>
+              Pengelolaan proyek kepemimpinan ini dilandaskan pada 4 kerangka teoritis dan manajerial yang kokoh:
+            </p>
+            <ul>
+              <li>
+                <span class="hl-concept">Kepemimpinan Pembelajaran &amp; Kepemimpinan Pelayan (Servant Leadership):</span> Mengarahkan orientasi utama proyek bukan pada pamer teknologi semata, melainkan pada struktur pedagogis media yang bermuara pada peningkatan keterlibatan peserta didik, serta memposisikan panitia sebagai fasilitator yang telaten mendengarkan kebutuhan spesifik para guru.
+              </li>
+              <li>
+                <span class="hl-concept">Kerangka TPACK (Technological Pedagogical Content Knowledge):</span> Membimbing guru mengintegrasikan fitur interaktif Canva Pro (<span class="hl-context">Technological Knowledge</span>) ke dalam alur belajar terstruktur (<span class="hl-concept">Pedagogical Knowledge</span>) yang disesuaikan dengan kurikulum kejuruan masing-masing (<span class="hl-context">Content Knowledge</span>).
+              </li>
+              <li>
+                <span class="hl-concept">Model Desain Instruksional ADDIE:</span> Menerapkan tahapan manajemen proyek secara disiplin: <em>Analysis</em> (analisis kebutuhan &amp; aset akun guru), <em>Design</em> (perancangan silabus pelatihan &amp; modul panduan), <em>Development</em> (pembuatan materi presentasi &amp; template media), <em>Implementation</em> (workshop luring 8 JP &amp; mentoring meja), serta <em>Evaluation</em> (analisis ketercapaian rubrik &amp; kepuasan).
+              </li>
+              <li>
+                <span class="hl-concept">Komunitas Praktisi (Community of Practice):</span> Membina ruang dialog dan jejaring kolaborasi antarpendidik lintas program keahlian untuk saling membagikan karya media interaktif yang telah diuji coba di kelas masing-masing.
+              </li>
+            </ul>
+          </div>
+
+          <!-- 4C Sub-Box 4: Change -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-chan">Change</span> Transformasi Mindset &amp; Praktik Kepemimpinan Berkelanjutan</h3>
+            <p>
+              Pengalaman nyata memimpin inisiasi perubahan ini melahirkan 3 transformasi mendalam dalam paradigma profesional saya:
+            </p>
+            <ul>
+              <li>
+                <strong>Pergeseran Pola Pikir (*Asset-Based Mindset*):</strong> Selalu mengawali setiap perencanaan program atau pembelajaran dengan memetakan potensi kekuatan, aset modalitas, dan peluang yang ada di lingkungan sekolah mitra, alih-alih meratapi keterbatasan sarana.
+              </li>
+              <li>
+                <strong>Konsistensi Inovasi Berbasis Desain Utuh:</strong> Memastikan setiap media pembelajaran digital yang dikembangkan di masa depan memiliki struktur instruksional yang utuh—memadukan apersepsi/diagnostik, eksplorasi interaktif, lembar kerja siswa, dan asesmen formatif terukur.
+              </li>
+              <li>
+                <strong>Pembudayaan Kolaborasi &amp; Komunitas Belajar Sejawat:</strong> Berkomitmen aktif menjadi inisiator terbentuknya kelompok belajar guru (*peer support community*) di sekolah penempatan bertugas, guna membiasakan budaya saling mentoring dan berbagi praktik baik (*best practices*).
+              </li>
+            </ul>
+          </div>
+
+          <!-- Sub-Box 5: Analisis Artefak -->
+          <div class="refleksi-subbox">
+            <h3><span class="badge-4c badge-art">Analisis Kritis Artefak</span> Evaluasi Mendalam Proposal &amp; LPJ Proyek</h3>
+            <p>
+              Dua dokumen artefak utama dijadikan bukti dukung konkret atas keberhasilan kepemimpinan instruksional:
+            </p>
+            <ul>
+              <li>
+                <strong>Artefak Proposal Proyek Kepemimpinan:</strong> Menjadi bukti proses berpikir strategis dan analitis awal. Bagian <em>Bab I (Latar Belakang &amp; Tujuan Khusus SMART)</em> membuktikan kejelian membaca data aset akun Canva Pro dan kebutuhan media ajar interaktif di SMK. Bagian <em>Bab III (Deskripsi Kegiatan &amp; Matriks Pembagian Tugas)</em> membuktikan penerapan kepemimpinan kolaboratif yang akuntabel di bawah koordinasi saya selaku Ketua Pelaksana.
+              </li>
+              <li>
+                <strong>Artefak Laporan Pertanggungjawaban (LPJ):</strong> Menjadi bukti nyata eksekusi kepemimpinan di lapangan serta akuntabilitas program. Bagian <em>Bab IV (Tantangan &amp; Solusi)</em> dan <em>Bab V (Refleksi Kepemimpinan Individu &amp; Dinamika Kelompok)</em> membuktikan ketangkasan kepemimpinan adaptif saat mengatasi kendala operasional dan disparitas literasi digital guru. Bagian <em>Bab VI serta Lampiran Luaran</em> membuktikan capaian luar biasa: terciptanya dan terverifikasinya <span class="hl-action">17 produk media pembelajaran interaktif</span> siap guna karya para guru SMKN 5 Yogyakarta dengan skor kepuasan pelaksanaan yang melampaui kriteria sukses (LK 1.12 &amp; LK 1.13).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. KESIMPULAN & AKSI NYATA KOMPREHENSIF -->
+        <section class="content-card conclusion-highlight">
+          <h2><i class="fa-solid fa-bullseye"></i> 3. Kesimpulan &amp; Rencana Aksi Nyata Komprehensif</h2>
+          <p>
+            Proyek Kepemimpinan membuktikan bahwa seorang pendidik muda memiliki potensi besar untuk menjadi motor penggerak kebaikan dan pembaruan pedagogik di ekosistem sekolah. Empat komitmen aksi nyata kepemimpinan yang akan terus saya implementasikan adalah:
+          </p>
+          <ul>
+            <li>
+              <strong>Kepemimpinan Pembelajaran Berbasis Data &amp; Aset:</strong> Terus mengedepankan asesmen kebutuhan dan pemetaan aset modal institusi sebelum meluncurkan inisiatif program pembelajaran atau pengembangan staf di sekolah.
+            </li>
+            <li>
+              <strong>Pengembangan Media Interaktif 4 Komponen:</strong> Mengonsistensikan standar perancangan media ajar digital yang memuat paket lengkap (pretest diagnostik, modul materi interaktif, LKPD digital, dan evaluasi posttest) untuk memaksimalkan retensi kognitif murid.
+            </li>
+            <li>
+              <strong>Penggerak Komunitas Belajar Guru (Komunitas Praktisi):</strong> Menginisiasi dan menghidupkan kelompok diskusi MGMP tingkat sekolah secara berkala sebagai ruang aman bagi para pendidik untuk saling bertukar media ajar, mengevaluasi rubrik asesmen, dan melakukan refleksi bersama.
+            </li>
+            <li>
+              <strong>Penerapan Prinsip Akuntabilitas Terbuka (ADDIE):</strong> Membudayakan penyusunan proposal program kerja yang terencana rapi, pengendalian risiko operasional yang adaptif, serta penerbitan laporan pertanggungjawaban yang berbasis bukti capaian konkret (*evidence-based reporting*).
+            </li>
+          </ul>
+        </section>
+
+        <!-- TOMBOL KEMBALI -->
+        <div style="text-align: center; margin-top: 2rem;">
+          <a
+            href="../refleksi-semester2.html"
+            class="btn-glow"
+            style="display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Daftar Mata Kuliah Semester 2
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <!-- BRAND -->
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>
+            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.
+          </p>
+        </div>
+
+        <!-- SEMESTER 1 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="../profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="../artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="../penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="../modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="../refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="../filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
+
+        <!-- SEMESTER 2 -->
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="../e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="../e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="../identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="../refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="../refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="../inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTAK & LOKASI -->
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe
+              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      function openTab(evt, tabId) {
+        var i, tabpane, tabbtn;
+        tabpane = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < tabpane.length; i++) {
+          tabpane[i].classList.remove("active");
+        }
+        tabbtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabbtn.length; i++) {
+          tabbtn[i].classList.remove("active");
+        }
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+
+      // NAVBAR SCROLL & DROPDOWN
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      if (hamburger) {
+        hamburger.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+          hamburger.classList.toggle("active");
+        });
+      }
+
+      const dropdownBtns = document.querySelectorAll(".dropbtn");
+      dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            const chevron = btn.querySelector(".chevron");
+            document.querySelectorAll(".dropdown-content").forEach((c) => {
+              if (c !== content) c.classList.remove("show");
+            });
+            document.querySelectorAll(".chevron").forEach((c) => {
+              if (c !== chevron) c.style.transform = "rotate(0deg)";
+            });
+            content.classList.toggle("show");
+            if (content.classList.contains("show")) chevron.style.transform = "rotate(180deg)";
+            else chevron.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

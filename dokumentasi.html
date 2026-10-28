@@ -1,14 +1,12 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dokumentasi Kegiatan | E-Portofolio PPG Calon Guru</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/dokumentasi.css" />
+    <link rel="stylesheet" href="../CSS/tech-theme.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,61 +19,65 @@
       <div class="mesh-blob blob-navy"></div>
       <div class="mesh-blob blob-coral"></div>
     </div>
-
+    
     <header class="navbar" id="navbar">
-      <div class="container nav-container">
-        <div class="nav-left">
-          <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
-          <span class="brand-name"
-            >E-Portofolio <span class="highlight">PPG.</span></span
-          >
+  <div class="container nav-container">
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo Universitas" class="univ-logo-img" />
+      <span class="brand-name">E-Portofolio <span class="highlight">PPG.</span></span>
+    </div>
+
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+    <nav class="nav-right" id="nav-menu">
+      <a href="index.html" class="nav-link">Beranda</a>
+
+      <div class="dropdown">
+        <button class="nav-link dropbtn">Semester 1 <i class="fa-solid fa-chevron-down chevron"></i></button>
+        <div class="dropdown-content dropdown-wide">
+          <div class="dropdown-label">E-Portofolio 1</div>
+          <a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a>
+          <a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a>
+          <a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a>
+          <a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="dropdown-label">E-Portofolio 2</div>
+          <a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a>
+          <a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a>
         </div>
-
-        <div class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </div>
-
-        <nav class="nav-right" id="nav-menu">
-          <a href="index.html" class="nav-link">Beranda</a>
-
-          <div class="dropdown">
-            <button class="nav-link dropbtn">
-              E-Portofolio 1 <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="profile.html"
-                ><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a
-              >
-              <a href="artefak.html"
-                ><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a
-              >
-              <a href="penilaian.html"
-                ><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a
-              >
-              <a href="modelguru.html"
-                ><i class="fa-solid fa-bullseye"></i> Model Guru</a
-              >
-            </div>
-          </div>
-
-          <div class="dropdown">
-            <button class="nav-link dropbtn">
-              E-Portofolio 2 <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="refleksi.html"
-                ><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a
-              >
-              <a href="filosofi.html"
-                ><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a
-              >
-            </div>
-          </div>
-
-          <a href="dokumentasi.html" class="nav-link active">Dokumentasi</a>
-        </nav>
       </div>
-    </header>
+
+      <div class="dropdown">
+        <button class="nav-link dropbtn">Semester 2 <i class="fa-solid fa-chevron-down chevron"></i></button>
+        <div class="dropdown-content dropdown-wide">
+          <div class="dropdown-label">E-Portofolio</div>
+          <a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a>
+          <a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a>
+
+          <div class="dropdown-divider"></div>
+
+              <div class="dropdown-label">Identifikasi Diri</div>
+              <a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a>
+
+              <div class="dropdown-divider"></div>
+
+          <div class="dropdown-label">Refleksi</div>
+          <a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a>
+          <a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="dropdown-label">Inovasi Pembelajaran</div>
+          <a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a>
+        </div>
+      </div>
+
+      <a href="dokumentasi.html" class="nav-link active">Dokumentasi</a>
+    </nav>
+  </div>
+</header>
 
     <main class="dokumentasi-main">
       <section class="hero-dokumentasi">
@@ -263,102 +265,65 @@
 
     <!-- FOOTER -->
     <footer class="site-footer">
-      <div class="container footer-container">
-        <!-- BRAND -->
-        <div class="footer-col brand-col">
-          <h3>E-Portofolio<span> PPG</span></h3>
-          <p>
-            Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) 1. Disusun
-            sebagai dokumentasi dan refleksi perjalanan menjadi guru
-            profesional.
-          </p>
-        </div>
+  <div class="container footer-container">
+    <!-- BRAND -->
+    <div class="footer-col brand-col">
+      <h3>E-Portofolio<span> PPG</span></h3>
+      <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.</p>
+    </div>
 
-        <!-- PORTOFOLIO 1 -->
-        <div class="footer-col links-col">
-          <h4><i class="fa-solid fa-book-open"></i> E-Portofolio 1</h4>
-          <ul>
-            <li>
-              <a href="profile.html">
-                <i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa
-              </a>
-            </li>
-            <li>
-              <a href="artefak.html">
-                <i class="fa-solid fa-file-waveform"></i> Artefak Produk
-              </a>
-            </li>
-            <li>
-              <a href="penilaian.html">
-                <i class="fa-solid fa-list-check"></i> Instrumen Penilaian
-              </a>
-            </li>
-            <li>
-              <a href="modelguru.html">
-                <i class="fa-solid fa-chalkboard-user"></i> Model Guru
-              </a>
-            </li>
-          </ul>
-        </div>
+    <!-- SEMESTER 1 -->
+    <div class="footer-col links-col">
+      <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+      <ul>
+        <li class="footer-sub-label">E-Portofolio 1</li>
+        <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+        <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+        <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+        <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+        <li class="footer-sub-label">E-Portofolio 2</li>
+        <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+        <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+      </ul>
+    </div>
 
-        <!-- PORTOFOLIO 2 -->
-        <div class="footer-col links-col">
-          <h4><i class="fa-solid fa-layer-group"></i> E-Portofolio 2</h4>
-          <ul>
-            <li>
-              <a href="refleksi.html">
-                <i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir
-              </a>
-            </li>
-            <li>
-              <a href="filosofi.html">
-                <i class="fa-solid fa-seedling"></i> Filosofi Mengajar
-              </a>
-            </li>
-          </ul>
-        </div>
+    <!-- SEMESTER 2 -->
+    <div class="footer-col links-col">
+      <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+      <ul>
+        <li class="footer-sub-label">E-Portofolio</li>
+        <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+        <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+        <li class="footer-sub-label">Identifikasi Diri</li>
+        <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+        <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+        <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+        <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+        <li class="footer-sub-label">Inovasi</li>
+        <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+      </ul>
+    </div>
 
-        <!-- KONTAK -->
-        <div class="footer-col contact-col">
-          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
-          <p>
-            <i class="fa-solid fa-building-columns"></i>
-            Universitas Negeri Yogyakarta
-          </p>
-          <div class="map-container">
-            <iframe
-              src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="150"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-          <div class="social-links">
-            <a href="mailto:ilhamkurniaseptiadi@gmail.com">
-              <i class="fa-solid fa-envelope"></i> Email
-            </a>
-            <a
-              href="https://www.instagram.com/_kurnia.sp?igsh=MXh2bGR6ZXU5bnlzeg=="
-              target="_blank"
-            >
-              <i class="fa-brands fa-instagram"></i> Instagram
-            </a>
-          </div>
-        </div>
+    <!-- KONTAK -->
+    <div class="footer-col contact-col">
+      <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+      <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+      <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="150" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
       </div>
-
-      <!-- COPYRIGHT -->
-      <div class="footer-bottom">
-        <div class="container">
-          <p>
-            © 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak
-            Cipta Dilindungi.
-          </p>
-        </div>
+      <div class="social-links">
+        <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
       </div>
-    </footer>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>Â© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
 
     <script>
       // ========================
@@ -382,37 +347,66 @@
         `;
       }
 
-      // ========================
-      // FILTER GALLERY
-      // ========================
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const filterItems = document.querySelectorAll(".filter-item");
+// FILTER GALLERY v2 — Instant hide, proper reflow
+// ========================
+const filterBtns = document.querySelectorAll(".filter-btn");
+const filterItems = document.querySelectorAll(".filter-item");
+const galleryGrid = document.getElementById("gallery-grid");
 
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach((button) => button.classList.remove("active"));
-          btn.classList.add("active");
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Update active button
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
 
-          const filterValue = btn.getAttribute("data-filter");
+    const filterValue = btn.getAttribute("data-filter");
+    let visibleCount = 0;
 
-          filterItems.forEach((item) => {
-            if (filterValue === "all" || item.classList.contains(filterValue)) {
-              item.style.display = "block";
-              setTimeout(() => {
-                item.style.opacity = "1";
-                item.style.transform = "scale(1)";
-              }, 50);
-            } else {
-              item.style.opacity = "0";
-              item.style.transform = "scale(0.8)";
-              setTimeout(() => {
-                item.style.display = "none";
-              }, 300);
-            }
-          });
-        });
-      });
+    filterItems.forEach((item) => {
+      const match = filterValue === "all" || item.classList.contains(filterValue);
+      if (match) {
+        item.classList.remove("filter-hidden");
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        item.classList.add("filter-hidden");
+        item.style.display = "none";
+      }
+    });
 
+    // Empty state
+    let emptyState = galleryGrid.querySelector(".gallery-empty");
+    if (visibleCount === 0) {
+      if (!emptyState) {
+        emptyState = document.createElement("div");
+        emptyState.className = "gallery-empty";
+        emptyState.innerHTML =
+          '<i class="fa-regular fa-folder-open"></i>' +
+          "<p>Belum ada item dalam kategori ini</p>";
+        galleryGrid.appendChild(emptyState);
+      }
+    } else if (emptyState) {
+      emptyState.remove();
+    }
+  });
+});
+
+// ========================
+// VIDEO THUMBNAIL FALLBACK
+// ========================
+document.querySelectorAll(".video-thumbnail").forEach((img) => {
+  img.addEventListener("error", function () {
+    // Kalau thumbnail gagal load, ganti dengan placeholder gradient
+    this.style.display = "none";
+    const parent = this.parentElement;
+    if (parent && !parent.querySelector(".video-thumb-fallback")) {
+      const fallback = document.createElement("div");
+      fallback.className = "video-thumb-fallback";
+      fallback.innerHTML = '<i class="fa-solid fa-film"></i>';
+      parent.insertBefore(fallback, parent.firstChild);
+    }
+  });
+});
       // ========================
       // NAVBAR SCROLL
       // ========================
