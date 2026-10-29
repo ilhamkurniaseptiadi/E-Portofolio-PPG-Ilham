@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,299 @@
     <link rel="stylesheet" href="CSS/tech-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+
+    <style>
+      /* Scoped Styles for E-Portofolio 1 Enhancements */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      .ep-main {
+        padding-top: 105px;
+        min-height: 85vh;
+      }
+
+      /* Highlight Kata Kunci */
+      .hl-concept {
+        color: #38bdf8;
+        font-weight: 700;
+      }
+      .hl-action {
+        color: #34d399;
+        font-weight: 700;
+      }
+      .hl-context {
+        color: #fbbf24;
+        font-weight: 700;
+      }
+      .hl-purple {
+        color: #c084fc;
+        font-weight: 700;
+      }
+
+      /* PDF Embed Direct Container */
+      .pdf-viewer-frame {
+        width: 100%;
+        height: 600px;
+        border: 1px solid var(--border-subtle, #30363d);
+        border-radius: 10px;
+        background: #0d1117;
+        margin-top: 14px;
+        overflow: hidden;
+      }
+      .pdf-viewer-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Tabs untuk Instrumen Penilaian */
+      .tab-switcher {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .tab-btn-pill {
+        padding: 9px 18px;
+        border-radius: 8px;
+        background: rgba(22, 27, 34, 0.85);
+        border: 1px solid var(--border-subtle, #30363d);
+        color: var(--text-light, #8b949e);
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.25s ease;
+      }
+      .tab-btn-pill:hover {
+        background: rgba(30, 41, 59, 0.9);
+        color: #ffffff;
+        border-color: rgba(56, 189, 248, 0.4);
+      }
+      .tab-btn-pill.active {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border-color: #38bdf8;
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+      }
+
+      /* Analisis Cards Layout */
+      .analisis-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        margin-top: 14px;
+      }
+      .analisis-card {
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 14px;
+        padding: 1.8rem 2rem;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .analisis-card:hover {
+        border-color: rgba(56, 189, 248, 0.45);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+      .analisis-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.1rem;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .analisis-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .analisis-icon-box {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+      .icon-box-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+      .icon-box-green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+      .icon-box-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+      .icon-box-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+
+      .analisis-card h3 {
+        font-size: 1.15rem;
+        color: #ffffff;
+        margin: 0;
+        font-weight: 700;
+      }
+      .analisis-badge-tag {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+      .tag-green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+      .tag-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+      .tag-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+
+      .analisis-card p {
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        line-height: 1.85;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-bottom: 0.9rem;
+      }
+      .analisis-card p:last-child {
+        margin-bottom: 0;
+      }
+      .analisis-sub-points {
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .analisis-sub-points li {
+        position: relative;
+        padding-left: 1.6rem;
+        color: #cbd5e1;
+        font-size: 0.93rem;
+        line-height: 1.75;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .analisis-sub-points li::before {
+        content: "\f058";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-size: 0.85rem;
+        color: #38bdf8;
+      }
+      .analisis-card.theme-green .analisis-sub-points li::before { color: #34d399; }
+      .analisis-card.theme-purple .analisis-sub-points li::before { color: #c084fc; }
+
+      /* Galeri Kegiatan Non-Mengajar 4 Foto Grid */
+      .kegiatan-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 18px;
+      }
+      .kegiatan-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid var(--border-subtle, #30363d);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .kegiatan-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(52, 211, 153, 0.4);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      }
+      .kegiatan-img-frame {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: #0d1117;
+      }
+      .kegiatan-img-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.4s ease;
+      }
+      .kegiatan-card:hover .kegiatan-img-frame img {
+        transform: scale(1.05);
+      }
+      .kegiatan-floating-pill {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .kegiatan-card-body {
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+      }
+      .kegiatan-card-body h4 {
+        color: #ffffff;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.4;
+      }
+      .kegiatan-card-body p {
+        color: #cbd5e1;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 0;
+      }
+      .kegiatan-card-footer {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        font-family: var(--font-mono, monospace);
+        color: #94a3b8;
+      }
+
+      /* Video Embed Full Width Frame */
+      .video-wrapper-frame {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-subtle, #30363d);
+        background: #000;
+        margin-top: 14px;
+      }
+      .video-wrapper-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
   </head>
   <body>
     <div class="mesh-bg">
@@ -17,6 +310,7 @@
       <div class="mesh-blob blob-coral"></div>
     </div>
 
+    <!-- NAVBAR RESMI -->
     <header class="navbar scrolled" id="navbar">
       <div class="container nav-container">
         <div class="nav-left">
@@ -75,13 +369,13 @@
       <section class="ep-hero">
         <div class="container text-center">
           <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
-            <i class="fa-solid fa-folder-open"></i> Semester 2 · Dokumentasi Praktik
+            <i class="fa-solid fa-folder-open"></i> Semester 2 · Dokumentasi PPL Siklus 1
           </div>
           <h1 class="fade-in-up" style="animation-delay: 0.2s">
             E-Portofolio 1 <span class="text-gradient">Semester 2</span>
           </h1>
           <p class="ep-hero-desc fade-in-up" style="animation-delay: 0.3s">
-            Rangkaian dokumentasi Praktik Pengalaman Lapangan (PPL) Siklus 1 — RPP, video praktik mengajar, analisis mendalam, hingga instrumen penilaian.
+            Dokumentasi komprehensif Praktik Pengalaman Lapangan (PPL) Siklus 1 di SMKN 5 Yogyakarta — RPP, video mengajar, instrumen penilaian, analisis reflektif mendalam, hingga kegiatan non-mengajar.
           </p>
         </div>
       </section>
@@ -92,7 +386,7 @@
         <aside class="ep-toc">
           <div class="ep-toc-sticky">
             <div class="ep-toc-title">
-              <i class="fa-solid fa-list-ul"></i> Daftar Isi
+              <i class="fa-solid fa-list-ul"></i> Siklus 1
             </div>
             <nav class="ep-toc-nav">
               <a href="#section-01" class="ep-toc-link active" data-section="section-01">
@@ -102,19 +396,19 @@
                 <span class="toc-num">02</span> Video Praktik
               </a>
               <a href="#section-03" class="ep-toc-link" data-section="section-03">
-                <span class="toc-num">03</span> Analisis RPP
+                <span class="toc-num">03</span> Instrumen Penilaian
               </a>
               <a href="#section-04" class="ep-toc-link" data-section="section-04">
-                <span class="toc-num">04</span> Analisis Media
+                <span class="toc-num">04</span> Analisis RPP
               </a>
               <a href="#section-05" class="ep-toc-link" data-section="section-05">
                 <span class="toc-num">05</span> Analisis Video
               </a>
               <a href="#section-06" class="ep-toc-link" data-section="section-06">
-                <span class="toc-num">06</span> Kegiatan Non-Mengajar
+                <span class="toc-num">06</span> Analisis Media
               </a>
               <a href="#section-07" class="ep-toc-link" data-section="section-07">
-                <span class="toc-num">07</span> Instrumen Penilaian
+                <span class="toc-num">07</span> Kegiatan Non-Mengajar
               </a>
             </nav>
           </div>
@@ -123,223 +417,482 @@
         <!-- CONTENT -->
         <div class="ep-content">
 
-          <!-- SECTION 01: RPP -->
+          <!-- ============================================ -->
+          <!-- SECTION 01: RPP SIKLUS 1                     -->
+          <!-- ============================================ -->
           <section id="section-01" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">01</span>
-              <h2>RPP Siklus 1</h2>
-              <p>Rencana Pelaksanaan Pembelajaran lengkap dengan tujuan, langkah, dan asesmen.</p>
+              <h2>RPP Siklus 1 (Informatika - HAKI & Etika Digital)</h2>
+              <p>Rencana Pelaksanaan Pembelajaran terintegrasi model Case-Based Learning di Kelas X SMK Negeri 5 Yogyakarta.</p>
             </div>
 
             <div class="pdf-block">
               <div class="pdf-block-toolbar">
                 <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
+                  <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i>
                   <span>RPP_Siklus_1.pdf</span>
                 </div>
                 <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB', 'RPP Siklus 1')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <a href="Dokumen/RPP_Siklus_1.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     <span>Full Preview</span>
-                  </button>
-                  <a href="https://drive.google.com/file/d/1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  </a>
+                  <a href="Dokumen/RPP_Siklus_1.pdf" download="RPP_Siklus_1_Ilham_Kurnia_Septiadi.pdf" class="btn-pdf-action">
+                    <i class="fa-solid fa-download"></i>
                     <span>Unduh PDF</span>
                   </a>
                 </div>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="1V2jToJ6FoYRZbHEKAza8ANm_w2K6hQsB">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
-                </div>
+              <div class="pdf-viewer-frame">
+                <iframe
+                  src="Dokumen/RPP_Siklus_1.pdf#toolbar=1&navpanes=0&scrollbar=1"
+                  title="Dokumen RPP Siklus 1"
+                >
+                  <p style="padding: 25px; text-align: center; color: #cbd5e1;">
+                    Peramban Anda tidak mendukung pratinjau PDF langsung. 
+                    <a href="Dokumen/RPP_Siklus_1.pdf" target="_blank" style="color: #38bdf8;">Klik di sini untuk membuka dokumen RPP Siklus 1</a>.
+                  </p>
+                </iframe>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 02: VIDEO -->
+          <!-- ============================================ -->
+          <!-- SECTION 02: VIDEO PRAKTIK PEMBELAJARAN       -->
+          <!-- ============================================ -->
           <section id="section-02" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">02</span>
               <h2>Video Praktik Pembelajaran Siklus 1</h2>
-              <p>Rekaman praktik mengajar Informatika pada Siklus 1.</p>
+              <p>Rekaman autentik praktik mengajar materi regulasi HAKI di Laboratorium Komputer SMK Negeri 5 Yogyakarta.</p>
             </div>
 
-            <div class="video-block">
-              <div class="video-block-embed" data-video-src="https://www.youtube.com/embed/dmqRm-f75Tk">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-video"></i>
-                  <span>Video belum tersedia</span>
+            <div class="pdf-block" style="padding-bottom: 20px;">
+              <div class="pdf-block-toolbar">
+                <div class="pdf-block-name">
+                  <i class="fa-brands fa-youtube" style="color: #ef4444;"></i>
+                  <span>Praktik Mengajar HAKI - SMKN 5 Yogyakarta</span>
                 </div>
+                <div class="pdf-block-actions">
+                  <a href="https://youtu.be/dmqRm-f75Tk?si=_6qJcB3uhWa3OBUW" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Buka di YouTube</span>
+                  </a>
+                </div>
+              </div>
+              <div class="video-wrapper-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/dmqRm-f75Tk"
+                  title="Video Praktik Pembelajaran Siklus 1 Informatika SMKN 5 Yogyakarta"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 03: ANALISIS RPP -->
+          <!-- ============================================ -->
+          <!-- SECTION 03: INSTRUMEN PENILAIAN (PINDAH KE 03)-->
+          <!-- ============================================ -->
           <section id="section-03" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">03</span>
-              <h2>Analisis RPP</h2>
-              <p>Refleksi dan evaluasi terhadap rancangan pembelajaran yang telah disusun.</p>
+              <h2>Instrumen Penilaian Siklus 1</h2>
+              <p>Kumpulan instrumen evaluasi komprehensif: lembar observasi praktik mengajar, telaah RPP, dan lembar kerja peserta didik.</p>
             </div>
 
-            <div class="pdf-block">
-              <div class="pdf-block-toolbar">
-                <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>Analisis_RPP_Siklus_1.pdf</span>
+            <!-- TAB SWITCHER DOKUMEN PENILAIAN -->
+            <div class="tab-switcher">
+              <button class="tab-btn-pill active" onclick="switchPenilaianTab('tab-praktik', this)">
+                <i class="fa-solid fa-clipboard-check"></i> Penilaian Praktik Mengajar
+              </button>
+              <button class="tab-btn-pill" onclick="switchPenilaianTab('tab-rpp', this)">
+                <i class="fa-solid fa-file-circle-check"></i> Penilaian RPP Siklus 1
+              </button>
+              <button class="tab-btn-pill" onclick="switchPenilaianTab('tab-lkpd', this)">
+                <i class="fa-solid fa-book-open-reader"></i> LKPD Siklus 1
+              </button>
+            </div>
+
+            <!-- PANEL 1: PENILAIAN PRAKTIK -->
+            <div class="penilaian-panel" id="tab-praktik">
+              <div class="pdf-block">
+                <div class="pdf-block-toolbar">
+                  <div class="pdf-block-name">
+                    <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i>
+                    <span>Penilaian_Praktik_Mengajar_Siklus_1.pdf</span>
+                  </div>
+                  <div class="pdf-block-actions">
+                    <a href="Dokumen/Penilaian Praktik Mengajar Siklus 1.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      <span>Full Preview</span>
+                    </a>
+                    <a href="Dokumen/Penilaian Praktik Mengajar Siklus 1.pdf" download="Penilaian_Praktik_Mengajar_Siklus_1.pdf" class="btn-pdf-action">
+                      <i class="fa-solid fa-download"></i>
+                      <span>Unduh PDF</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_3', 'Analisis RPP')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>Full Preview</span>
-                  </button>
-                  <a href="GANTI_DOWNLOAD_LINK_3" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Unduh PDF</span>
-                  </a>
+                <div class="pdf-viewer-frame">
+                  <iframe
+                    src="Dokumen/Penilaian Praktik Mengajar Siklus 1.pdf#toolbar=1&navpanes=0"
+                    title="Penilaian Praktik Mengajar Siklus 1"
+                  ></iframe>
                 </div>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_3">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
+            </div>
+
+            <!-- PANEL 2: PENILAIAN RPP -->
+            <div class="penilaian-panel" id="tab-rpp" style="display: none;">
+              <div class="pdf-block">
+                <div class="pdf-block-toolbar">
+                  <div class="pdf-block-name">
+                    <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i>
+                    <span>Penilaian_RPP_Siklus_1.pdf</span>
+                  </div>
+                  <div class="pdf-block-actions">
+                    <a href="Dokumen/Penilaian RPP Siklus 1.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      <span>Full Preview</span>
+                    </a>
+                    <a href="Dokumen/Penilaian RPP Siklus 1.pdf" download="Penilaian_RPP_Siklus_1.pdf" class="btn-pdf-action">
+                      <i class="fa-solid fa-download"></i>
+                      <span>Unduh PDF</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="pdf-viewer-frame">
+                  <iframe
+                    src="Dokumen/Penilaian RPP Siklus 1.pdf#toolbar=1&navpanes=0"
+                    title="Penilaian RPP Siklus 1"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 3: LKPD -->
+            <div class="penilaian-panel" id="tab-lkpd" style="display: none;">
+              <div class="pdf-block">
+                <div class="pdf-block-toolbar">
+                  <div class="pdf-block-name">
+                    <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i>
+                    <span>LKPD_Siklus_1.pdf</span>
+                  </div>
+                  <div class="pdf-block-actions">
+                    <a href="Dokumen/LKPD Siklus 1.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      <span>Full Preview</span>
+                    </a>
+                    <a href="Dokumen/LKPD Siklus 1.pdf" download="LKPD_Siklus_1.pdf" class="btn-pdf-action">
+                      <i class="fa-solid fa-download"></i>
+                      <span>Unduh PDF</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="pdf-viewer-frame">
+                  <iframe
+                    src="Dokumen/LKPD Siklus 1.pdf#toolbar=1&navpanes=0"
+                    title="LKPD Siklus 1"
+                  ></iframe>
                 </div>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 04: ANALISIS MEDIA -->
+          <!-- ============================================ -->
+          <!-- SECTION 04: ANALISIS RPP (DESKRIPSI MENARIK) -->
+          <!-- ============================================ -->
           <section id="section-04" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">04</span>
-              <h2>Analisis Media Pembelajaran</h2>
-              <p>Kajian efektivitas media digital dan alat bantu yang digunakan di kelas.</p>
+              <h2>Analisis Rancangan Pelaksanaan Pembelajaran (RPP)</h2>
+              <p>Kajian reflektif terhadap keselarasan Capaian Pembelajaran, sintaksis Case-Based Learning, dan diferensiasi peserta didik.</p>
             </div>
 
-            <div class="pdf-block">
-              <div class="pdf-block-toolbar">
-                <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>Analisis_Media_Siklus_1.pdf</span>
+            <div class="analisis-cards-grid">
+              <!-- KARTU 1 -->
+              <div class="analisis-card">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-blue">
+                      <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Keselarasan Tujuan & Capaian Pembelajaran (CP)</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-blue">Pedagogi & Taksonomi</span>
                 </div>
-                <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_4', 'Analisis Media Pembelajaran')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>Full Preview</span>
-                  </button>
-                  <a href="GANTI_DOWNLOAD_LINK_4" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Unduh PDF</span>
-                  </a>
-                </div>
+                <p>
+                  Perancangan modul ajar Siklus 1 dititikberatkan pada elemen <strong class="hl-concept">Dampak Sosial Informatika (DSI)</strong> dengan materi inti regulasi Hak Kekayaan Intelektual (HAKI) dan UU ITE di Kelas X SMKN 5 Yogyakarta. Tujuan pembelajaran dirancang menyasar tingkat kognitif tingkat tinggi (<strong class="hl-action">HOTS - C4 Menganalisis</strong>), di mana peserta didik tidak sekadar menghafal pasal, melainkan mampu membedah kasus pelanggaran hak cipta digital dalam ranah industri kreatif kejuruan.
+                </p>
+                <ul class="analisis-sub-points">
+                  <li>
+                    <strong>Integrasi Masalah Autentik:</strong> Studi kasus diambil dari peristiwa nyata di industri desain dan perangkat lunak komersial sehingga memicu relevansi langsung dengan program keahlian siswa.
+                  </li>
+                  <li>
+                    <strong>Keterpaduan Asesmen:</strong> Kriteria Ketercapaian Tujuan Pembelajaran (KKTP) terhubung langsung dengan rubrik asesmen diagnostik, formatif proses, dan lembar evaluasi akhir.
+                  </li>
+                </ul>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_4">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
+
+              <!-- KARTU 2 -->
+              <div class="analisis-card theme-green">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-green">
+                      <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>Penerapan Pembelajaran Berdiferensiasi & TaRL</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-green">Teaching at the Right Level</span>
                 </div>
+                <p>
+                  Berdasarkan pemetaan asesmen awal, terdapat keragaman pemahaman peserta didik mengenai konsep royalti dan pembajakan perangkat lunak. RPP ini mengakomodasi <strong class="hl-action">diferensiasi proses dan konten</strong> melalui penyusunan lembar kerja berjenjang (<em>scaffolding</em>).
+                </p>
+                <ul class="analisis-sub-points">
+                  <li>
+                    <strong>Kelompok Fondasi:</strong> Diberikan panduan lembar studi kasus terarah (*guided case*) yang menyajikan batasan masalah dan opsi pasal perundang-undangan secara eksplisit.
+                  </li>
+                  <li>
+                    <strong>Kelompok Mahir:</strong> Ditantang menganalisis dilema etika lisensi ganda (*dual-licensing*) serta merumuskan rekomendasi kebijakan perlindungan hak cipta bagi karya siswa di sekolah.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- KARTU 3 -->
+              <div class="analisis-card">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-amber">
+                      <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <h3>Refleksi Kritis & Area Perbaikan RPP</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-amber">Evaluasi Desain Ajar</span>
+                </div>
+                <p>
+                  Secara umum, sintaksis <strong class="hl-concept">Case-Based Learning</strong> berjalan terstruktur dengan orientasi masalah yang kuat. Namun, evaluasi implementasi menunjukkan bahwa estimasi durasi pada fase presentasi kelompok masih terlalu optimis, sehingga sesi tanya jawab antar-kelompok terdesak waktu. Pada siklus berikutnya, alokasi waktu per kelompok dibatasi dengan ketat melalui *timer visual* interaktif.
+                </p>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 05: ANALISIS VIDEO -->
+          <!-- ============================================ -->
+          <!-- SECTION 05: ANALISIS VIDEO PRAKTIK           -->
+          <!-- ============================================ -->
           <section id="section-05" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">05</span>
               <h2>Analisis Video Praktik Pembelajaran</h2>
-              <p>Umpan balik dan refleksi berdasarkan rekaman praktik mengajar.</p>
+              <p>Evaluasi reflektif terhadap keterampilan dasar mengajar, dinamika kelas, dan interaksi murid selama praktik pembelajaran.</p>
             </div>
 
-            <div class="pdf-block">
-              <div class="pdf-block-toolbar">
-                <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>Analisis_Video_Siklus_1.pdf</span>
+            <div class="analisis-cards-grid">
+              <!-- KARTU 1 -->
+              <div class="analisis-card">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-blue">
+                      <i class="fa-solid fa-door-open"></i>
+                    </div>
+                    <h3>Apersepsi & Pemicu Diskusi Awal</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-blue">Opening Class Dynamics</span>
                 </div>
-                <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_5', 'Analisis Video Praktik')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>Full Preview</span>
-                  </button>
-                  <a href="GANTI_DOWNLOAD_LINK_5" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Unduh PDF</span>
-                  </a>
-                </div>
+                <p>
+                  Pada rekaman video, sesi pembukaan diawali dengan penayangan cuplikan singkat fenomena penertiban hak cipta font komersial yang dialami desainer lokal. Stimulus visual ini terbukti <strong class="hl-action">membangkitkan atensi spontan peserta didik</strong> yang awalnya pasif, memancing siswa mengemukakan pengalaman pribadi saat mengunduh aplikasi digital.
+                </p>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_5">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
+
+              <!-- KARTU 2 -->
+              <div class="analisis-card theme-green">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-green">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3>Keterampilan Bertanya & Fasilitasi Diskusi</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-green">Scaffolding & Dialog</span>
                 </div>
+                <p>
+                  Guru memposisikan diri sebagai <strong class="hl-concept">fasilitator yang bergerak aktif (mobile teacher)</strong> di antara baris komputer laboratorium, mengajukan pertanyaan penuntun (<em>probing questions</em>) alih-alih mendiktekan jawaban. Hal ini memberi ruang aman bagi murid untuk mengekspresikan argumen tanpa rasa takut salah.
+                </p>
+                <ul class="analisis-sub-points">
+                  <li>
+                    <strong>Inklusivitas Suara Murid:</strong> Guru secara aktif merotasi kesempatan berbicara kepada siswa yang pendiam di sudut lab komputer untuk mempresentasikan poin temuan kelompoknya.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- KARTU 3 -->
+              <div class="analisis-card theme-purple">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-purple">
+                      <i class="fa-solid fa-flag-checkered"></i>
+                    </div>
+                    <h3>Penutupan, Umpan Balik, & Penguatan Konsep</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-purple">Closing & Synthesis</span>
+                </div>
+                <p>
+                  Sesi penutup video memperlihatkan penarikan benang merah secara kolaboratif. Guru bersama peserta didik menyimpulkan bahwa menghargai HAKI bukan sekadar menaati hukum negara, melainkan bentuk <strong class="hl-context">integritas profesional dan etika moral</strong> yang wajib dimiliki oleh talenta vokasi masa depan.
+                </p>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 06: ANALISIS KEGIATAN NON-MENGAJAR -->
+          <!-- ============================================ -->
+          <!-- SECTION 06: ANALISIS MEDIA PEMBELAJARAN      -->
+          <!-- ============================================ -->
           <section id="section-06" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">06</span>
-              <h2>Analisis Kegiatan Non-Mengajar</h2>
-              <p>Dokumentasi keterlibatan dalam kegiatan di luar jam mengajar.</p>
+              <h2>Analisis Media & Perangkat Pembelajaran</h2>
+              <p>Kajian efektivitas penggunaan media digital interaktif, integrasi perangkat komputer lab, dan lembar kerja peserta didik.</p>
             </div>
 
-            <div class="pdf-block">
-              <div class="pdf-block-toolbar">
-                <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>Analisis_Kegiatan_NonMengajar.pdf</span>
+            <div class="analisis-cards-grid">
+              <!-- KARTU 1 -->
+              <div class="analisis-card">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-blue">
+                      <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Pemanfaatan Sarana Laboratorium Komputer</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-blue">Infrastruktur & Akses</span>
                 </div>
-                <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_6', 'Analisis Kegiatan Non-Mengajar')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>Full Preview</span>
-                  </button>
-                  <a href="GANTI_DOWNLOAD_LINK_6" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Unduh PDF</span>
-                  </a>
-                </div>
+                <p>
+                  Media pembelajaran dirancang selaras dengan ketersediaan unit komputer PC di laboratorium SMKN 5 Yogyakarta. Murid tidak hanya membaca teks undang-undang di papan tulis, tetapi secara langsung <strong class="hl-action">mengakses repositori lisensi digital (Creative Commons, GNU GPL, dan lisensi proprietary)</strong> melalui peramban web komputer untuk memverifikasi keabsahan lisensi perangkat lunak secara langsung.
+                </p>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_6">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
+
+              <!-- KARTU 2 -->
+              <div class="analisis-card theme-green">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-green">
+                      <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3>Desain Infografis Visual & LKPD Digital</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-green">Visual Engagement</span>
                 </div>
+                <p>
+                  Penyusunan materi tayang menggunakan infografis visual terstruktur dengan bagan perbandingan hak ekonomi vs hak moral pencipta karya. Penggunaan diagram alur hukum yang ringkas mampu mereduksi kompleksitas pasal perundang-undangan sehingga lebih ramah dipahami oleh peserta didik jenjang SMK kelas X.
+                </p>
+              </div>
+
+              <!-- KARTU 3 -->
+              <div class="analisis-card theme-amber">
+                <div class="analisis-card-header">
+                  <div class="analisis-title-wrap">
+                    <div class="analisis-icon-box icon-box-amber">
+                      <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3>Rekomendasi Integrasi Gamifikasi Interaktif</h3>
+                  </div>
+                  <span class="analisis-badge-tag tag-amber">Future Enhancement</span>
+                </div>
+                <p>
+                  Sebagai langkah optimalisasi untuk siklus mendatang, media ajar disarankan menambahkan instrumen kuis gamifikasi cepat (seperti Kahoot atau Wordwall) di akhir sesi untuk mengukur retensi konsep pasal regulasi secara instan, seru, dan memberikan umpan balik evaluatif secara waktu nyata (*real-time analytics*).
+                </p>
               </div>
             </div>
           </section>
 
-          <!-- SECTION 07: INSTRUMEN PENILAIAN -->
+          <!-- ============================================ -->
+          <!-- SECTION 07: KEGIATAN NON-MENGAJAR (4 FOTO)   -->
+          <!-- ============================================ -->
           <section id="section-07" class="ep-section">
             <div class="ep-section-header">
               <span class="ep-section-num">07</span>
-              <h2>Instrumen Penilaian</h2>
-              <p>Kumpulan instrumen penilaian autentik: kognitif, afektif, dan psikomotorik.</p>
+              <h2>Dokumentasi Kegiatan Non-Mengajar</h2>
+              <p>Rekam jejak keterlibatan aktif dan dedikasi mahasiswa PPL dalam mendukung manajemen sekolah, pembiasaan budaya positif, dan kegiatan kesiswaan di SMKN 5 Yogyakarta.</p>
             </div>
 
-            <div class="pdf-block">
-              <div class="pdf-block-toolbar">
-                <div class="pdf-block-name">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>Instrumen_Penilaian_Siklus_1.pdf</span>
+            <!-- GRID 4 FOTO KEGIATAN -->
+            <div class="kegiatan-gallery-grid">
+              <!-- FOTO 1 -->
+              <div class="kegiatan-card">
+                <div class="kegiatan-img-frame">
+                  <img src="IMG/penerjunan1.jpeg" alt="Penerjunan dan Orientasi Lapangan PPL" />
+                  <div class="kegiatan-floating-pill">
+                    <i class="fa-solid fa-landmark"></i> Orientasi Lapangan
+                  </div>
                 </div>
-                <div class="pdf-block-actions">
-                  <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_ID_7', 'Instrumen Penilaian')">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    <span>Full Preview</span>
-                  </button>
-                  <a href="GANTI_DOWNLOAD_LINK_7" target="_blank" rel="noopener" class="btn-pdf-action">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Unduh PDF</span>
-                  </a>
+                <div class="kegiatan-card-body">
+                  <h4>Penerjunan & Orientasi Satuan Pendidikan</h4>
+                  <p>
+                    Upacara penerjunan resmi dan koordinasi manajerial bersama Kepala Sekolah, Dosen Pembimbing Lapangan (DPL), Wakil Kepala Kurikulum, serta jajaran Koordinator Guru Pamong di SMK Negeri 5 Yogyakarta guna menyelaraskan target program PPL.
+                  </p>
+                  <div class="kegiatan-card-footer">
+                    <span><i class="fa-solid fa-location-dot"></i> Ruang Rapat SMKN 5</span>
+                    <span>Manajerial PPL</span>
+                  </div>
                 </div>
               </div>
-              <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_ID_7">
-                <div class="pdf-placeholder">
-                  <i class="fa-solid fa-file-pdf"></i>
-                  <span>PDF belum tersedia</span>
+
+              <!-- FOTO 2 -->
+              <div class="kegiatan-card">
+                <div class="kegiatan-img-frame">
+                  <img src="IMG/kegiatan2.jpeg" alt="Pendampingan Kemah Siswa SMKN 5 Yogyakarta" />
+                  <div class="kegiatan-floating-pill">
+                    <i class="fa-solid fa-campground"></i> Ekstrakurikuler
+                  </div>
+                </div>
+                <div class="kegiatan-card-body">
+                  <h4>Pendampingan Perkemahan Siswa di Kaliurang</h4>
+                  <p>
+                    Keterlibatan aktif mendampingi peserta didik kelas X SMKN 5 Yogyakarta dalam kegiatan Perkemahan Pendidikan Karakter di Bumi Perkemahan Kaliurang, menumbuhkan kemandirian, gotong royong, dan kedisiplinan di luar ruang kelas.
+                  </p>
+                  <div class="kegiatan-card-footer">
+                    <span><i class="fa-solid fa-mountain"></i> Buper Kaliurang</span>
+                    <span>Pembinaan Siswa</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FOTO 3 -->
+              <div class="kegiatan-card">
+                <div class="kegiatan-img-frame">
+                  <img src="IMG/kegiatan1.jpeg" alt="Piket Sekolah dan Pembiasaan Budaya Positif" />
+                  <div class="kegiatan-floating-pill">
+                    <i class="fa-solid fa-school"></i> Budaya Sekolah
+                  </div>
+                </div>
+                <div class="kegiatan-card-body">
+                  <h4>Piket Harian & Pembiasaan 3S di Gerbang</h4>
+                  <p>
+                    Melaksanakan tugas piket sekolah harian menyambut kedatangan peserta didik, memeriksa ketertiban atribut seragam, mengawasi presensi kehadiran, serta membiasakan budaya Senyum, Sapa, dan Salam (3S) di lingkungan sekolah.
+                  </p>
+                  <div class="kegiatan-card-footer">
+                    <span><i class="fa-solid fa-door-open"></i> Gerbang Depan Sekolah</span>
+                    <span>Tata Tertib & Karakter</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FOTO 4 -->
+              <div class="kegiatan-card">
+                <div class="kegiatan-img-frame">
+                  <img src="IMG/Diskusi.jpeg" alt="Diskusi Refleksi Komunitas Praktisi Bersama Guru Pamong" />
+                  <div class="kegiatan-floating-pill">
+                    <i class="fa-solid fa-users"></i> Komunitas Praktisi
+                  </div>
+                </div>
+                <div class="kegiatan-card-body">
+                  <h4>Diskusi Refleksi & Kolaborasi Guru Pamong</h4>
+                  <p>
+                    Pertemuan berkala komunitas belajar guru (*lesson study*) bersama Guru Pamong dan rekan mahasiswa PPL untuk merefleksikan kendala teknis pembelajaran, meninjau instrumen asesmen, dan menyusun perbaikan siklus berikutnya.
+                  </p>
+                  <div class="kegiatan-card-footer">
+                    <span><i class="fa-solid fa-comments"></i> Ruang Guru Informatika</span>
+                    <span>Refleksi Kolaboratif</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,30 +902,7 @@
       </div>
     </main>
 
-    <!-- PDF MODAL -->
-    <div class="pdf-modal" id="pdfModal">
-      <div class="pdf-modal-backdrop" onclick="closePdfModal()"></div>
-      <div class="pdf-modal-content">
-        <div class="pdf-modal-header">
-          <span class="pdf-modal-title" id="pdfModalTitle">
-            <i class="fa-solid fa-file-pdf"></i> Preview
-          </span>
-          <div class="pdf-modal-actions">
-            <a href="#" target="_blank" class="btn-pdf-action" id="pdfModalOpen">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-              <span>Tab Baru</span>
-            </a>
-            <button class="btn-pdf-action close" onclick="closePdfModal()" aria-label="Tutup">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="pdf-modal-body">
-          <iframe id="pdfModalIframe" src="" loading="lazy" title="PDF Preview"></iframe>
-        </div>
-      </div>
-    </div>
-
+    <!-- FOOTER RESMI -->
     <footer class="site-footer">
       <div class="container footer-container">
         <div class="footer-col brand-col">
@@ -401,8 +931,8 @@
             <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
             <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
             <li class="footer-sub-label">Identifikasi Diri</li>
-        <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
-        <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
             <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
             <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
             <li class="footer-sub-label">Inovasi</li>
@@ -425,18 +955,21 @@
 
       <div class="footer-bottom">
         <div class="container">
-          <p>© 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+          <p>&copy; 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
         </div>
       </div>
     </footer>
 
+    <!-- SCRIPT LOGIC -->
     <script>
+      // NAVBAR SCROLL
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) navbar.classList.add("scrolled");
         else navbar.classList.remove("scrolled");
       });
 
+      // MOBILE MENU
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       hamburger.addEventListener("click", () => {
@@ -444,6 +977,7 @@
         hamburger.classList.toggle("active");
       });
 
+      // MOBILE DROPDOWN
       const dropdownBtns = document.querySelectorAll(".dropbtn");
       dropdownBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -464,7 +998,7 @@
         });
       });
 
-      // ===== TOC Active Highlight =====
+      // TOC ACTIVE HIGHLIGHT
       const sections = document.querySelectorAll(".ep-section");
       const tocLinks = document.querySelectorAll(".ep-toc-link");
 
@@ -479,100 +1013,21 @@
             }
           });
         },
-        { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+        { rootMargin: "-25% 0px -65% 0px", threshold: 0 }
       );
-
       sections.forEach((s) => observer.observe(s));
 
-      // ===== Lazy Load PDF Embed =====
-      const pdfWrappers = document.querySelectorAll(".pdf-block-embed[data-pdf-id]");
-      const pdfObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const wrapper = entry.target;
-              const pdfId = wrapper.getAttribute("data-pdf-id");
-              if (pdfId && !pdfId.includes("GANTI")) {
-                wrapper.innerHTML =
-                  '<iframe src="https://drive.google.com/file/d/' +
-                  pdfId +
-                  '/preview" allow="autoplay" loading="lazy" title="PDF Preview"></iframe>';
-              }
-              pdfObserver.unobserve(wrapper);
-            }
-          });
-        },
-        { rootMargin: "300px" }
-      );
-      pdfWrappers.forEach((w) => pdfObserver.observe(w));
+      // TAB SWITCHER INSTRUMEN PENILAIAN
+      function switchPenilaianTab(tabId, btn) {
+        document.querySelectorAll(".tab-btn-pill").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".penilaian-panel").forEach((p) => (p.style.display = "none"));
 
-      // ===== Lazy Load Video Embed =====
-      const videoWrappers = document.querySelectorAll(".video-block-embed[data-video-src]");
-      const videoObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const wrapper = entry.target;
-              const src = wrapper.getAttribute("data-video-src");
-              if (src && !src.includes("GANTI")) {
-                wrapper.innerHTML =
-                  '<iframe src="' +
-                  src +
-                  '" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>';
-              }
-              videoObserver.unobserve(wrapper);
-            }
-          });
-        },
-        { rootMargin: "300px" }
-      );
-      videoWrappers.forEach((w) => videoObserver.observe(w));
-
-      // ===== PDF Modal =====
-      function openPdfModal(pdfId, title) {
-        if (!pdfId || pdfId.includes("GANTI")) {
-          alert("File PDF belum tersedia. Silakan isi link Drive terlebih dahulu.");
-          return;
-        }
-        const modal = document.getElementById("pdfModal");
-        const iframe = document.getElementById("pdfModalIframe");
-        const titleEl = document.getElementById("pdfModalTitle");
-        const openBtn = document.getElementById("pdfModalOpen");
-
-        iframe.src = "https://drive.google.com/file/d/" + pdfId + "/preview";
-        titleEl.innerHTML = '<i class="fa-solid fa-file-pdf"></i> ' + title;
-        openBtn.href = "https://drive.google.com/file/d/" + pdfId + "/view";
-
-        modal.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closePdfModal() {
-        const modal = document.getElementById("pdfModal");
-        const iframe = document.getElementById("pdfModalIframe");
-        modal.classList.remove("open");
-        setTimeout(() => {
-          iframe.src = "";
-        }, 200);
-        document.body.style.overflow = "";
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closePdfModal();
-      });
-
-      // ===== Scroll Reveal =====
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal, .fade-in-up");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 80;
-          if (elementTop < windowHeight - elementVisible) reveals[i].classList.add("active");
+        btn.classList.add("active");
+        const activePanel = document.getElementById(tabId);
+        if (activePanel) {
+          activePanel.style.display = "block";
         }
       }
-      window.addEventListener("scroll", reveal);
-      reveal();
     </script>
   </body>
 </html>
