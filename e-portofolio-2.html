@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,328 @@
     <link rel="stylesheet" href="CSS/tech-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+
+    <style>
+      /* Scoped Styles for E-Portofolio 2 Enhancements */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      .ep-main {
+        padding-top: 105px;
+        min-height: 85vh;
+      }
+
+      /* Hero Section Styling (Always 100% Visible & Prominent) */
+      .ep-hero {
+        padding: 40px 0 30px;
+        text-align: center;
+        position: relative;
+      }
+      .ep-hero .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .ep-hero h1 {
+        font-size: clamp(2.2rem, 4.5vw, 3.2rem) !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin: 16px 0 14px !important;
+        letter-spacing: -0.02em !important;
+        line-height: 1.2 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+      .ep-hero .badge-tech {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+      }
+      .ep-hero .ep-hero-desc {
+        font-size: 1.05rem !important;
+        line-height: 1.75 !important;
+        color: var(--text-light, #94a3b8) !important;
+        max-width: 780px !important;
+        margin: 0 auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+
+      /* Highlight Kata Kunci */
+      .hl-concept { color: #38bdf8; font-weight: 700; }
+      .hl-action { color: #34d399; font-weight: 700; }
+      .hl-context { color: #fbbf24; font-weight: 700; }
+      .hl-purple { color: #c084fc; font-weight: 700; }
+
+      /* PDF Embed Container */
+      .pdf-viewer-frame {
+        width: 100%;
+        height: 600px;
+        border: 1px solid var(--border-subtle, #30363d);
+        border-radius: 10px;
+        background: #0d1117;
+        margin-top: 14px;
+        overflow: hidden;
+      }
+      .pdf-viewer-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Tabs untuk Instrumen Penilaian */
+      .tab-switcher {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .tab-btn-pill {
+        padding: 9px 18px;
+        border-radius: 8px;
+        background: rgba(22, 27, 34, 0.85);
+        border: 1px solid var(--border-subtle, #30363d);
+        color: var(--text-light, #8b949e);
+        font-family: var(--font-mono, monospace);
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.25s ease;
+      }
+      .tab-btn-pill:hover {
+        background: rgba(30, 41, 59, 0.9);
+        color: #ffffff;
+        border-color: rgba(56, 189, 248, 0.4);
+      }
+      .tab-btn-pill.active {
+        background: rgba(56, 189, 248, 0.15);
+        color: #38bdf8;
+        border-color: #38bdf8;
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+      }
+
+      /* Analisis Cards Layout */
+      .analisis-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        margin-top: 14px;
+      }
+      .analisis-card {
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 14px;
+        padding: 1.8rem 2rem;
+        backdrop-filter: blur(10px);
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .analisis-card:hover {
+        border-color: rgba(56, 189, 248, 0.45);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+      .analisis-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.1rem;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .analisis-title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .analisis-icon-box {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+      }
+      .icon-box-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+      .icon-box-green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+      .icon-box-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+      .icon-box-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+
+      .analisis-card h3 {
+        font-size: 1.15rem;
+        color: #ffffff;
+        margin: 0;
+        font-weight: 700;
+      }
+      .analisis-badge-tag {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+      .tag-green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
+      .tag-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+      .tag-purple { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
+
+      .analisis-card p {
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        line-height: 1.85;
+        text-align: justify;
+        text-justify: inter-word;
+        margin-bottom: 0.9rem;
+      }
+      .analisis-card p:last-child {
+        margin-bottom: 0;
+      }
+      .analisis-sub-points {
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .analisis-sub-points li {
+        position: relative;
+        padding-left: 1.6rem;
+        color: #cbd5e1;
+        font-size: 0.93rem;
+        line-height: 1.75;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .analisis-sub-points li::before {
+        content: "\f058";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        font-size: 0.85rem;
+        color: #38bdf8;
+      }
+      .analisis-card.theme-green .analisis-sub-points li::before { color: #34d399; }
+      .analisis-card.theme-purple .analisis-sub-points li::before { color: #c084fc; }
+
+      /* Galeri Kegiatan Non-Mengajar 4 Foto Grid */
+      .kegiatan-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 18px;
+      }
+      .kegiatan-card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid var(--border-subtle, #30363d);
+        border-radius: 14px;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .kegiatan-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(52, 211, 153, 0.4);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      }
+      .kegiatan-img-frame {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: #0d1117;
+      }
+      .kegiatan-img-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.4s ease;
+      }
+      .kegiatan-card:hover .kegiatan-img-frame img {
+        transform: scale(1.05);
+      }
+      .kegiatan-floating-pill {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .kegiatan-card-body {
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+      }
+      .kegiatan-card-body h4 {
+        color: #ffffff;
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.4;
+      }
+      .kegiatan-card-body p {
+        color: #cbd5e1;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        text-align: justify;
+        text-justify: inter-word;
+        margin: 0;
+      }
+      .kegiatan-card-footer {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        font-family: var(--font-mono, monospace);
+        color: #94a3b8;
+      }
+
+      /* Video Embed Full Width Frame */
+      .video-wrapper-frame {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-subtle, #30363d);
+        background: #000;
+        margin-top: 14px;
+      }
+      .video-wrapper-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
   </head>
   <body>
     <div class="mesh-bg">
@@ -17,6 +339,7 @@
       <div class="mesh-blob blob-coral"></div>
     </div>
 
+    <!-- NAVBAR RESMI -->
     <header class="navbar scrolled" id="navbar">
       <div class="container nav-container">
         <div class="nav-left">
@@ -74,14 +397,14 @@
       <!-- HERO -->
       <section class="ep-hero">
         <div class="container text-center">
-          <div class="badge-tech fade-in-up" style="animation-delay: 0.1s">
-            <i class="fa-solid fa-folder-open"></i> Semester 2 · Praktik Mandiri
+          <div class="badge-tech">
+            <i class="fa-solid fa-folder-open"></i> Semester 2 · Praktik Mandiri Siklus 2, 3, & 4
           </div>
-          <h1 class="fade-in-up" style="animation-delay: 0.2s">
+          <h1>
             E-Portofolio 2 <span class="text-gradient">Semester 2</span>
           </h1>
-          <p class="ep-hero-desc fade-in-up" style="animation-delay: 0.3s">
-            Dokumentasi lengkap Praktik Pengalaman Lapangan (PPL) Mandiri Siklus 2, 3, dan 4 — RPP, video praktik, analisis mendalam, hingga instrumen penilaian.
+          <p class="ep-hero-desc">
+            Dokumentasi komprehensif Praktik Pengalaman Lapangan (PPL) Mandiri Siklus 2, 3, dan 4 di SMK Negeri 5 Yogyakarta — Rencana Pelaksanaan Pembelajaran (RPP), video praktik mengajar, instrumen penilaian autentik, analisis reflektif mendalam, hingga rekam jejak kegiatan non-mengajar.
           </p>
         </div>
       </section>
@@ -109,6 +432,7 @@
       <!-- ============================================ -->
       <div class="ep-siklus-panel active" id="siklus-2">
         <div class="ep-layout">
+          <!-- TOC SIKLUS 2 -->
           <aside class="ep-toc">
             <div class="ep-toc-sticky">
               <div class="ep-toc-title">
@@ -117,208 +441,271 @@
               <nav class="ep-toc-nav" data-siklus="s2">
                 <a href="#s2-01" class="ep-toc-link active" data-section="s2-01"><span class="toc-num">01</span> RPP Siklus 2</a>
                 <a href="#s2-02" class="ep-toc-link" data-section="s2-02"><span class="toc-num">02</span> Video Praktik</a>
-                <a href="#s2-03" class="ep-toc-link" data-section="s2-03"><span class="toc-num">03</span> Analisis RPP</a>
-                <a href="#s2-04" class="ep-toc-link" data-section="s2-04"><span class="toc-num">04</span> Analisis Media</a>
+                <a href="#s2-03" class="ep-toc-link" data-section="s2-03"><span class="toc-num">03</span> Instrumen Penilaian</a>
+                <a href="#s2-04" class="ep-toc-link" data-section="s2-04"><span class="toc-num">04</span> Analisis RPP</a>
                 <a href="#s2-05" class="ep-toc-link" data-section="s2-05"><span class="toc-num">05</span> Analisis Video</a>
-                <a href="#s2-06" class="ep-toc-link" data-section="s2-06"><span class="toc-num">06</span> Kegiatan Non-Mengajar</a>
-                <a href="#s2-07" class="ep-toc-link" data-section="s2-07"><span class="toc-num">07</span> Instrumen Penilaian</a>
+                <a href="#s2-06" class="ep-toc-link" data-section="s2-06"><span class="toc-num">06</span> Analisis Media</a>
+                <a href="#s2-07" class="ep-toc-link" data-section="s2-07"><span class="toc-num">07</span> Kegiatan Non-Mengajar</a>
               </nav>
             </div>
           </aside>
 
           <div class="ep-content">
-            <!-- Siklus 2 · Section 01: RPP -->
+            <!-- S2 · 01: RPP -->
             <section id="s2-01" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">01</span>
-                <h2>RPP Siklus 2</h2>
-                <p>Rencana Pelaksanaan Pembelajaran Siklus 2.</p>
+                <h2>RPP Siklus 2 (Struktur Data & Analisis Data)</h2>
+                <p>Rencana Pelaksanaan Pembelajaran Siklus 2 berbasis permainan logika dan eksplorasi data di SMKN 5 Yogyakarta.</p>
               </div>
               <div class="pdf-block">
                 <div class="pdf-block-toolbar">
                   <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i>
                     <span>RPP_Siklus_2.pdf</span>
                   </div>
                   <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('1hqtSK6VG2Klmn85-VHjubVDhS6KQNxPr', 'RPP Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1hqtSK6VG2Klmn85-VHjubVDhS6KQNxPr/view?usp=sharing" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
+                    <a href="Dokumen/RPP Siklus 2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      <span>Full Preview</span>
+                    </a>
+                    <a href="Dokumen/RPP Siklus 2.pdf" download="RPP_Siklus_2_Ilham_Kurnia_Septiadi.pdf" class="btn-pdf-action">
+                      <i class="fa-solid fa-download"></i>
+                      <span>Unduh PDF</span>
                     </a>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="1hqtSK6VG2Klmn85-VHjubVDhS6KQNxPr">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                <div class="pdf-viewer-frame">
+                  <iframe src="Dokumen/RPP Siklus 2.pdf#toolbar=1&navpanes=0" title="RPP Siklus 2"></iframe>
                 </div>
               </div>
             </section>
 
-            <!-- Section 02: Video -->
+            <!-- S2 · 02: VIDEO -->
             <section id="s2-02" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">02</span>
                 <h2>Video Praktik Pembelajaran Siklus 2</h2>
-                <p>Rekaman praktik mengajar pada Siklus 2.</p>
+                <p>Dokumentasi video pelaksanaan praktik mengajar materi struktur data di laboratorium komputer.</p>
               </div>
-              <div class="video-block">
+              <div class="pdf-block" style="padding-bottom: 20px;">
                 <div class="pdf-block-toolbar">
                   <div class="pdf-block-name">
-                    <i class="fa-solid fa-circle-play" style="color: #4f8cff;"></i>
-                    <span>Video_Praktik_Siklus_2</span>
+                    <i class="fa-brands fa-google-drive" style="color: #4285f4;"></i>
+                    <span>Video_Praktik_Siklus_2.mp4</span>
                   </div>
                   <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openVideoModal('https://drive.google.com/file/d/1Ua23BCztEy2DpNBCze2tm_xQ4tvmUHEp/view?usp=sharing', 'Video Praktik Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1Ua23BCztEy2DpNBCze2tm_xQ4tvmUHEp/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf-action">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Buka di Google Drive</span>
+                    <a href="https://drive.google.com/file/d/1Ua23BCztEy2DpNBCze2tm_xQ4tvmUHEp/view?usp=sharing" target="_blank" rel="noopener" class="btn-pdf-action primary">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      <span>Buka di Google Drive</span>
                     </a>
                   </div>
                 </div>
-                <div class="video-block-embed" data-video-src="https://drive.google.com/file/d/1Ua23BCztEy2DpNBCze2tm_xQ4tvmUHEp/view?usp=sharing">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-video"></i><span>Memuat video...</span></div>
+                <div class="video-wrapper-frame">
+                  <iframe
+                    src="https://drive.google.com/file/d/1Ua23BCztEy2DpNBCze2tm_xQ4tvmUHEp/preview"
+                    title="Video Praktik Siklus 2"
+                    allow="autoplay"
+                  ></iframe>
                 </div>
               </div>
             </section>
 
-            <!-- Section 03: Analisis RPP -->
+            <!-- S2 · 03: INSTRUMEN PENILAIAN -->
             <section id="s2-03" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">03</span>
-                <h2>Analisis RPP Siklus 2</h2>
-                <p>Refleksi dan evaluasi rancangan pembelajaran Siklus 2.</p>
+                <h2>Instrumen Penilaian Siklus 2</h2>
+                <p>Kumpulan instrumen evaluasi otentik: penilaian pelaksanaan mengajar, evaluasi RPP, dan LKPD peserta didik.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <span>Analisis_RPP_Siklus_2.pdf</span>
+              <div class="tab-switcher">
+                <button class="tab-btn-pill active" onclick="switchPenilaianTabS2('tab-s2-praktik', this)">
+                  <i class="fa-solid fa-clipboard-check"></i> Penilaian Praktik Mengajar
+                </button>
+                <button class="tab-btn-pill" onclick="switchPenilaianTabS2('tab-s2-rpp', this)">
+                  <i class="fa-solid fa-file-circle-check"></i> Penilaian RPP Siklus 2
+                </button>
+                <button class="tab-btn-pill" onclick="switchPenilaianTabS2('tab-s2-lkpd', this)">
+                  <i class="fa-solid fa-book-open-reader"></i> LKPD Siklus 2
+                </button>
+              </div>
+
+              <div class="penilaian-panel-s2" id="tab-s2-praktik">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Penilaian_Praktik_Mengajar_Siklus_2.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Penilaian Praktik Mengajar Siklus 2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Penilaian Praktik Mengajar Siklus 2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
                   </div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S2_3', 'Analisis RPP Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="GANTI_DL_S2_3" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
-                    </a>
-                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Penilaian Praktik Mengajar Siklus 2.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S2_3">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+              </div>
+
+              <div class="penilaian-panel-s2" id="tab-s2-rpp" style="display: none;">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Penilaian_RPP_Siklus_2.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Penilaian RPP Siklus 2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Penilaian RPP Siklus 2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
+                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Penilaian RPP Siklus 2.pdf#toolbar=1&navpanes=0"></iframe></div>
+                </div>
+              </div>
+
+              <div class="penilaian-panel-s2" id="tab-s2-lkpd" style="display: none;">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>LKPD_Siklus_2.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/LKPD Siklus 2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/LKPD Siklus 2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
+                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/LKPD Siklus 2.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
               </div>
             </section>
 
-            <!-- Section 04: Analisis Media -->
+            <!-- S2 · 04: ANALISIS RPP -->
             <section id="s2-04" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">04</span>
-                <h2>Analisis Media Pembelajaran Siklus 2</h2>
-                <p>Kajian efektivitas media yang digunakan di Siklus 2.</p>
+                <h2>Analisis RPP Siklus 2</h2>
+                <p>Refleksi rancangan instruksional materi struktur data dengan integrasi simulasi interaktif.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <span>Analisis_Media_Siklus_2.pdf</span>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-blue"><i class="fa-solid fa-diagram-project"></i></div><h3>Desain Pembelajaran & Apersepsi Konkret</h3></div>
+                    <span class="analisis-badge-tag tag-blue">Inovasi Instruksional</span>
                   </div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S2_4', 'Analisis Media Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="GANTI_DL_S2_4" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
-                    </a>
-                  </div>
+                  <p>
+                    RPP Siklus 2 menghadirkan penyempurnaan signifikan dari Siklus 1 dengan merancang apersepsi berbasis aktivitas konkret bertajuk <strong class="hl-concept">"Cari Data Saya!"</strong>. Guru mengontekstualisasikan konsep abstrak struktur data (array dan indexing) ke dalam analogi pengorganisasian katalog bahan di bengkel kejuruan SMKN 5 Yogyakarta.
+                  </p>
+                  <ul class="analisis-sub-points">
+                    <li><strong>Aktivasi Kognitif Cepat:</strong> Simulasi 15 menit awal berhasil mengeliminasi resistensi murid terhadap terminologi teknis informatika.</li>
+                    <li><strong>Keterpaduan Diferensiasi:</strong> Peserta didik dengan daya tangkap beragam diberikan pilihan representasi data visual atau tabel matriks.</li>
+                  </ul>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S2_4">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                <div class="analisis-card theme-green">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-green"><i class="fa-solid fa-sliders"></i></div><h3>Evaluasi Manajemen Alokasi Waktu</h3></div>
+                    <span class="analisis-badge-tag tag-green">Refleksi Sintaksis</span>
+                  </div>
+                  <p>
+                    Dibandingkan siklus sebelumnya, pembagian waktu pada RPP Siklus 2 berjalan jauh lebih presisi. Guru memprogramkan transisi yang terukur antara pemaparan materi, kerja mandiri pada LKPD, dan verifikasi silang antar-kelompok sehingga seluruh sintaksis terlaksana tuntas.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <!-- Section 05: Analisis Video -->
+            <!-- S2 · 05: ANALISIS VIDEO -->
             <section id="s2-05" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">05</span>
                 <h2>Analisis Video Praktik Siklus 2</h2>
-                <p>Umpan balik berdasarkan rekaman praktik mengajar Siklus 2.</p>
+                <p>Telaah interaksi kelas, gestur fasilitasi, dan peningkatan partisipasi aktif peserta didik.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <span>Analisis_Video_Siklus_2.pdf</span>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-blue"><i class="fa-solid fa-user-check"></i></div><h3>Peningkatan Partisipasi & Interaksi Kelas</h3></div>
+                    <span class="analisis-badge-tag tag-blue">Class Engagement</span>
                   </div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S2_5', 'Analisis Video Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="GANTI_DL_S2_5" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
-                    </a>
-                  </div>
+                  <p>
+                    Rekaman praktik memperlihatkan suasana kelas yang lebih dinamis. Peserta didik menunjukkan keberanian bertanya dan saling mengoreksi saat menyusun barisan indeks data. Guru konsisten memberikan penguatan verbal positif (*positive reinforcement*) yang menjaga semangat belajar peserta didik.
+                  </p>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S2_5">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                <div class="analisis-card theme-purple">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-purple"><i class="fa-solid fa-chalkboard-user"></i></div><h3>Fasilitasi Kelompok Terarah</h3></div>
+                    <span class="analisis-badge-tag tag-purple">Guided Scaffolding</span>
+                  </div>
+                  <p>
+                    Guru terlihat efektif memandu kelompok kerja yang mengalami kebuntuan logika tanpa memotong alur berpikir mandiri siswa. Intervensi dilakukan lewat pertanyaan pemandu bertingkat, membimbing murid menemukan sendiri letak kekeliruan logika indeks data.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <!-- Section 06: Kegiatan Non-Mengajar -->
+            <!-- S2 · 06: ANALISIS MEDIA -->
             <section id="s2-06" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">06</span>
-                <h2>Analisis Kegiatan Non-Mengajar Siklus 2</h2>
-                <p>Keterlibatan dalam kegiatan di luar jam mengajar.</p>
+                <h2>Analisis Media Pembelajaran Siklus 2</h2>
+                <p>Kajian efektivitas alat peraga kartu indeks data dan media slide visual terstruktur.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <span>Analisis_Kegiatan_NonMengajar_Siklus_2.pdf</span>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-green"><i class="fa-solid fa-cubes"></i></div><h3>Kombinasi Media Fisik & Digital</h3></div>
+                    <span class="analisis-badge-tag tag-green">Blended Tools</span>
                   </div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S2_6', 'Kegiatan Non-Mengajar Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="GANTI_DL_S2_6" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S2_6">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                  <p>
+                    Siklus 2 memadukan kartu indeks fisik (*manipulative cards*) dengan visualisasi proyektor LCD. Media manipulatif terbukti mempercepat pemahaman murid kinestetik mengenai konsep antrian (*queue*) dan tumpukan (*stack*) sebelum diimplementasikan ke dalam kode komputer.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <!-- Section 07: Instrumen Penilaian -->
+            <!-- S2 · 07: KEGIATAN NON-MENGAJAR -->
             <section id="s2-07" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">07</span>
-                <h2>Instrumen Penilaian Siklus 2</h2>
-                <p>Instrumen penilaian autentik Siklus 2.</p>
+                <h2>Dokumentasi Kegiatan Non-Mengajar</h2>
+                <p>Partisipasi nyata mahasiswa PPL dalam mendukung tata kelola sekolah, kesiswaan, dan kolaborasi komunitas guru.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <span>Instrumen_Penilaian_Siklus_2.pdf</span>
+              <div class="kegiatan-gallery-grid">
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/penerjunan1.jpeg" alt="Penerjunan dan Orientasi Lapangan PPL" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-landmark"></i> Orientasi Lapangan</div>
                   </div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S2_7', 'Instrumen Penilaian Siklus 2')">
-                      <i class="fa-solid fa-expand"></i> <span>Full Preview</span>
-                    </button>
-                    <a href="GANTI_DL_S2_7" download class="btn-pdf-action">
-                      <i class="fa-solid fa-download"></i> <span>Unduh PDF</span>
-                    </a>
+                  <div class="kegiatan-card-body">
+                    <h4>Penerjunan & Orientasi Satuan Pendidikan</h4>
+                    <p>Upacara serah terima dan koordinasi resmi bersama pimpinan SMKN 5 Yogyakarta guna menyelaraskan program PPL dengan agenda semester sekolah.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-location-dot"></i> Ruang Rapat SMKN 5</span><span>Manajerial PPL</span></div>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S2_7">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan2.jpeg" alt="Pendampingan Kemah Siswa SMKN 5" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-campground"></i> Ekstrakurikuler</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Pendampingan Perkemahan di Kaliurang</h4>
+                    <p>Keterlibatan aktif membimbing peserta didik kelas X dalam perkemahan pembinaan karakter di Buper Kaliurang untuk memupuk jiwa kemandirian dan gotong royong.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-mountain"></i> Buper Kaliurang</span><span>Pembinaan Karakter</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan1.jpeg" alt="Piket Sekolah dan Pembiasaan Budaya Positif" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-school"></i> Budaya Sekolah</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Piket Harian & Pembiasaan 3S di Gerbang</h4>
+                    <p>Melaksanakan piket harian menyambut kehadiran siswa di gerbang pagi, mengawasi kedisiplinan seragam, serta memperkuat budaya Senyum, Sapa, Salam.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-door-open"></i> Gerbang Depan</span><span>Budaya Positif</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/Diskusi.jpeg" alt="Diskusi Refleksi Bersama Guru Pamong" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-users"></i> Komunitas Praktisi</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Diskusi Refleksi & Kolaborasi Guru Pamong</h4>
+                    <p>Pertemuan mingguan evaluasi pengajaran bersama Guru Pamong dan rekan mahasiswa PPL guna meninjau hasil belajar dan merancang perbaikan siklus berikutnya.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-comments"></i> Ruang Guru</span><span>Lesson Study</span></div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -329,8 +716,9 @@
       <!-- ============================================ -->
       <!-- PANEL SIKLUS 3                               -->
       <!-- ============================================ -->
-      <div class="ep-siklus-panel" id="siklus-3">
+      <div class="ep-siklus-panel" id="siklus-3" style="display: none;">
         <div class="ep-layout">
+          <!-- TOC SIKLUS 3 -->
           <aside class="ep-toc">
             <div class="ep-toc-sticky">
               <div class="ep-toc-title">
@@ -339,145 +727,237 @@
               <nav class="ep-toc-nav" data-siklus="s3">
                 <a href="#s3-01" class="ep-toc-link active" data-section="s3-01"><span class="toc-num">01</span> RPP Siklus 3</a>
                 <a href="#s3-02" class="ep-toc-link" data-section="s3-02"><span class="toc-num">02</span> Video Praktik</a>
-                <a href="#s3-03" class="ep-toc-link" data-section="s3-03"><span class="toc-num">03</span> Analisis RPP</a>
-                <a href="#s3-04" class="ep-toc-link" data-section="s3-04"><span class="toc-num">04</span> Analisis Media</a>
+                <a href="#s3-03" class="ep-toc-link" data-section="s3-03"><span class="toc-num">03</span> Instrumen Penilaian</a>
+                <a href="#s3-04" class="ep-toc-link" data-section="s3-04"><span class="toc-num">04</span> Analisis RPP</a>
                 <a href="#s3-05" class="ep-toc-link" data-section="s3-05"><span class="toc-num">05</span> Analisis Video</a>
-                <a href="#s3-06" class="ep-toc-link" data-section="s3-06"><span class="toc-num">06</span> Kegiatan Non-Mengajar</a>
-                <a href="#s3-07" class="ep-toc-link" data-section="s3-07"><span class="toc-num">07</span> Instrumen Penilaian</a>
+                <a href="#s3-06" class="ep-toc-link" data-section="s3-06"><span class="toc-num">06</span> Analisis Media</a>
+                <a href="#s3-07" class="ep-toc-link" data-section="s3-07"><span class="toc-num">07</span> Kegiatan Non-Mengajar</a>
               </nav>
             </div>
           </aside>
 
           <div class="ep-content">
+            <!-- S3 · 01: RPP -->
             <section id="s3-01" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">01</span>
-                <h2>RPP Siklus 3</h2>
-                <p>Rencana Pelaksanaan Pembelajaran Siklus 3.</p>
+                <h2>RPP Siklus 3 (Operasi Struktur Data & Algoritma Lanjut)</h2>
+                <p>Rencana Pelaksanaan Pembelajaran implementasi operasi logika dan algoritma di Kelas X Keramik SMKN 5 Yogyakarta.</p>
               </div>
               <div class="pdf-block">
                 <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>RPP_Siklus_3.pdf</span></div>
+                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>RPP_Siklus_3.pdf</span></div>
                   <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('1GLLI216Qm7jIB_xoER8cqsj_7aFgSzZ9', 'RPP Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="https://drive.google.com/file/d/1GLLI216Qm7jIB_xoER8cqsj_7aFgSzZ9/view?usp=sharing" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    <a href="Dokumen/RPP Siklus 3.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                    <a href="Dokumen/RPP Siklus 3.pdf" download="RPP_Siklus_3_Ilham_Kurnia_Septiadi.pdf" class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="1GLLI216Qm7jIB_xoER8cqsj_7aFgSzZ9">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
-                </div>
+                <div class="pdf-viewer-frame"><iframe src="Dokumen/RPP Siklus 3.pdf#toolbar=1&navpanes=0"></iframe></div>
               </div>
             </section>
 
+            <!-- S3 · 02: VIDEO -->
             <section id="s3-02" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">02</span>
                 <h2>Video Praktik Pembelajaran Siklus 3</h2>
-                <p>Rekaman praktik mengajar pada Siklus 3.</p>
+                <p>Dokumentasi pelaksanaan pembelajaran mandiri Siklus 3 materi algoritma terapan.</p>
               </div>
-              <div class="video-block">
-                <div class="video-block-embed" data-video-src="GANTI_VIDEO_S3">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-video"></i><span>Video belum tersedia</span></div>
+              <div class="pdf-block" style="padding-bottom: 20px;">
+                <div class="pdf-block-toolbar">
+                  <div class="pdf-block-name"><i class="fa-brands fa-youtube" style="color: #ef4444;"></i><span>Video_Praktik_Siklus_3</span></div>
+                  <div class="pdf-block-actions">
+                    <a href="https://www.youtube.com/watch?v=7NqSZ3KpROI" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Buka di YouTube</span></a>
+                  </div>
+                </div>
+                <div class="video-wrapper-frame">
+                  <iframe src="https://www.youtube.com/embed/7NqSZ3KpROI" title="Video Praktik Siklus 3" allowfullscreen></iframe>
                 </div>
               </div>
             </section>
 
+            <!-- S3 · 03: INSTRUMEN PENILAIAN -->
             <section id="s3-03" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">03</span>
-                <h2>Analisis RPP Siklus 3</h2>
-                <p>Refleksi dan evaluasi rancangan pembelajaran Siklus 3.</p>
+                <h2>Instrumen Penilaian Siklus 3</h2>
+                <p>Instrumen penilaian komprehensif mengukur performa praktik mengajar, kualitas RPP, dan LKPD siswa.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_RPP_Siklus_3.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S3_3', 'Analisis RPP Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S3_3" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="tab-switcher">
+                <button class="tab-btn-pill active" onclick="switchPenilaianTabS3('tab-s3-praktik', this)">
+                  <i class="fa-solid fa-clipboard-check"></i> Penilaian Praktik Mengajar
+                </button>
+                <button class="tab-btn-pill" onclick="switchPenilaianTabS3('tab-s3-rpp', this)">
+                  <i class="fa-solid fa-file-circle-check"></i> Penilaian RPP Siklus 3
+                </button>
+                <button class="tab-btn-pill" onclick="switchPenilaianTabS3('tab-s3-lkpd', this)">
+                  <i class="fa-solid fa-book-open-reader"></i> LKPD Siklus 3
+                </button>
+              </div>
+
+              <div class="penilaian-panel-s3" id="tab-s3-praktik">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Penilaian_Praktik_Mengajar_Siklus_3.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Penilaian Praktik Mengajar Siklus 3.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Penilaian Praktik Mengajar Siklus 3.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
                   </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Penilaian Praktik Mengajar Siklus 3.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S3_3">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+              </div>
+
+              <div class="penilaian-panel-s3" id="tab-s3-rpp" style="display: none;">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Penilaian_RPP_Siklus_3.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Penilaian RPP Siklus 3.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Penilaian RPP Siklus 3.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
+                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Penilaian RPP Siklus 3.pdf#toolbar=1&navpanes=0"></iframe></div>
+                </div>
+              </div>
+
+              <div class="penilaian-panel-s3" id="tab-s3-lkpd" style="display: none;">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>LKPD_Siklus_3.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/LKPD Siklus 3.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/LKPD Siklus 3.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
+                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/LKPD Siklus 3.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
               </div>
             </section>
 
+            <!-- S3 · 04: ANALISIS RPP -->
             <section id="s3-04" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">04</span>
-                <h2>Analisis Media Pembelajaran Siklus 3</h2>
-                <p>Kajian efektivitas media yang digunakan di Siklus 3.</p>
+                <h2>Analisis RPP Siklus 3</h2>
+                <p>Refleksi perancangan skenario pembelajaran operasi struktur data dan pembiasaan computational thinking.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Media_Siklus_3.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S3_4', 'Analisis Media Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S3_4" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-blue"><i class="fa-solid fa-code-branch"></i></div><h3>Penguatan Nalar Algoritmik Siswa</h3></div>
+                    <span class="analisis-badge-tag tag-blue">Computational Thinking</span>
                   </div>
+                  <p>
+                    RPP Siklus 3 dirancang secara terfokus pada 15 menit awal untuk menjembatani penguasaan konsep dasar menuju <strong class="hl-concept">tahap implementasi operasi struktur data dan algoritma pencarian</strong>. Sintaksis diintegrasikan dengan pemecahan kasus kontekstual pengelolaan inventaris karya seni keramik siswa.
+                  </p>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S3_4">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                <div class="analisis-card theme-green">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-green"><i class="fa-solid fa-users-gear"></i></div><h3>Kolaborasi Heterogen & Peer-Assisted Learning</h3></div>
+                    <span class="analisis-badge-tag tag-green">Diferensiasi Proses</span>
+                  </div>
+                  <p>
+                    Pembagian kelompok heterogen dirancang agar murid berkemampuan logis tinggi dapat bertindak sebagai tutor sebaya (*peer tutor*), mempercepat pemahaman anggota kelompok yang masih memerlukan bimbingan konseptual.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S3 · 05: ANALISIS VIDEO -->
             <section id="s3-05" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">05</span>
                 <h2>Analisis Video Praktik Siklus 3</h2>
-                <p>Umpan balik berdasarkan rekaman praktik mengajar Siklus 3.</p>
+                <p>Evaluasi keterampilan mengelola perdebatan kelompok dan pemberian umpan balik langsung (direct feedback).</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Video_Siklus_3.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S3_5', 'Analisis Video Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S3_5" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-purple"><i class="fa-solid fa-comments-dollar"></i></div><h3>Dinamika Diskusi & Argumen Logis</h3></div>
+                    <span class="analisis-badge-tag tag-purple">Dialogue Quality</span>
                   </div>
-                </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S3_5">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                  <p>
+                    Video memperlihatkan proses diskusi yang sangat hidup di mana masing-masing kelompok saling mempertahankan efisiensi algoritma rancangannya. Guru berperan efektif sebagai moderator netral yang mengarahkan perdebatan menuju kesimpulan saintifik.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S3 · 06: ANALISIS MEDIA -->
             <section id="s3-06" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">06</span>
-                <h2>Analisis Kegiatan Non-Mengajar Siklus 3</h2>
-                <p>Keterlibatan dalam kegiatan di luar jam mengajar.</p>
+                <h2>Analisis Media Pembelajaran Siklus 3</h2>
+                <p>Pemanfaatan media simulator algoritma digital dan lembar kerja kasus terstruktur.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Kegiatan_NonMengajar_Siklus_3.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S3_6', 'Kegiatan Non-Mengajar Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S3_6" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-amber"><i class="fa-solid fa-microchip"></i></div><h3>Interaktivitas Simulator Komputasi</h3></div>
+                    <span class="analisis-badge-tag tag-amber">Digital Simulation</span>
                   </div>
-                </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S3_6">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                  <p>
+                    Integrasi simulator berbasis web di komputer lab memungkinkan peserta didik melihat secara visual bagaimana sebuah data berpindah dan tersortir secara real-time, mengubah konsep abstrak baris kode menjadi visualisasi grafis yang gamblang.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S3 · 07: KEGIATAN NON-MENGAJAR -->
             <section id="s3-07" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">07</span>
-                <h2>Instrumen Penilaian Siklus 3</h2>
-                <p>Instrumen penilaian autentik Siklus 3.</p>
+                <h2>Dokumentasi Kegiatan Non-Mengajar</h2>
+                <p>Keterlibatan berkelanjutan mahasiswa PPL dalam mendukung pembinaan karakter dan kemitraan satuan pendidikan.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Instrumen_Penilaian_Siklus_3.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S3_7', 'Instrumen Penilaian Siklus 3')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S3_7" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="kegiatan-gallery-grid">
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/penerjunan1.jpeg" alt="Penerjunan dan Orientasi Lapangan PPL" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-landmark"></i> Orientasi Lapangan</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Penerjunan & Orientasi Satuan Pendidikan</h4>
+                    <p>Upacara serah terima dan koordinasi resmi bersama pimpinan SMKN 5 Yogyakarta guna menyelaraskan program PPL dengan agenda semester sekolah.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-location-dot"></i> Ruang Rapat SMKN 5</span><span>Manajerial PPL</span></div>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S3_7">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan2.jpeg" alt="Pendampingan Kemah Siswa SMKN 5" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-campground"></i> Ekstrakurikuler</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Pendampingan Perkemahan di Kaliurang</h4>
+                    <p>Keterlibatan aktif membimbing peserta didik kelas X dalam perkemahan pembinaan karakter di Buper Kaliurang untuk memupuk jiwa kemandirian dan gotong royong.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-mountain"></i> Buper Kaliurang</span><span>Pembinaan Karakter</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan1.jpeg" alt="Piket Sekolah dan Pembiasaan Budaya Positif" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-school"></i> Budaya Sekolah</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Piket Harian & Pembiasaan 3S di Gerbang</h4>
+                    <p>Melaksanakan piket harian menyambut kehadiran siswa di gerbang pagi, mengawasi kedisiplinan seragam, serta memperkuat budaya Senyum, Sapa, Salam.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-door-open"></i> Gerbang Depan</span><span>Budaya Positif</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/Diskusi.jpeg" alt="Diskusi Refleksi Bersama Guru Pamong" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-users"></i> Komunitas Praktisi</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Diskusi Refleksi & Kolaborasi Guru Pamong</h4>
+                    <p>Pertemuan mingguan evaluasi pengajaran bersama Guru Pamong dan rekan mahasiswa PPL guna meninjau hasil belajar dan merancang perbaikan siklus berikutnya.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-comments"></i> Ruang Guru</span><span>Lesson Study</span></div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -488,8 +968,9 @@
       <!-- ============================================ -->
       <!-- PANEL SIKLUS 4                               -->
       <!-- ============================================ -->
-      <div class="ep-siklus-panel" id="siklus-4">
+      <div class="ep-siklus-panel" id="siklus-4" style="display: none;">
         <div class="ep-layout">
+          <!-- TOC SIKLUS 4 -->
           <aside class="ep-toc">
             <div class="ep-toc-sticky">
               <div class="ep-toc-title">
@@ -498,145 +979,221 @@
               <nav class="ep-toc-nav" data-siklus="s4">
                 <a href="#s4-01" class="ep-toc-link active" data-section="s4-01"><span class="toc-num">01</span> RPP Siklus 4</a>
                 <a href="#s4-02" class="ep-toc-link" data-section="s4-02"><span class="toc-num">02</span> Video Praktik</a>
-                <a href="#s4-03" class="ep-toc-link" data-section="s4-03"><span class="toc-num">03</span> Analisis RPP</a>
-                <a href="#s4-04" class="ep-toc-link" data-section="s4-04"><span class="toc-num">04</span> Analisis Media</a>
+                <a href="#s4-03" class="ep-toc-link" data-section="s4-03"><span class="toc-num">03</span> Instrumen Penilaian</a>
+                <a href="#s4-04" class="ep-toc-link" data-section="s4-04"><span class="toc-num">04</span> Analisis RPP</a>
                 <a href="#s4-05" class="ep-toc-link" data-section="s4-05"><span class="toc-num">05</span> Analisis Video</a>
-                <a href="#s4-06" class="ep-toc-link" data-section="s4-06"><span class="toc-num">06</span> Kegiatan Non-Mengajar</a>
-                <a href="#s4-07" class="ep-toc-link" data-section="s4-07"><span class="toc-num">07</span> Instrumen Penilaian</a>
+                <a href="#s4-06" class="ep-toc-link" data-section="s4-06"><span class="toc-num">06</span> Analisis Media</a>
+                <a href="#s4-07" class="ep-toc-link" data-section="s4-07"><span class="toc-num">07</span> Kegiatan Non-Mengajar</a>
               </nav>
             </div>
           </aside>
 
           <div class="ep-content">
+            <!-- S4 · 01: RPP -->
             <section id="s4-01" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">01</span>
-                <h2>RPP Siklus 4</h2>
-                <p>Rencana Pelaksanaan Pembelajaran Siklus 4.</p>
+                <h2>RPP Siklus 4 (Algoritma, Flowchart, & Konteks Kejuruan)</h2>
+                <p>Rancangan pembelajaran puncak mengintegrasikan logika komputasional ke dalam aktivitas bengkel Kriya SMKN 5 Yogyakarta.</p>
               </div>
               <div class="pdf-block">
                 <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>RPP_Siklus_4.pdf</span></div>
+                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>RPP_Siklus_4.pdf</span></div>
                   <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('18kmH9SVoiDWU4D3Om6RRCsljypX7gkTI', 'RPP Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="https://drive.google.com/file/d/18kmH9SVoiDWU4D3Om6RRCsljypX7gkTI/view?usp=sharing" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    <a href="Dokumen/Refleksi_Siklus_4_S2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                    <a href="Dokumen/Refleksi_Siklus_4_S2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="18kmH9SVoiDWU4D3Om6RRCsljypX7gkTI">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
-                </div>
+                <div class="pdf-viewer-frame"><iframe src="Dokumen/Refleksi_Siklus_4_S2.pdf#toolbar=1&navpanes=0"></iframe></div>
               </div>
             </section>
 
+            <!-- S4 · 02: VIDEO -->
             <section id="s4-02" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">02</span>
                 <h2>Video Praktik Pembelajaran Siklus 4</h2>
-                <p>Rekaman praktik mengajar pada Siklus 4.</p>
+                <p>Dokumentasi praktik mandiri puncak pembelajaran komputasional dan presentasi proyek siswa.</p>
               </div>
-              <div class="video-block">
-                <div class="video-block-embed" data-video-src="GANTI_VIDEO_S4">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-video"></i><span>Video belum tersedia</span></div>
+              <div class="pdf-block" style="padding-bottom: 20px;">
+                <div class="pdf-block-toolbar">
+                  <div class="pdf-block-name"><i class="fa-brands fa-youtube" style="color: #ef4444;"></i><span>Video_Praktik_Puncak_Siklus_4</span></div>
+                  <div class="pdf-block-actions">
+                    <a href="https://youtu.be/dmqRm-f75Tk?si=_6qJcB3uhWa3OBUW" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Buka di YouTube</span></a>
+                  </div>
+                </div>
+                <div class="video-wrapper-frame">
+                  <iframe src="https://www.youtube.com/embed/dmqRm-f75Tk" title="Video Praktik Siklus 4" allowfullscreen></iframe>
                 </div>
               </div>
             </section>
 
+            <!-- S4 · 03: INSTRUMEN PENILAIAN -->
             <section id="s4-03" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">03</span>
-                <h2>Analisis RPP Siklus 4</h2>
-                <p>Refleksi dan evaluasi rancangan pembelajaran Siklus 4.</p>
+                <h2>Instrumen Penilaian Siklus 4</h2>
+                <p>Instrumen evaluasi puncak mencakup lembar refleksi LK 4 mandiri dan rekam jejak jurnal PKB.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_RPP_Siklus_4.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S4_3', 'Analisis RPP Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S4_3" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="tab-switcher">
+                <button class="tab-btn-pill active" onclick="switchPenilaianTabS4('tab-s4-refleksi', this)">
+                  <i class="fa-solid fa-clipboard-check"></i> Lembar Refleksi LK 4
+                </button>
+                <button class="tab-btn-pill" onclick="switchPenilaianTabS4('tab-s4-pkb', this)">
+                  <i class="fa-solid fa-book-journal-whills"></i> Jurnal PKB Siklus 4
+                </button>
+              </div>
+
+              <div class="penilaian-panel-s4" id="tab-s4-refleksi">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Lembar_Refleksi_Siklus_4.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Refleksi_Siklus_4_S2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Refleksi_Siklus_4_S2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
                   </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Refleksi_Siklus_4_S2.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S4_3">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+              </div>
+
+              <div class="penilaian-panel-s4" id="tab-s4-pkb" style="display: none;">
+                <div class="pdf-block">
+                  <div class="pdf-block-toolbar">
+                    <div class="pdf-block-name"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Jurnal_PKB_S2.pdf</span></div>
+                    <div class="pdf-block-actions">
+                      <a href="Dokumen/Jurnal_PKB_S2.pdf" target="_blank" rel="noopener" class="btn-pdf-action primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Full Preview</span></a>
+                      <a href="Dokumen/Jurnal_PKB_S2.pdf" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+                    </div>
+                  </div>
+                  <div class="pdf-viewer-frame"><iframe src="Dokumen/Jurnal_PKB_S2.pdf#toolbar=1&navpanes=0"></iframe></div>
                 </div>
               </div>
             </section>
 
+            <!-- S4 · 04: ANALISIS RPP -->
             <section id="s4-04" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">04</span>
-                <h2>Analisis Media Pembelajaran Siklus 4</h2>
-                <p>Kajian efektivitas media yang digunakan di Siklus 4.</p>
+                <h2>Analisis RPP Siklus 4</h2>
+                <p>Telaah kematangan desain instruksional menghubungkan logika flowchart ke bengkel kerja vokasi.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Media_Siklus_4.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S4_4', 'Analisis Media Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S4_4" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-blue"><i class="fa-solid fa-award"></i></div><h3>Kematangan Kontekstualisasi Kejuruan</h3></div>
+                    <span class="analisis-badge-tag tag-blue">Peak Instructional Design</span>
                   </div>
+                  <p>
+                    RPP Siklus 4 mencerminkan <strong class="hl-concept">kematangan desain instruksional paling optimal</strong>. Konsep algoritma dan diagram alur (*flowchart*) dibumikan secara langsung ke dalam prosedur operasional standar (SOP) pembuatan produk di bengkel Kelas X Kriya Kreatif Kulit SMKN 5 Yogyakarta, membuktikan integrasi nyata informatika lintas kejuruan.
+                  </p>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S4_4">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                <div class="analisis-card theme-green">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-green"><i class="fa-solid fa-lightbulb"></i></div><h3>Pencapaian Kemandirian Belajar</h3></div>
+                    <span class="analisis-badge-tag tag-green">Autonomous Learning</span>
+                  </div>
+                  <p>
+                    Murid tidak lagi bergantung pada arahan per-langkah dari guru. Desain modul membiasakan siswa melakukan *self-checking* dan *peer-review* atas logika algoritma sebelum menyusun laporan akhir.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S4 · 05: ANALISIS VIDEO -->
             <section id="s4-05" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">05</span>
                 <h2>Analisis Video Praktik Siklus 4</h2>
-                <p>Umpan balik berdasarkan rekaman praktik mengajar Siklus 4.</p>
+                <p>Refleksi performa mengajar mandiri, penguasaan panggung kelas, dan kematangan pedagogik guru.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Video_Siklus_4.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S4_5', 'Analisis Video Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S4_5" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card theme-green">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-green"><i class="fa-solid fa-chalkboard-user"></i></div><h3>Penguasaan Panggung & Refleksi Mandiri</h3></div>
+                    <span class="analisis-badge-tag tag-green">Pedagogical Mastery</span>
                   </div>
-                </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S4_5">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                  <p>
+                    Rekaman memperlihatkan keluwesan guru dalam merespons dinamika kelas yang tidak terduga. Transisi antar-kegiatan mengalir mulus, intonasi suara mantap, dan umpan balik yang diberikan sangat konstruktif memicu rasa percaya diri murid saat presentasi akhir.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S4 · 06: ANALISIS MEDIA -->
             <section id="s4-06" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">06</span>
-                <h2>Analisis Kegiatan Non-Mengajar Siklus 4</h2>
-                <p>Keterlibatan dalam kegiatan di luar jam mengajar.</p>
+                <h2>Analisis Media Pembelajaran Siklus 4</h2>
+                <p>Integrasi perangkat diagram alur interaktif digital dan presentasi terpadu hasil karya.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Analisis_Kegiatan_NonMengajar_Siklus_4.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S4_6', 'Kegiatan Non-Mengajar Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S4_6" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="analisis-cards-grid">
+                <div class="analisis-card theme-amber">
+                  <div class="analisis-card-header">
+                    <div class="analisis-title-wrap"><div class="analisis-icon-box icon-box-amber"><i class="fa-solid fa-chart-pie"></i></div><h3>Optimalisasi Media Diagram Alur Terbuka</h3></div>
+                    <span class="analisis-badge-tag tag-amber">Interactive Flow Tools</span>
                   </div>
-                </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S4_6">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+                  <p>
+                    Penggunaan platform pembuat flowchart berbasis web (Draw.io / Canva) memudahkan murid memvisualisasikan alur percabangan dan perulangan secara modular, menghasilkan artefak pembelajaran yang rapi dan siap didokumentasikan dalam portofolio mereka.
+                  </p>
                 </div>
               </div>
             </section>
 
+            <!-- S4 · 07: KEGIATAN NON-MENGAJAR -->
             <section id="s4-07" class="ep-section">
               <div class="ep-section-header">
                 <span class="ep-section-num">07</span>
-                <h2>Instrumen Penilaian Siklus 4</h2>
-                <p>Instrumen penilaian autentik Siklus 4.</p>
+                <h2>Dokumentasi Kegiatan Non-Mengajar</h2>
+                <p>Dedikasi dan partisipasi aktif mahasiswa PPL dalam mendukung budaya positif dan iklim akademik sekolah.</p>
               </div>
-              <div class="pdf-block">
-                <div class="pdf-block-toolbar">
-                  <div class="pdf-block-name"><i class="fa-solid fa-file-pdf"></i><span>Instrumen_Penilaian_Siklus_4.pdf</span></div>
-                  <div class="pdf-block-actions">
-                    <button class="btn-pdf-action primary" onclick="openPdfModal('GANTI_PDF_S4_7', 'Instrumen Penilaian Siklus 4')"><i class="fa-solid fa-expand"></i> <span>Full Preview</span></button>
-                    <a href="GANTI_DL_S4_7" download class="btn-pdf-action"><i class="fa-solid fa-download"></i> <span>Unduh PDF</span></a>
+              <div class="kegiatan-gallery-grid">
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/penerjunan1.jpeg" alt="Penerjunan dan Orientasi Lapangan PPL" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-landmark"></i> Orientasi Lapangan</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Penerjunan & Orientasi Satuan Pendidikan</h4>
+                    <p>Upacara serah terima dan koordinasi resmi bersama pimpinan SMKN 5 Yogyakarta guna menyelaraskan program PPL dengan agenda semester sekolah.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-location-dot"></i> Ruang Rapat SMKN 5</span><span>Manajerial PPL</span></div>
                   </div>
                 </div>
-                <div class="pdf-block-embed" data-pdf-id="GANTI_PDF_S4_7">
-                  <div class="pdf-placeholder"><i class="fa-solid fa-file-pdf"></i><span>PDF belum tersedia</span></div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan2.jpeg" alt="Pendampingan Kemah Siswa SMKN 5" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-campground"></i> Ekstrakurikuler</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Pendampingan Perkemahan di Kaliurang</h4>
+                    <p>Keterlibatan aktif membimbing peserta didik kelas X dalam perkemahan pembinaan karakter di Buper Kaliurang untuk memupuk jiwa kemandirian dan gotong royong.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-mountain"></i> Buper Kaliurang</span><span>Pembinaan Karakter</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/kegiatan1.jpeg" alt="Piket Sekolah dan Pembiasaan Budaya Positif" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-school"></i> Budaya Sekolah</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Piket Harian & Pembiasaan 3S di Gerbang</h4>
+                    <p>Melaksanakan piket harian menyambut kehadiran siswa di gerbang pagi, mengawasi kedisiplinan seragam, serta memperkuat budaya Senyum, Sapa, Salam.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-door-open"></i> Gerbang Depan</span><span>Budaya Positif</span></div>
+                  </div>
+                </div>
+
+                <div class="kegiatan-card">
+                  <div class="kegiatan-img-frame">
+                    <img src="IMG/Diskusi.jpeg" alt="Diskusi Refleksi Bersama Guru Pamong" />
+                    <div class="kegiatan-floating-pill"><i class="fa-solid fa-users"></i> Komunitas Praktisi</div>
+                  </div>
+                  <div class="kegiatan-card-body">
+                    <h4>Diskusi Refleksi & Kolaborasi Guru Pamong</h4>
+                    <p>Pertemuan mingguan evaluasi pengajaran bersama Guru Pamong dan rekan mahasiswa PPL guna meninjau hasil belajar dan merancang perbaikan siklus berikutnya.</p>
+                    <div class="kegiatan-card-footer"><span><i class="fa-solid fa-comments"></i> Ruang Guru</span><span>Lesson Study</span></div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -645,99 +1202,74 @@
       </div>
     </main>
 
-    <!-- PDF MODAL -->
-    <div class="pdf-modal" id="pdfModal">
-      <div class="pdf-modal-backdrop" onclick="closePdfModal()"></div>
-      <div class="pdf-modal-content">
-        <div class="pdf-modal-header">
-          <span class="pdf-modal-title" id="pdfModalTitle">
-            <i class="fa-solid fa-file-pdf"></i> Preview
-          </span>
-          <div class="pdf-modal-actions">
-  <a href="#" target="_blank" class="btn-pdf-action" id="pdfModalOpen">
-    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-    <span>Tab Baru</span>
-  </a>
-  <button class="btn-pdf-action close" onclick="closePdfModal()" aria-label="Tutup">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
-</div>
-        </div>
-        <div class="pdf-modal-body">
-          <iframe id="pdfModalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" loading="lazy" title="Preview Modal"></iframe>
-        </div>
-      </div>
-    </div>
-
+    <!-- FOOTER RESMI -->
     <footer class="site-footer">
-  <div class="container footer-container">
-    <!-- BRAND -->
-    <div class="footer-col brand-col">
-      <h3>E-Portofolio<span> PPG</span></h3>
-      <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.</p>
-    </div>
+      <div class="container footer-container">
+        <div class="footer-col brand-col">
+          <h3>E-Portofolio<span> PPG</span></h3>
+          <p>Ruang rekam jejak Praktik Pengalaman Lapangan (PPL) dan refleksi perjalanan menjadi guru profesional. Disusun secara berkelanjutan dari Semester 1 hingga Semester 2.</p>
+        </div>
 
-    <!-- SEMESTER 1 -->
-    <div class="footer-col links-col">
-      <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
-      <ul>
-        <li class="footer-sub-label">E-Portofolio 1</li>
-        <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
-        <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
-        <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
-        <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
-        <li class="footer-sub-label">E-Portofolio 2</li>
-        <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
-        <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
-      </ul>
-    </div>
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book"></i> Semester 1</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio 1</li>
+            <li><a href="profile.html"><i class="fa-solid fa-user-graduate"></i> Profil Mahasiswa</a></li>
+            <li><a href="artefak.html"><i class="fa-solid fa-file-waveform"></i> Artefak Produk</a></li>
+            <li><a href="penilaian.html"><i class="fa-solid fa-list-check"></i> Instrumen Penilaian</a></li>
+            <li><a href="modelguru.html"><i class="fa-solid fa-bullseye"></i> Model Guru</a></li>
+            <li class="footer-sub-label">E-Portofolio 2</li>
+            <li><a href="refleksi.html"><i class="fa-solid fa-arrows-rotate"></i> Refleksi Akhir</a></li>
+            <li><a href="filosofi.html"><i class="fa-solid fa-seedling"></i> Filosofi Mengajar</a></li>
+          </ul>
+        </div>
 
-    <!-- SEMESTER 2 -->
-    <div class="footer-col links-col">
-      <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
-      <ul>
-        <li class="footer-sub-label">E-Portofolio</li>
-        <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
-        <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
-        <li class="footer-sub-label">Identifikasi Diri</li>
-        <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
-        <li class="footer-sub-label">Refleksi Mata Kuliah</li>
-        <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
-        <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
-        <li class="footer-sub-label">Inovasi</li>
-        <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
-      </ul>
-    </div>
+        <div class="footer-col links-col">
+          <h4><i class="fa-solid fa-book-open"></i> Semester 2</h4>
+          <ul>
+            <li class="footer-sub-label">E-Portofolio</li>
+            <li><a href="e-portofolio-1.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 1</a></li>
+            <li><a href="e-portofolio-2.html"><i class="fa-solid fa-folder-open"></i> E-Portofolio 2</a></li>
+            <li class="footer-sub-label">Identifikasi Diri</li>
+            <li><a href="identifikasi_diri.html"><i class="fa-solid fa-id-card"></i> Identifikasi Diri</a></li>
+            <li class="footer-sub-label">Refleksi Mata Kuliah</li>
+            <li><a href="refleksi-semester1.html"><i class="fa-solid fa-book"></i> Semester 1</a></li>
+            <li><a href="refleksi-semester2.html"><i class="fa-solid fa-book-open"></i> Semester 2</a></li>
+            <li class="footer-sub-label">Inovasi</li>
+            <li><a href="inovasi-pembelajaran.html"><i class="fa-solid fa-lightbulb"></i> Inovasi Pembelajaran</a></li>
+          </ul>
+        </div>
 
-    <!-- KONTAK -->
-    <div class="footer-col contact-col">
-      <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
-      <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
-      <div class="map-container">
-        <iframe src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="150" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+        <div class="footer-col contact-col">
+          <h4><i class="fa-solid fa-location-dot"></i> Lokasi LPTK</h4>
+          <p><i class="fa-solid fa-building-columns"></i> Universitas Negeri Yogyakarta</p>
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Universitas%20Negeri%20Yogyakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="150" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="social-links">
+            <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
       </div>
-      <div class="social-links">
-        <a href="mailto:ilhamkurniaseptiadi@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-        <a href="https://www.instagram.com/_kurnia.sp" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
+        </div>
       </div>
-    </div>
-  </div>
+    </footer>
 
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2026 Ilham Kurnia Septiadi - E-Portofolio PPL PPG. Semua Hak Cipta Dilindungi.</p>
-    </div>
-  </div>
-</footer>
-
+    <!-- SCRIPT LOGIC -->
     <script>
-      // ===== NAVBAR =====
+      // NAVBAR SCROLL
       const navbar = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 50) navbar.classList.add("scrolled");
         else navbar.classList.remove("scrolled");
       });
 
+      // MOBILE MENU
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("nav-menu");
       hamburger.addEventListener("click", () => {
@@ -745,6 +1277,7 @@
         hamburger.classList.toggle("active");
       });
 
+      // MOBILE DROPDOWN
       const dropdownBtns = document.querySelectorAll(".dropbtn");
       dropdownBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -765,244 +1298,70 @@
         });
       });
 
-      // ===== TAB SIKLUS SWITCH =====
-      function switchSiklus(evt, panelId) {
-        // Sembunyikan semua panel
-        document.querySelectorAll(".ep-siklus-panel").forEach((p) => p.classList.remove("active"));
-        // Nonaktifkan semua tab
-        document.querySelectorAll(".ep-siklus-tab").forEach((t) => t.classList.remove("active"));
-        // Aktifkan yang dipilih
-        document.getElementById(panelId).classList.add("active");
-        evt.currentTarget.classList.add("active");
-
-        // Scroll ke atas tab (biar user lihat section awal)
-        const tabsWrapper = document.querySelector(".ep-siklus-tabs-wrapper");
-        if (tabsWrapper) {
-          window.scrollTo({
-            top: tabsWrapper.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-
-        // Re-observe lazy load untuk konten di panel baru
-        observeLazyContent();
-      }
-
-      // ===== LAZY LOAD (PDF + Video) =====
-      let pdfObserver, videoObserver;
-
-      // Fungsi fleksibel untuk mengenali berbagai format link video (Drive, YouTube, direct MP4)
-      function resolveVideoEmbedUrl(url) {
-        if (!url || typeof url !== "string") return null;
-        url = url.trim();
-        if (url.includes("GANTI") || url === "") return null;
-
-        // 1. Google Drive (berbagai variasi link sharing/view)
-        const driveFileMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/i);
-        if (driveFileMatch && driveFileMatch[1]) {
-          return {
-            type: "iframe",
-            src: "https://drive.google.com/file/d/" + driveFileMatch[1] + "/preview",
-            rawUrl: url
-          };
-        }
-
-        const driveIdMatch = url.match(/drive\.google\.com\/(?:open|uc)\?(?:.*&)?id=([a-zA-Z0-9_-]+)/i);
-        if (driveIdMatch && driveIdMatch[1]) {
-          return {
-            type: "iframe",
-            src: "https://drive.google.com/file/d/" + driveIdMatch[1] + "/preview",
-            rawUrl: url
-          };
-        }
-
-        // 2. YouTube (watch, embed, short link youtu.be, shorts)
-        const ytMatch = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i);
-        if (ytMatch && ytMatch[1]) {
-          return {
-            type: "iframe",
-            src: "https://www.youtube.com/embed/" + ytMatch[1] + "?rel=0",
-            rawUrl: url
-          };
-        }
-
-        // 3. Direct video file (mp4, webm, ogg)
-        if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)) {
-          return {
-            type: "video",
-            src: url,
-            rawUrl: url
-          };
-        }
-
-        // 4. Fallback jika link Google Drive view lain
-        if (url.includes("drive.google.com") && url.includes("/view")) {
-          return {
-            type: "iframe",
-            src: url.replace(/\/view(?:\?.*)?$/, "/preview"),
-            rawUrl: url
-          };
-        }
-
-        // Fallback default
-        return {
-          type: "iframe",
-          src: url,
-          rawUrl: url
-        };
-      }
-
-      function loadVideoEmbed(wrapper) {
-        if (!wrapper || wrapper.dataset.loaded === "1") return;
-        const rawSrc = wrapper.getAttribute("data-video-src");
-        const resolved = resolveVideoEmbedUrl(rawSrc);
-        if (resolved) {
-          if (resolved.type === "video") {
-            wrapper.innerHTML =
-              '<video src="' + resolved.src + '" controls controlsList="nodownload" style="width:100%;height:100%;display:block;background:#000;" playsinline></video>';
-          } else {
-            wrapper.innerHTML =
-              '<iframe src="' + resolved.src + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" loading="lazy" title="Video Praktik Pembelajaran"></iframe>';
-          }
-          wrapper.dataset.loaded = "1";
-        }
-      }
-
-      function observeLazyContent() {
-        // PDF
-        document.querySelectorAll(".pdf-block-embed[data-pdf-id]").forEach((wrapper) => {
-          if (wrapper.dataset.observed === "1") return;
-          if (pdfObserver) pdfObserver.observe(wrapper);
+      // SIKLUS TAB SWITCHER
+      function switchSiklus(e, panelId) {
+        document.querySelectorAll(".ep-siklus-tab").forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".ep-siklus-panel").forEach(p => {
+          p.classList.remove("active");
+          p.style.display = "none";
         });
-        // Video
-        document.querySelectorAll(".video-block-embed[data-video-src]").forEach((wrapper) => {
-          if (wrapper.dataset.observed === "1") return;
-          if (videoObserver) videoObserver.observe(wrapper);
-        });
+
+        e.currentTarget.classList.add("active");
+        const panel = document.getElementById(panelId);
+        if (panel) {
+          panel.classList.add("active");
+          panel.style.display = "block";
+        }
       }
 
-      pdfObserver = new IntersectionObserver(
+      // TAB SWITCHER PENILAIAN SIKLUS 2
+      function switchPenilaianTabS2(tabId, btn) {
+        btn.closest(".tab-switcher").querySelectorAll(".tab-btn-pill").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".penilaian-panel-s2").forEach(p => (p.style.display = "none"));
+        btn.classList.add("active");
+        const p = document.getElementById(tabId);
+        if (p) p.style.display = "block";
+      }
+
+      // TAB SWITCHER PENILAIAN SIKLUS 3
+      function switchPenilaianTabS3(tabId, btn) {
+        btn.closest(".tab-switcher").querySelectorAll(".tab-btn-pill").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".penilaian-panel-s3").forEach(p => (p.style.display = "none"));
+        btn.classList.add("active");
+        const p = document.getElementById(tabId);
+        if (p) p.style.display = "block";
+      }
+
+      // TAB SWITCHER PENILAIAN SIKLUS 4
+      function switchPenilaianTabS4(tabId, btn) {
+        btn.closest(".tab-switcher").querySelectorAll(".tab-btn-pill").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".penilaian-panel-s4").forEach(p => (p.style.display = "none"));
+        btn.classList.add("active");
+        const p = document.getElementById(tabId);
+        if (p) p.style.display = "block";
+      }
+
+      // TOC ACTIVE HIGHLIGHT FOR ALL PANELS
+      const sections = document.querySelectorAll(".ep-section");
+      const tocLinks = document.querySelectorAll(".ep-toc-link");
+
+      const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const wrapper = entry.target;
-              const pdfId = wrapper.getAttribute("data-pdf-id");
-              if (pdfId && !pdfId.includes("GANTI")) {
-                wrapper.innerHTML =
-                  '<iframe src="https://drive.google.com/file/d/' + pdfId + '/preview" allow="autoplay" loading="lazy" title="PDF Preview"></iframe>';
-              }
-              wrapper.dataset.observed = "1";
-              pdfObserver.unobserve(wrapper);
-            }
-          });
-        },
-        { rootMargin: "300px" }
-      );
-
-      videoObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const wrapper = entry.target;
-              loadVideoEmbed(wrapper);
-              wrapper.dataset.observed = "1";
-              videoObserver.unobserve(wrapper);
-            }
-          });
-        },
-        { rootMargin: "300px" }
-      );
-
-      observeLazyContent();
-
-      // ===== TOC ACTIVE HIGHLIGHT (per Siklus) =====
-      // Update TOC sesuai scroll di panel aktif
-      document.querySelectorAll(".ep-siklus-panel").forEach((panel) => {
-        const panelSections = panel.querySelectorAll(".ep-section");
-        const panelTocLinks = panel.querySelectorAll(".ep-toc-link");
-        if (!panelSections.length) return;
-
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                panelTocLinks.forEach((l) => l.classList.remove("active"));
-                const id = entry.target.id;
-                const activeLink = panel.querySelector('.ep-toc-link[data-section="' + id + '"]');
+              const id = entry.target.id;
+              const parentPanel = entry.target.closest(".ep-siklus-panel");
+              if (parentPanel && parentPanel.classList.contains("active")) {
+                parentPanel.querySelectorAll(".ep-toc-link").forEach(l => l.classList.remove("active"));
+                const activeLink = parentPanel.querySelector('.ep-toc-link[data-section="' + id + '"]');
                 if (activeLink) activeLink.classList.add("active");
               }
-            });
-          },
-          { rootMargin: "-25% 0px -65% 0px", threshold: 0 }
-        );
-
-        panelSections.forEach((s) => obs.observe(s));
-      });
-
-      // ===== PDF & VIDEO MODAL =====
-      function openPdfModal(pdfId, title) {
-        if (!pdfId || pdfId.includes("GANTI")) {
-          alert("File PDF belum tersedia. Silakan isi link Drive terlebih dahulu.");
-          return;
-        }
-        const modal = document.getElementById("pdfModal");
-        const iframe = document.getElementById("pdfModalIframe");
-        const titleEl = document.getElementById("pdfModalTitle");
-        const openBtn = document.getElementById("pdfModalOpen");
-
-        iframe.src = "https://drive.google.com/file/d/" + pdfId + "/preview";
-        titleEl.innerHTML = '<i class="fa-solid fa-file-pdf"></i> ' + title;
-        openBtn.href = "https://drive.google.com/file/d/" + pdfId + "/view";
-
-        modal.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-
-      function openVideoModal(videoSrc, title) {
-        const resolved = resolveVideoEmbedUrl(videoSrc);
-        if (!resolved) {
-          alert("Video belum tersedia. Silakan masukkan link video terlebih dahulu.");
-          return;
-        }
-        const modal = document.getElementById("pdfModal");
-        const iframe = document.getElementById("pdfModalIframe");
-        const titleEl = document.getElementById("pdfModalTitle");
-        const openBtn = document.getElementById("pdfModalOpen");
-
-        iframe.src = resolved.src;
-        titleEl.innerHTML = '<i class="fa-solid fa-circle-play" style="color: #4f8cff;"></i> ' + title;
-        openBtn.href = resolved.rawUrl || videoSrc;
-
-        modal.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closePdfModal() {
-        const modal = document.getElementById("pdfModal");
-        const iframe = document.getElementById("pdfModalIframe");
-        modal.classList.remove("open");
-        setTimeout(() => {
-          iframe.src = "";
-        }, 200);
-        document.body.style.overflow = "";
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closePdfModal();
-      });
-
-      // ===== SCROLL REVEAL =====
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal, .fade-in-up");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 80;
-          if (elementTop < windowHeight - elementVisible) reveals[i].classList.add("active");
-        }
-      }
-      window.addEventListener("scroll", reveal);
-      reveal();
+            }
+          });
+        },
+        { rootMargin: "-25% 0px -65% 0px", threshold: 0 }
+      );
+      sections.forEach((s) => observer.observe(s));
     </script>
   </body>
 </html>
